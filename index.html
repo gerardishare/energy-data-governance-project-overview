@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Energy Data Projects Directory</title>
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <h1>Energy Data Projects</h1>
+        <p>Overzicht van projecten rond energiedata en data delen. Filter op status en scope, zoek op naam/summary/tags, en open een quick reference card of de detailpagina.</p>
+      </div>
+      <img src="assets/logo-topsector.png" alt="Topsector Energy" class="headerLogo" />
+    </div>
+
+    <div class="toolbar">
+      <div class="controls">
+        <input id="q" class="input" type="search" placeholder="Zoek (naam, tags, summary)…" autocomplete="off" />
+        <select id="status" class="select">
+          <option value="">Status (alle)</option>
+        </select>
+        <select id="scope" class="select">
+          <option value="">Scope (alle)</option>
+        </select>
+      </div>
+      <div class="kpis">
+        <div>
+          <span id="countLabel">0 projecten</span>
+          <span class="small">• klik op een card voor quick reference</span>
+        </div>
+        <div class="chips" id="activeChips"></div>
+      </div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none;">
+      Geen projecten gevonden met deze filters/zoekterm.
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Project quick reference">
+    <div class="drawerHeader">
+      <div>
+        <h2 id="dTitle">Project</h2>
+        <p class="sub" id="dSub"></p>
+      </div>
+      <button class="iconBtn" id="closeBtn" aria-label="Sluiten">✕</button>
+    </div>
+    <div class="drawerBody">
+      <div class="section">
+        <h4>Quick reference</h4>
+        <div class="kv" id="dKv"></div>
+        <div id="dLists"></div>
+      </div>
+
+      <div class="section">
+        <h4>Samenvatting</h4>
+        <p class="summary" id="dSummary"></p>
+      </div>
+
+      <div class="section">
+        <h4>Links</h4>
+        <div class="actions" id="dLinks"></div>
+        <hr class="sep"/>
+        <a class="button primary" id="dDetail" href="#">Open detailpagina →</a>
+      </div>
+
+      <div class="small" id="dMeta"></div>
+    </div>
+  </aside>
+
+  <!-- Fuse.js (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
