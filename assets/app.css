@@ -171,6 +171,27 @@
     font-size: 12px;
     color: var(--muted);
   }
+  .badgeStatus{ font-weight: 500; }
+  .badgeStatus--active{
+    border-color: rgba(100, 180, 120, .5);
+    background: rgba(100, 180, 120, .14);
+    color: rgba(160, 220, 175, .95);
+  }
+  .badgeStatus--pilot{
+    border-color: rgba(100, 165, 200, .5);
+    background: rgba(100, 165, 200, .12);
+    color: rgba(170, 210, 235, .95);
+  }
+  .badgeStatus--completed{
+    border-color: rgba(255,255,255,.18);
+    background: rgba(255,255,255,.06);
+    color: rgba(255,255,255,.6);
+  }
+  .badgeStatus--default{
+    border-color: rgba(255,255,255,.2);
+    background: rgba(255,255,255,.06);
+    color: var(--muted);
+  }
   .summary{
     margin:0;
     color: var(--muted);
