@@ -47,7 +47,7 @@
     font-size: clamp(22px, 2.6vw, 32px);
     letter-spacing:-0.02em;
   }
-  .title p{margin:0; color:var(--muted); max-width:70ch; line-height:1.45}
+  .title p{margin:0; color:var(--muted); max-width:100ch; line-height:1.45}
   
   .toolbar{
     display:grid;

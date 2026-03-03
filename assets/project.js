@@ -39,14 +39,27 @@ async function init(){
 
   document.title = `${p.name} — Project`;
   pTitle.textContent = p.name;
-  pSub.textContent = `${p.status} • ${p.scope} • start ${p.year_start ?? '—'} • ${p.owner ?? ''}`.replace(/\s•\s$/,'');
+  const subParts = [];
+  if (p.status) subParts.push(p.status);
+  if (p.scope) subParts.push(p.scope);
+  if (p.geografical_scope) subParts.push(p.geografical_scope);
+  if (p.year_start || p.year_end) {
+    subParts.push(`${p.year_start ?? '—'}–${p.year_end ?? '—'}`);
+  }
+  if (p.owner) subParts.push(p.owner);
+  pSub.textContent = subParts.join(' • ');
   pSummary.textContent = p.summary || '';
 
   const qr = p.quick_reference || {};
+  const yearsLabel = (p.year_start || p.year_end)
+    ? `${p.year_start ?? '—'}–${p.year_end ?? '—'}`
+    : '—';
   pKv.innerHTML = `
     <div class="k">Doel</div><div class="v">${escapeHtml(qr.primary_goal || '—')}</div>
     <div class="k">Status</div><div class="v">${escapeHtml(p.status || '—')}</div>
     <div class="k">Scope</div><div class="v">${escapeHtml(p.scope || '—')}</div>
+    <div class="k">Geografische scope</div><div class="v">${escapeHtml(p.geografical_scope || '—')}</div>
+    <div class="k">Looptijd</div><div class="v">${escapeHtml(yearsLabel)}</div>
     <div class="k">Owner</div><div class="v">${escapeHtml(p.owner || '—')}</div>
   `;
 
@@ -59,10 +72,15 @@ async function init(){
 
   // links
   pLinks.innerHTML = '';
-  const linkDefs = [
-    {label:'Website', url: p.website},
-    {label:'Repository', url: p.repo}
-  ].filter(x => x.url && String(x.url).trim().length);
+  let linkDefs = Array.isArray(p.links) ? p.links : [];
+  // fallback voor oudere structuur
+  if (!linkDefs.length) {
+    linkDefs = [
+      {label:'Website', url: p.website},
+      {label:'Repository', url: p.repo}
+    ];
+  }
+  linkDefs = linkDefs.filter(x => x && x.url && String(x.url).trim().length);
 
   if (!linkDefs.length){
     pLinks.innerHTML = `<span class="small">Geen links opgegeven.</span>`;
@@ -73,7 +91,7 @@ async function init(){
       a.href = l.url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      a.textContent = l.label;
+      a.textContent = l.label || l.url;
       pLinks.appendChild(a);
     }
   }

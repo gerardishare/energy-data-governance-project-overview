@@ -3,11 +3,21 @@
       "slug": "energy-data-space-nl",
       "name": "Energy Data Space NL",
       "status": "Pilot",
-      "scope": "National",
+      "scope": "Energiedomein",
+      "geografical_scope": "Nederland",
       "owner": "Consortium (DSO, TSO, suppliers)",
       "year_start": 2024,
-      "website": "https://example.org/eds-nl",
-      "repo": "https://github.com/example/eds-nl",
+      "year_end": 2026,
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://example.org/eds-nl"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/example/eds-nl"
+        }
+      ],
       "summary": "Pilot voor sectorbrede afspraken en technische bouwblokken om energiedata veilig te delen tussen marktpartijen.",
       "tags": ["data sharing", "governance", "interoperability"],
       "quick_reference": {
@@ -20,11 +30,21 @@
       "slug": "flexibility-marketplace-eu",
       "name": "Flexibility Marketplace EU",
       "status": "Active",
-      "scope": "EU",
+      "scope": "Gerelateerde sector",
+      "geografical_scope": "Europa",
       "owner": "EU-funded project",
       "year_start": 2023,
-      "website": "https://example.org/flex-eu",
-      "repo": "",
+      "year_end": 2025,
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://example.org/flex-eu"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/example/flex-eu"
+        }
+      ],
       "summary": "Project dat markt- en datakoppelingen onderzoekt voor flexibiliteitsdiensten (congestiemanagement, balancing) met focus op interoperabiliteit.",
       "tags": ["flexibility", "market design", "APIs"],
       "quick_reference": {
@@ -37,11 +57,21 @@
       "slug": "metering-data-hub-open",
       "name": "Metering Data Hub (Open)",
       "status": "Completed",
-      "scope": "Sector",
+      "scope": "Generiek initiatief", 
+      "geografical_scope": "Nederland",
       "owner": "Industry working group",
       "year_start": 2022,
-      "website": "https://example.org/metering-hub",
-      "repo": "https://github.com/example/metering-hub",
+      "year_end": 2024,
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://example.org/metering-hub"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/example/metering-hub"
+        }
+      ],
       "summary": "Open specificatie en voorbeeldimplementaties voor gestandaardiseerde uitwisseling van meetdata en consent/authorisation patronen.",
       "tags": ["metering", "consent", "standards"],
       "quick_reference": {
