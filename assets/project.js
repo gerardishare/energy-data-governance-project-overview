@@ -1,10 +1,14 @@
 /* assets/project.js */
-const DATA_URL = './projects.json';
-
 function getSlug(){
   const url = new URL(window.location.href);
   return url.searchParams.get('slug') || '';
 }
+function getYear(){
+  const url = new URL(window.location.href);
+  const y = url.searchParams.get('year');
+  return y === '2023' ? 2023 : 2026;
+}
+function getDataUrl(){ return `./projects_${getYear()}.json`; }
 function escapeHtml(s){
   return String(s ?? '')
     .replaceAll('&','&amp;')
@@ -16,8 +20,10 @@ function escapeHtml(s){
 
 async function init(){
   const slug = getSlug();
-  const res = await fetch(DATA_URL, {cache:'no-store'});
-  if (!res.ok) throw new Error(`Failed to load ${DATA_URL}`);
+  const year = getYear();
+  const dataUrl = getDataUrl();
+  const res = await fetch(dataUrl, {cache:'no-store'});
+  if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
   const projects = await res.json();
   const p = projects.find(x => x.slug === slug);
 
@@ -28,6 +34,9 @@ async function init(){
   const pLists = document.getElementById('pLists');
   const pLinks = document.getElementById('pLinks');
   const pMeta = document.getElementById('pMeta');
+
+  const backLink = document.querySelector('.pageBack');
+  if (backLink) backLink.href = `./?year=${year}`;
 
   if (!p){
     document.title = 'Project niet gevonden';
@@ -96,6 +105,33 @@ async function init(){
     }
   }
 
+  // Ontwikkelingen 2023–2026
+  const pDevelopmentsSection = document.getElementById('pDevelopmentsSection');
+  const pDevelopments = document.getElementById('pDevelopments');
+  const dev = p.developments_2023_2026;
+  if (dev && (dev.summary || (Array.isArray(dev.highlights) && dev.highlights.length))) {
+    pDevelopmentsSection.style.display = '';
+    let html = '';
+    if (dev.reference_date) {
+      html += `<p class="small" style="margin:0 0 8px;">Referentiedatum: ${escapeHtml(dev.reference_date)}</p>`;
+    }
+    if (dev.summary) {
+      html += `<p class="summary" style="margin:0 0 10px;">${escapeHtml(dev.summary)}</p>`;
+    }
+    if (Array.isArray(dev.highlights) && dev.highlights.length) {
+      html += '<ul class="list developmentHighlights">';
+      for (const h of dev.highlights) {
+        const datePart = h.date ? `<span class="developmentDate">${escapeHtml(h.date)}</span> ` : '';
+        html += `<li>${datePart}<strong>${escapeHtml(h.title || '')}</strong>${h.detail ? ` — ${escapeHtml(h.detail)}` : ''}</li>`;
+      }
+      html += '</ul>';
+    }
+    pDevelopments.innerHTML = html;
+  } else {
+    pDevelopmentsSection.style.display = 'none';
+    pDevelopments.innerHTML = '';
+  }
+
   // metadata
   const tags = (p.tags || []).join(', ');
   pMeta.innerHTML = `
@@ -107,5 +143,5 @@ async function init(){
 init().catch(err=>{
   console.error(err);
   document.getElementById('pTitle').textContent = 'Fout bij laden';
-  document.getElementById('pSub').textContent = 'Kon projects.json niet laden.';
+  document.getElementById('pSub').textContent = `Kon ${getDataUrl()} niet laden.`;
 });

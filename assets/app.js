@@ -1,8 +1,9 @@
 /* assets/app.js */
-const DATA_URL = './projects.json';
-
+let selectedYear = 2026;
 let allProjects = [];
 let fuse = null;
+
+function getDataUrl(){ return `./projects_${selectedYear}.json`; }
 
 const elQ = document.getElementById('q');
 const elStatus = document.getElementById('status');
@@ -11,6 +12,7 @@ const elGrid = document.getElementById('grid');
 const elEmpty = document.getElementById('empty');
 const elCount = document.getElementById('countLabel');
 const elChips = document.getElementById('activeChips');
+const yearBtns = document.querySelectorAll('.yearBtn');
 
 const overlay = document.getElementById('overlay');
 const drawer = document.getElementById('drawer');
@@ -21,6 +23,8 @@ const dSub = document.getElementById('dSub');
 const dKv = document.getElementById('dKv');
 const dLists = document.getElementById('dLists');
 const dSummary = document.getElementById('dSummary');
+const dDevelopmentsSection = document.getElementById('dDevelopmentsSection');
+const dDevelopments = document.getElementById('dDevelopments');
 const dLinks = document.getElementById('dLinks');
 const dDetail = document.getElementById('dDetail');
 const dMeta = document.getElementById('dMeta');
@@ -85,7 +89,7 @@ function cardHtml(p){
       <p class="summary">${summary}</p>
       <div class="footerRow">
         <span class="small">Quick reference →</span>
-        <a class="link" href="project.html?slug=${encodeURIComponent(p.slug)}" onclick="event.stopPropagation()">Detail</a>
+        <a class="link" href="project.html?slug=${encodeURIComponent(p.slug)}&year=${selectedYear}" onclick="event.stopPropagation()">Detail</a>
       </div>
     </div>
   `;
@@ -196,9 +200,34 @@ function openDrawer(slug){
     }
   }
 
-  dDetail.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
+  dDetail.href = `project.html?slug=${encodeURIComponent(p.slug)}&year=${selectedYear}`;
   const tagText = (p.tags || []).join(', ');
   dMeta.textContent = tagText ? `Tags: ${tagText}` : '';
+
+  // Ontwikkelingen 2023–2026
+  const dev = p.developments_2023_2026;
+  if (dev && (dev.summary || (Array.isArray(dev.highlights) && dev.highlights.length))) {
+    dDevelopmentsSection.style.display = '';
+    let html = '';
+    if (dev.reference_date) {
+      html += `<p class="small" style="margin:0 0 8px;">Referentiedatum: ${escapeHtml(dev.reference_date)}</p>`;
+    }
+    if (dev.summary) {
+      html += `<p class="summary" style="margin:0 0 10px;">${escapeHtml(dev.summary)}</p>`;
+    }
+    if (Array.isArray(dev.highlights) && dev.highlights.length) {
+      html += '<ul class="list developmentHighlights">';
+      for (const h of dev.highlights) {
+        const datePart = h.date ? `<span class="developmentDate">${escapeHtml(h.date)}</span> ` : '';
+        html += `<li>${datePart}<strong>${escapeHtml(h.title || '')}</strong>${h.detail ? ` — ${escapeHtml(h.detail)}` : ''}</li>`;
+      }
+      html += '</ul>';
+    }
+    dDevelopments.innerHTML = html;
+  } else {
+    dDevelopmentsSection.style.display = 'none';
+    dDevelopments.innerHTML = '';
+  }
 
   overlay.classList.add('open');
   drawer.classList.add('open');
@@ -224,12 +253,24 @@ function onEsc(e){
 overlay.addEventListener('click', closeDrawer);
 closeBtn.addEventListener('click', closeDrawer);
 
-async function init(){
-  const res = await fetch(DATA_URL, {cache:'no-store'});
-  if (!res.ok) throw new Error(`Failed to load ${DATA_URL}`);
+function setYearUI(year){
+  selectedYear = year;
+  yearBtns.forEach(btn => {
+    const y = parseInt(btn.dataset.year, 10);
+    btn.classList.toggle('active', y === selectedYear);
+  });
+  const url = new URL(window.location.href);
+  url.searchParams.set('year', String(selectedYear));
+  window.history.replaceState(null, '', url);
+}
+
+async function loadProjects(year){
+  setYearUI(year);
+  const dataUrl = getDataUrl();
+  const res = await fetch(dataUrl, {cache:'no-store'});
+  if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
   allProjects = await res.json();
 
-  // init Fuse
   fuse = new Fuse(allProjects, {
     includeScore: true,
     threshold: 0.32,
@@ -242,19 +283,43 @@ async function init(){
     ]
   });
 
-  // fill filter values
+  elStatus.innerHTML = '<option value="">Status (alle)</option>';
+  elScope.innerHTML = '<option value="">Scope (alle)</option>';
   buildSelectOptions(elStatus, uniqSorted(allProjects.map(p=>p.status)));
   buildSelectOptions(elScope, uniqSorted(allProjects.map(p=>p.scope)));
-
-  // listeners
-  elQ.addEventListener('input', apply);
-  elStatus.addEventListener('change', apply);
-  elScope.addEventListener('change', apply);
 
   apply();
 }
 
-init().catch(err=>{
-  console.error(err);
-  elGrid.innerHTML = `<div class="empty">Kon projects.json niet laden. Check of alle bestanden op GitHub Pages staan.</div>`;
-});
+function init(){
+  const url = new URL(window.location.href);
+  const yearParam = url.searchParams.get('year');
+  if (yearParam === '2023' || yearParam === '2026') {
+    selectedYear = parseInt(yearParam, 10);
+    yearBtns.forEach(btn => {
+      const y = parseInt(btn.dataset.year, 10);
+      btn.classList.toggle('active', y === selectedYear);
+    });
+  }
+
+  yearBtns.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      const y = parseInt(btn.dataset.year, 10);
+      loadProjects(y).catch(err=>{
+        console.error(err);
+        elGrid.innerHTML = `<div class="empty">Kon ${getDataUrl()} niet laden.</div>`;
+      });
+    });
+  });
+
+  elQ.addEventListener('input', apply);
+  elStatus.addEventListener('change', apply);
+  elScope.addEventListener('change', apply);
+
+  loadProjects(selectedYear).catch(err=>{
+    console.error(err);
+    elGrid.innerHTML = `<div class="empty">Kon ${getDataUrl()} niet laden. Check of alle bestanden op GitHub Pages staan.</div>`;
+  });
+}
+
+init();
