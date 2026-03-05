@@ -232,7 +232,7 @@ function renderDiagram(projects){
     let out = '';
     for (const pt of points){
       out += `
-        <g>
+        <g class="diagramItem" data-slug="${escapeHtml(pt.p.slug)}">
           <circle cx="${pt.x}" cy="${pt.y}" r="3.2" fill="${color}"/>
           <text x="${pt.lx}" y="${pt.ly}" fill="rgba(255,255,255,.9)" font-size="6" text-anchor="${pt.anchor}" dominant-baseline="middle">
             ${escapeHtml(pt.p.name)}
@@ -249,6 +249,21 @@ function renderDiagram(projects){
 
   svg += '</svg>';
   elDiagram.innerHTML = svg;
+
+  // Maak namen in de schietschaaf klikbaar (zelfde gedrag als kaarten)
+  for (const el of elDiagram.querySelectorAll('.diagramItem')){
+    const slug = el.getAttribute('data-slug');
+    if (!slug) continue;
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.addEventListener('click', () => openDrawer(slug));
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer(slug);
+      }
+    });
+  }
 }
 
 function openDrawer(slug){
@@ -291,15 +306,9 @@ function openDrawer(slug){
 
   // links
   dLinks.innerHTML = '';
-  let linkDefs = Array.isArray(p.links) ? p.links : [];
-  // fallback voor oudere structuur
-  if (!linkDefs.length) {
-    linkDefs = [
-      {label:'Website', url: p.website},
-      {label:'Repository', url: p.repo}
-    ];
-  }
-  linkDefs = linkDefs.filter(x => x && x.url && String(x.url).trim().length);
+  const linkDefs = (Array.isArray(p.links) ? p.links : []).filter(
+    x => x && x.url && String(x.url).trim().length
+  );
 
   if (!linkDefs.length){
     dLinks.innerHTML = `<span class="small">Geen links opgegeven.</span>`;
@@ -384,12 +393,9 @@ async function loadProjects(year){
   const dataUrl = getDataUrl();
   const res = await fetch(dataUrl, {cache:'no-store'});
   if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
-  let data = await res.json();
-  // Ondersteun wrapper-bestanden in /data die verwijzen naar de echte JSON
-  if (!Array.isArray(data) && data && typeof data.include === 'string') {
-    const res2 = await fetch(data.include, {cache:'no-store'});
-    if (!res2.ok) throw new Error(`Failed to load ${data.include}`);
-    data = await res2.json();
+  const data = await res.json();
+  if (!Array.isArray(data)) {
+    throw new Error(`Unexpected data format in ${dataUrl}`);
   }
   allProjects = data;
 

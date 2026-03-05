@@ -8,7 +8,7 @@ function getYear(){
   const y = url.searchParams.get('year');
   return y === '2023' ? 2023 : 2026;
 }
-function getDataUrl(){ return `./projects_${getYear()}.json`; }
+function getDataUrl(){ return `./data/projects_data_sharing_${getYear()}.json`; }
 function escapeHtml(s){
   return String(s ?? '')
     .replaceAll('&','&amp;')
@@ -36,6 +36,9 @@ async function init(){
   const res = await fetch(dataUrl, {cache:'no-store'});
   if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
   const projects = await res.json();
+  if (!Array.isArray(projects)) {
+    throw new Error(`Unexpected data format in ${dataUrl}`);
+  }
   const p = projects.find(x => x.slug === slug);
 
   const pTitle = document.getElementById('pTitle');
@@ -92,15 +95,9 @@ async function init(){
 
   // links
   pLinks.innerHTML = '';
-  let linkDefs = Array.isArray(p.links) ? p.links : [];
-  // fallback voor oudere structuur
-  if (!linkDefs.length) {
-    linkDefs = [
-      {label:'Website', url: p.website},
-      {label:'Repository', url: p.repo}
-    ];
-  }
-  linkDefs = linkDefs.filter(x => x && x.url && String(x.url).trim().length);
+  const linkDefs = (Array.isArray(p.links) ? p.links : []).filter(
+    x => x && x.url && String(x.url).trim().length
+  );
 
   if (!linkDefs.length){
     pLinks.innerHTML = `<span class="small">Geen links opgegeven.</span>`;
