@@ -3,12 +3,13 @@ let selectedYear = 2026;
 let allProjects = [];
 let fuse = null;
 
-function getDataUrl(){ return `./projects_${selectedYear}.json`; }
+function getDataUrl(){ return `./data/projects_data_sharing_${selectedYear}.json`; }
 
 const elQ = document.getElementById('q');
 const elStatus = document.getElementById('status');
 const elScope = document.getElementById('scope');
 const elGrid = document.getElementById('grid');
+const elDiagram = document.getElementById('radialDiagram');
 const elEmpty = document.getElementById('empty');
 const elCount = document.getElementById('countLabel');
 const elChips = document.getElementById('activeChips');
@@ -145,6 +146,109 @@ function apply(){
   }
 
   renderGrid(list);
+  renderDiagram(list);
+}
+
+function renderDiagram(projects){
+  if (!elDiagram) return;
+  const list = Array.isArray(projects) ? projects : [];
+  if (!list.length){
+    elDiagram.innerHTML = '<p class="small">Geen initiatieven om weer te geven.</p>';
+    return;
+  }
+
+  const byScope = {
+    'Energiedomein': [],
+    'Gerelateerde sector': [],
+    'Generiek initiatief': []
+  };
+  for (const p of list){
+    if (byScope[p.scope]) byScope[p.scope].push(p);
+  }
+
+  const size = 420;
+  const center = size / 2;
+  const radii = {
+    inner: 60,
+    middle: 95,
+    outer: 130
+  };
+  const dotRadii = {
+    inner: radii.inner * 0.6,
+    middle: (radii.inner + radii.middle) / 2,
+    outer: (radii.middle + radii.outer) / 2
+  };
+
+  function pointsFor(list, radius){
+    const n = list.length;
+    if (!n) return [];
+    const pts = [];
+    for (let i=0; i<n; i++){
+      const angle = (2 * Math.PI * i / n) - Math.PI / 2;
+      const x = center + radius * Math.cos(angle);
+      const y = center + radius * Math.sin(angle);
+      const isRight = Math.cos(angle) >= 0;
+      const side = isRight ? 'right' : 'left';
+      const anchor = isRight ? 'start' : 'end';
+      const offset = 10;
+      const lx = x + (isRight ? offset : -offset);
+      const ly = y;
+      pts.push({p: list[i], x, y, lx, ly, anchor, side});
+    }
+    return pts;
+  }
+
+  const innerPts = pointsFor(byScope['Energiedomein'], dotRadii.inner);
+  const middlePts = pointsFor(byScope['Gerelateerde sector'], dotRadii.middle);
+  const outerPts = pointsFor(byScope['Generiek initiatief'], dotRadii.outer);
+
+  // eenvoudige label-collision-resolutie per zijde (links/rechts)
+  const allPts = [...innerPts, ...middlePts, ...outerPts];
+  const minLabelGap = 8;
+  function adjustLabels(side){
+    const pts = allPts.filter(pt => pt.side === side).sort((a,b)=>a.ly - b.ly);
+    for (let i = 1; i < pts.length; i++){
+      const prev = pts[i-1];
+      const curr = pts[i];
+      if (curr.ly < prev.ly + minLabelGap){
+        curr.ly = prev.ly + minLabelGap;
+      }
+    }
+  }
+  adjustLabels('left');
+  adjustLabels('right');
+
+  const viewBoxY = 70;
+  const viewBoxH = size - 140;
+  let svg = `<svg viewBox="0 ${viewBoxY} ${size} ${viewBoxH}" role="img" aria-label="Overzicht initiatieven per scope">`;
+  // achtergrondcirkels (gevuld, geen lijnen)
+  svg += `
+    <circle cx="${center}" cy="${center}" r="${radii.outer}" fill="rgba(22,40,70,.75)"/>
+    <circle cx="${center}" cy="${center}" r="${radii.middle}" fill="rgba(18,32,60,.9)"/>
+    <circle cx="${center}" cy="${center}" r="${radii.inner}" fill="rgba(14,26,48,1)"/>
+  `;
+
+  function renderLayer(points, color){
+    let out = '';
+    for (const pt of points){
+      out += `
+        <g>
+          <circle cx="${pt.x}" cy="${pt.y}" r="3.2" fill="${color}"/>
+          <text x="${pt.lx}" y="${pt.ly}" fill="rgba(255,255,255,.9)" font-size="6" text-anchor="${pt.anchor}" dominant-baseline="middle">
+            ${escapeHtml(pt.p.name)}
+          </text>
+        </g>
+      `;
+    }
+    return out;
+  }
+
+  svg += renderLayer(innerPts, 'rgb(110, 220, 190)');
+  svg += renderLayer(middlePts, 'rgb(130, 190, 255)');
+  svg += renderLayer(outerPts, 'rgb(195, 190, 255)');
+
+  svg += '</svg>';
+  elDiagram.innerHTML = svg;
 }
 
 function openDrawer(slug){
@@ -280,7 +384,14 @@ async function loadProjects(year){
   const dataUrl = getDataUrl();
   const res = await fetch(dataUrl, {cache:'no-store'});
   if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
-  allProjects = await res.json();
+  let data = await res.json();
+  // Ondersteun wrapper-bestanden in /data die verwijzen naar de echte JSON
+  if (!Array.isArray(data) && data && typeof data.include === 'string') {
+    const res2 = await fetch(data.include, {cache:'no-store'});
+    if (!res2.ok) throw new Error(`Failed to load ${data.include}`);
+    data = await res2.json();
+  }
+  allProjects = data;
 
   fuse = new Fuse(allProjects, {
     includeScore: true,
