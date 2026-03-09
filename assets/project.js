@@ -19,9 +19,9 @@ function escapeHtml(s){
 }
 function statusClass(s){
   const v = (s || '').toLowerCase();
-  if (v === 'active') return 'badgeStatus--active';
+  if (v === 'actief') return 'badgeStatus--active';
   if (v === 'pilot') return 'badgeStatus--pilot';
-  if (v === 'completed') return 'badgeStatus--completed';
+  if (v === 'afgerond') return 'badgeStatus--completed';
   return 'badgeStatus--default';
 }
 function statusBadgeHtml(s){
@@ -39,7 +39,7 @@ async function init(){
   if (!Array.isArray(projects)) {
     throw new Error(`Unexpected data format in ${dataUrl}`);
   }
-  const p = projects.find(x => x.slug === slug);
+  const p = projects.find(x => x.id === slug);
 
   const pTitle = document.getElementById('pTitle');
   const pSub = document.getElementById('pSub');
@@ -53,44 +53,46 @@ async function init(){
   if (backLink) backLink.href = `./?year=${year}`;
 
   if (!p){
-    document.title = 'Project niet gevonden';
-    pTitle.textContent = 'Project niet gevonden';
+    document.title = 'Initiatief niet gevonden';
+    pTitle.textContent = 'Initiatief niet gevonden';
     pSub.textContent = 'Controleer de URL (slug).';
     pSummary.textContent = '';
     return;
   }
 
-  document.title = `${p.name} — Project`;
-  pTitle.textContent = p.name;
+  document.title = `${p.naam} — Initiatief data delen`;
+  pTitle.textContent = p.naam;
   const subParts = [];
   if (p.status) subParts.push(p.status);
   if (p.scope) subParts.push(p.scope);
-  if (p.geografical_scope) subParts.push(p.geografical_scope);
-  if (p.year_start || p.year_end) {
-    subParts.push(`${p.year_start ?? '—'}–${p.year_end ?? '—'}`);
+  if (p.geografische_scope) subParts.push(p.geografische_scope);
+  if (p.jaar_start || p.jaar_einde) {
+    subParts.push(`${p.jaar_start ?? '—'}–${p.jaar_einde ?? '—'}`);
   }
-  if (p.owner) subParts.push(p.owner);
+  if (p.eigenaar) subParts.push(p.eigenaar);
   pSub.textContent = subParts.join(' • ');
-  pSummary.textContent = p.summary || '';
+  pSummary.textContent = p.samenvatting || '';
 
-  const qr = p.quick_reference || {};
-  const yearsLabel = (p.year_start || p.year_end)
-    ? `${p.year_start ?? '—'}–${p.year_end ?? '—'}`
+  const qr = p.korte_referentie || {};
+  const startYear = p.jaar_start;
+  const endYear = p.jaar_einde;
+  const yearsLabel = (startYear || endYear)
+    ? `${startYear ?? '—'}–${endYear ?? '—'}`
     : '—';
   pKv.innerHTML = `
-    <div class="k">Doel</div><div class="v">${escapeHtml(qr.primary_goal || '—')}</div>
+    <div class="k">Doel</div><div class="v">${escapeHtml(qr.primair_doel || '—')}</div>
     <div class="k">Status</div><div class="v">${statusBadgeHtml(p.status)}</div>
     <div class="k">Scope</div><div class="v">${escapeHtml(p.scope || '—')}</div>
-    <div class="k">Geografische scope</div><div class="v">${escapeHtml(p.geografical_scope || '—')}</div>
+    <div class="k">Geografische scope</div><div class="v">${escapeHtml(p.geografische_scope || '—')}</div>
     <div class="k">Looptijd</div><div class="v">${escapeHtml(yearsLabel)}</div>
-    <div class="k">Owner</div><div class="v">${escapeHtml(p.owner || '—')}</div>
+    <div class="k">Eigenaar</div><div class="v">${escapeHtml(p.eigenaar || '—')}</div>
   `;
 
-  const outputs = (qr.key_outputs || []);
-  const users = (qr.target_users || []);
+  const outputs = (qr.belangrijkste_resultaten || []);
+  const users = (qr.doelgebruikers || []);
   pLists.innerHTML = `
-    ${outputs.length ? `<div class="small" style="margin-top:10px;">Key outputs</div><ul class="list">${outputs.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
-    ${users.length ? `<div class="small" style="margin-top:10px;">Target users</div><ul class="list">${users.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+    ${outputs.length ? `<div class="small" style="margin-top:10px;">Belangrijkste resultaten</div><ul class="list">${outputs.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+    ${users.length ? `<div class="small" style="margin-top:10px;">Doelgebruikers</div><ul class="list">${users.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
   `;
 
   // links
@@ -116,21 +118,21 @@ async function init(){
   // Ontwikkelingen 2023–2026
   const pDevelopmentsSection = document.getElementById('pDevelopmentsSection');
   const pDevelopments = document.getElementById('pDevelopments');
-  const dev = p.developments_2023_2026;
-  if (dev && (dev.summary || (Array.isArray(dev.highlights) && dev.highlights.length))) {
+  const dev = p.ontwikkelingen_2023_2026;
+  if (dev && (dev.samenvatting || (Array.isArray(dev.hoogtepunten) && dev.hoogtepunten.length))) {
     pDevelopmentsSection.style.display = '';
     let html = '';
-    if (dev.reference_date) {
-      html += `<p class="small" style="margin:0 0 8px;">Referentiedatum: ${escapeHtml(dev.reference_date)}</p>`;
+    if (dev.referentiedatum) {
+      html += `<p class="small" style="margin:0 0 8px;">Referentiedatum: ${escapeHtml(dev.referentiedatum)}</p>`;
     }
-    if (dev.summary) {
-      html += `<p class="summary" style="margin:0 0 10px;">${escapeHtml(dev.summary)}</p>`;
+    if (dev.samenvatting) {
+      html += `<p class="summary" style="margin:0 0 10px;">${escapeHtml(dev.samenvatting)}</p>`;
     }
-    if (Array.isArray(dev.highlights) && dev.highlights.length) {
+    if (Array.isArray(dev.hoogtepunten) && dev.hoogtepunten.length) {
       html += '<ul class="list developmentHighlights">';
-      for (const h of dev.highlights) {
-        const datePart = h.date ? `<span class="developmentDate">${escapeHtml(h.date)}</span> ` : '';
-        html += `<li>${datePart}<strong>${escapeHtml(h.title || '')}</strong>${h.detail ? ` — ${escapeHtml(h.detail)}` : ''}</li>`;
+      for (const h of dev.hoogtepunten) {
+        const datePart = h.datum ? `<span class="developmentDate">${escapeHtml(h.datum)}</span> ` : '';
+        html += `<li>${datePart}<strong>${escapeHtml(h.titel || '')}</strong>${h.detail ? ` — ${escapeHtml(h.detail)}` : ''}</li>`;
       }
       html += '</ul>';
     }
@@ -143,7 +145,7 @@ async function init(){
   // metadata
   const tags = (p.tags || []).join(', ');
   pMeta.innerHTML = `
-    <div class="k">Slug</div><div class="v">${escapeHtml(p.slug)}</div>
+    <div class="k">ID</div><div class="v">${escapeHtml(p.id)}</div>
     <div class="k">Tags</div><div class="v">${escapeHtml(tags || '—')}</div>
   `;
 }

@@ -31,7 +31,7 @@
     <div class="header">
       <div class="title">
         <h1>Initiatieven op het gebied van energiedata en data delen</h1>
-        <p>Afsprakenstelsels, digitale stelsels, data spaces en randvoorwaardelijke ontwikkelingen zijn in opkomst. Deze ontwikkelingen bieden mogelijkheden om naast wet- en regelgeving afspraken en principes tussen partijen vast te leggen en bevorderen de beschikbaarheid en het delen van energiedata.</p>
+        <p>Afsprakenstelsels, digitale stelsels, dataspace-achtige initiatieven en randvoorwaardelijke ontwikkelingen zijn in opkomst. Deze overzichtspagina hoort bij hoofdstuk 6.2 van het rapport en laat initiatieven zien die de beschikbaarheid en het delen van energiedata bevorderen.</p>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
           <button type="button" class="yearBtn active" data-year="2026">2026</button>
         </div>
         <div class="controls">
-          <input id="q" class="input" type="search" placeholder="Zoek (naam, tags, samenvatting)…" autocomplete="off" />
+          <input id="q" class="input" type="search" placeholder="Zoek (naam, samenvatting, tags…)" autocomplete="off" />
           <select id="status" class="select">
             <option value="">Status (alle)</option>
           </select>
@@ -52,8 +52,8 @@
         </div>
         <div class="kpis">
           <div>
-            <span id="countLabel">0 projecten</span>
-            <span class="small">• klik op een projectkaart voor details</span>
+            <span id="countLabel">0 initiatieven</span>
+            <span class="small">• klik op een kaart voor details</span>
           </div>
           <div class="chips" id="activeChips"></div>
         </div>
@@ -63,16 +63,16 @@
 
     <div id="grid" class="grid"></div>
     <div id="empty" class="empty" style="display:none;">
-      Geen projecten gevonden met deze filters/zoekterm.
+      Geen initiatieven gevonden met deze filters/zoekterm.
     </div>
   </div>
 
   <!-- Drawer -->
   <div id="overlay" class="overlay" aria-hidden="true"></div>
-  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Project quick reference">
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Initiatief quick reference">
     <div class="drawerHeader">
       <div>
-        <h2 id="dTitle">Project</h2>
+        <h2 id="dTitle">Initiatief</h2>
         <p class="sub" id="dSub"></p>
       </div>
       <button class="iconBtn" id="closeBtn" aria-label="Sluiten">✕</button>
