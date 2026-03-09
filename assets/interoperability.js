@@ -111,9 +111,6 @@ function mapInitiatives(raw){
     const status2023 = i.status_2023 || '';
     const statusLabel = shortStatus(status2026 || status2023);
     const scope = i.familie || '';
-    const tags = [];
-    if (scope) tags.push(scope);
-    if (i.geografische_scope) tags.push(i.geografische_scope);
 
     return {
       slug: i.id,
@@ -131,7 +128,7 @@ function mapInitiatives(raw){
       related_raw: i.verwante_of_nieuwe_initiatieven || '',
       related: splitRelated(i.verwante_of_nieuwe_initiatieven),
       sourceKeys: Array.isArray(i.bronnen) ? i.bronnen : [],
-      tags
+      tags: []
     };
   });
 }
