@@ -1,15 +1,16 @@
 {
   "meta": {
-    "titel": "Update H6.1 – Semantiek & interoperabiliteit (zonder data spaces)",
-    "datum": "2026-03-04",
-    "versie": "v5",
+    "titel": "Update H6.1 – Semantiek & interoperabiliteit (internationaal, zonder data spaces)",
+    "datum": "2026-03-20",
+    "versie": "v6-structured-like-projects_interoperability",
     "afbakening": {
       "in_scope": [
         "semantiek",
         "ontologie",
         "informatiemodellen",
         "conformance/testing",
-        "interoperabiliteitsrichtlijnen"
+        "interoperabiliteitsrichtlijnen",
+        "internationale vergelijking"
       ],
       "out_of_scope": [
         "data spaces",
@@ -25,7 +26,7 @@
       "naam": "Energiewet (NL) – begrippen, rollen en randvoorwaarden voor gegevensbeheer",
       "familie": "Juridisch kader / definities",
       "geografische_scope": "Nederland",
-      "korte_omschrijving": "Normerend wettelijk kader dat kernbegrippen en rollen definieert en randvoorwaarden stelt voor gegevensbeheer en gegevensuitwisseling in het energiedomein.",
+      "korte_omschrijving": "Land van oorsprong: Nederland. Organisatie/consortium: Rijksoverheid / Ministerie van Klimaat en Groene Groei. Normerend wettelijk kader dat kernbegrippen en rollen definieert en randvoorwaarden stelt voor gegevensbeheer en gegevensuitwisseling in het energiedomein.",
       "status_2023": "Wetgevingsproces lopend; kader in wording voor rollen/registraties en gegevensuitwisseling.",
       "status_2026": "In werking (per 1 januari 2026); normerend begrippenkader en basis voor governance rond energiedata.",
       "ontwikkelingen_sinds_publicatie": "Inwerkingtreding en verdere concretisering in implementatiepraktijk (rollen, processen, registraties).",
@@ -43,7 +44,7 @@
       "naam": "VIVET/Geonovum – Begrippenkader Energie",
       "familie": "Begrippenkader / semantische governance",
       "geografische_scope": "Nederland",
-      "korte_omschrijving": "Begrippenkader met definities en relaties tussen energieconcepten; bedoeld als referentie voor semantische afstemming en beheer.",
+      "korte_omschrijving": "Land van oorsprong: Nederland. Organisatie/consortium: Programma VIVET / Geonovum. Begrippenkader met definities en relaties tussen energieconcepten; bedoeld als referentie voor semantische afstemming en beheer.",
       "status_2023": "In doorontwikkeling; positionering als online begrippenkader voor energiedata.",
       "status_2026": "Bredere inzet als centrale referentie; belang toegenomen door groei aan modellen en ketenintegraties.",
       "ontwikkelingen_sinds_publicatie": "Meer nadruk op beheer (governance), hergebruik en mapping naar informatiemodellen.",
@@ -59,14 +60,14 @@
       "id": "cim_cgmes",
       "naam": "CIM / CGMES (IEC 61970/61968 + ENTSO-E profiel)",
       "familie": "Semantische standaard (netten)",
-      "geografische_scope": "Europa/Nederland",
-      "korte_omschrijving": "IEC Common Information Model (CIM) en ENTSO-E CGMES-profiel voor uitwisseling van net- en gridmodellen.",
+      "geografische_scope": "Europa/Nederland/internationaal",
+      "korte_omschrijving": "Land van oorsprong: internationaal / Europa. Organisatie/consortium: IEC TC57; ENTSO-E; UCAIug. IEC Common Information Model (CIM) en ENTSO-E CGMES-profiel voor uitwisseling van net- en gridmodellen.",
       "status_2023": "Breed ingezet (TSO/DSO); conformance en profielen actief; CGMES als standaard voor grid model exchange.",
       "status_2026": "Doorlopende updates; conformance/SV-IOP tests volwassen; ruggengraat voor netmodel-interoperabiliteit.",
       "ontwikkelingen_sinds_publicatie": "ENTSO-E introduceerde jaarlijkse SV-IOP; 2024 testreport publiek met governance rond NC profiles.",
       "bijdrage_datagovernance_interoperabiliteit": "Levert gedeelde semantiek + syntaxis én conformance governance via profielen, tests en change management.",
       "relevantie_en_advies": "Kern; expliciet positioneren als authoritative semantiek voor netwerkdata.",
-      "verwante_of_nieuwe_initiatieven": "ENTSO-E CGMES Library; ENTSO-E CIM Conformity & Interoperability; OneNet; INT:NET/IOP.",
+      "verwante_of_nieuwe_initiatieven": "ENTSO-E CGMES Library; ENTSO-E CIM Conformity & Interoperability; OneNet; INT:NET/IOP; OpenFMB.",
       "bronnen": [
         "WEB_ENTSOE_CGMES",
         "WEB_ENTSOE_SVIOP_2024",
@@ -79,7 +80,7 @@
       "naam": "ESDL (Energy System Description Language)",
       "familie": "Semantisch model (energiesysteem, multi-vector)",
       "geografische_scope": "Nederland/Europa",
-      "korte_omschrijving": "Modeltaal om energiesystemen (elektra, warmte, gas) integraal te beschrijven; gebruikt in systeemstudies en scenario’s.",
+      "korte_omschrijving": "Land van oorsprong: Nederland. Organisatie/consortium: TNO / Quintel / Nederlandse energiesysteemmodellering-community. Modeltaal om energiesystemen (elektra, warmte, gas) integraal te beschrijven; gebruikt in systeemstudies en scenario’s.",
       "status_2023": "Groeiend toegepast in NL energiesysteem-analyse; tooling/community in opbouw.",
       "status_2026": "Breed toegepast; geschikt als koppeltaal voor integrale systeemrepresentaties en scenario-uitwisseling.",
       "ontwikkelingen_sinds_publicatie": "Meer nadruk op hergebruik, repositories en mapping naar andere standaarden.",
@@ -92,17 +93,51 @@
       ]
     },
     {
+      "id": "nbility",
+      "naam": "NBility",
+      "familie": "Bedrijfsobjectenmodel / netbeheersemantiek",
+      "geografische_scope": "Nederland",
+      "korte_omschrijving": "Land van oorsprong: Nederland. Organisatie/consortium: Netbeheer Nederland / netbeheer-ecosysteem. Bedrijfsobjectenmodel en semantische laag voor assets, aansluitingen, klanten en processen in netbeheercontext.",
+      "status_2023": "Breed gebruikt als semantische laag voor netbeheerobjecten en processen.",
+      "status_2026": "Nog steeds kernonderdeel van Nederlandse semantiek voor netbeheer en ketenprocessen.",
+      "ontwikkelingen_sinds_publicatie": "Sterkere koppeling met begrippenkaders en procesafspraken; bruikbaar gebleven als bedrijfsobjectenmodel.",
+      "bijdrage_datagovernance_interoperabiliteit": "Maakt expliciet welke bedrijfsobjecten bestaan, hoe ze samenhangen en hoe organisaties daar consistent over kunnen werken.",
+      "relevantie_en_advies": "Zeer hoog; expliciet verbinden met CIM, ESDL en juridische begrippen.",
+      "verwante_of_nieuwe_initiatieven": "VIVET begrippenkader; EDSN; MFFBAS/Het Normo; CIM.",
+      "bronnen": [
+        "FILE_UPDATE_H61",
+        "FILE_BIJLAGEN_6_1"
+      ]
+    },
+    {
+      "id": "linked_mhm",
+      "naam": "LinkED Energy Data – Model Harmonisatie Methodiek (MHM)",
+      "familie": "Methodiek voor harmonisatie",
+      "geografische_scope": "Nederland",
+      "korte_omschrijving": "Land van oorsprong: Nederland. Organisatie/consortium: LinkED Energy Data consortium. Methodiek om informatiemodellen en ontologieën te koppelen via mappings en governance voor wijzigingsbeheer.",
+      "status_2023": "Beschikbaar als werkwijze; waarde in expliciteren van keuzes en mappings.",
+      "status_2026": "Nog relevanter door groei aan model-ecosystemen; inzetbaar als governance-instrument voor mappings.",
+      "ontwikkelingen_sinds_publicatie": "Toegenomen noodzaak aan systematische mappings; meer tooling rond vocabulaire- en ontologiebeheer.",
+      "bijdrage_datagovernance_interoperabiliteit": "Borgt besluitvorming en wijzigingsbeheer rond mappings; bevordert herbruikbaarheid van harmonisatiepatronen.",
+      "relevantie_en_advies": "Hoog als werkwijze; opnemen als methodische bouwsteen.",
+      "verwante_of_nieuwe_initiatieven": "InterConnect SIF; LF Energy SEF; BD4NRG methodiek.",
+      "bronnen": [
+        "FILE_BIJLAGEN_6_1",
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
       "id": "saref",
       "naam": "ETSI SAREF",
       "familie": "Ontologie (IoT/gebouw/achter-de-meter)",
       "geografische_scope": "Europa",
-      "korte_omschrijving": "Suite van ontologieën voor slimme apparaten/IoT met extensies; inzetbaar voor device/sensor semantiek en mapping naar energiedomein.",
+      "korte_omschrijving": "Land van oorsprong: Europa. Organisatie/consortium: ETSI. Suite van ontologieën voor slimme apparaten/IoT met extensies; inzetbaar voor device/sensor semantiek en mapping naar energiedomein.",
       "status_2023": "EU-referentieontologie; relevant voor achter-de-meter en smart building use-cases.",
       "status_2026": "Suite actief doorontwikkeld; belangrijker door koppelingen tussen gebouw/energie-data en semantische frameworks.",
       "ontwikkelingen_sinds_publicatie": "Doorlopende updates via ETSI; meer praktijktesten in projecten (o.a. InterConnect).",
       "bijdrage_datagovernance_interoperabiliteit": "Biedt gedeelde begrippen voor device/sensor data; faciliteert mapping naar domeinmodellen.",
       "relevantie_en_advies": "Belangrijk maar afgebakend: inzetten waar IoT/gebouwdata onderdeel is van energiedata.",
-      "verwante_of_nieuwe_initiatieven": "InterConnect SIF; LF Energy SEF.",
+      "verwante_of_nieuwe_initiatieven": "InterConnect SIF; LF Energy SEF; CSIP-AUS; CSIP California.",
       "bronnen": [
         "WEB_SAREF_PORTAL",
         "WEB_INTERCONNECT_D23",
@@ -114,7 +149,7 @@
       "naam": "InterConnect – ontologieën & Semantic Interoperability Framework (SIF)",
       "familie": "EU project (ontologie/semantiek)",
       "geografische_scope": "Europa",
-      "korte_omschrijving": "H2020 InterConnect (2019–2024) ontwikkelde ontologieën en een semantic interoperability framework (SIF) voor smart home/building/grid/IoT use-cases.",
+      "korte_omschrijving": "Land van oorsprong: Europa. Organisatie/consortium: H2020 InterConnect consortium. InterConnect ontwikkelde ontologieën en een semantic interoperability framework (SIF) voor smart home/building/grid/IoT use-cases.",
       "status_2023": "Project actief; publieke deliverable D2.3 over standards and ontologies beschikbaar (2023).",
       "status_2026": "Project afgerond; resultaten gecontinueerd richting LF Energy SEF (open governance).",
       "ontwikkelingen_sinds_publicatie": "Consolidatie van SIF-resultaten en transitie naar open source/industry governance.",
@@ -132,7 +167,7 @@
       "naam": "LF Energy – Semantic Energy Framework (SEF)",
       "familie": "Open source semantic framework",
       "geografische_scope": "Europa/Internationaal",
-      "korte_omschrijving": "LF Energy project dat voortbouwt op InterConnect SIF en tools/methods/specs voor semantische interoperabiliteit consolideert onder open governance.",
+      "korte_omschrijving": "Land van oorsprong: internationaal. Organisatie/consortium: LF Energy / Linux Foundation. Open governance vervolg op InterConnect SIF dat semantische assets, mappings en richtlijnen consolideert.",
       "status_2023": "SEF nog niet zichtbaar als apart LF Energy project; SIF in InterConnect in ontwikkeling.",
       "status_2026": "SEF actief als LF Energy project; positioneert SIF-resultaten als herbruikbaar framework.",
       "ontwikkelingen_sinds_publicatie": "Start/opschaling als open governance laag voor semantische assets.",
@@ -149,7 +184,7 @@
       "naam": "OneNet – interoperabiliteitsrichtlijnen en dataspecificaties",
       "familie": "EU project (interoperabiliteit richtlijnen/specs)",
       "geografische_scope": "Europa",
-      "korte_omschrijving": "OneNet publiceerde richtlijnen en deliverables voor interoperabiliteit, incl. technische specs voor data models/middleware (o.a. D5.5).",
+      "korte_omschrijving": "Land van oorsprong: Europa. Organisatie/consortium: H2020 OneNet consortium. OneNet publiceerde richtlijnen en deliverables voor interoperabiliteit, incl. technische specs voor data models/middleware (o.a. D5.5).",
       "status_2023": "Project actief; deliverables gepubliceerd.",
       "status_2026": "Projectresultaten publiek; bruikbaar als referentie/benchmark.",
       "ontwikkelingen_sinds_publicatie": "Van deliverables naar replicability/lessons learned; CIM/CGMES blijft centraal.",
@@ -159,6 +194,102 @@
       "bronnen": [
         "WEB_ONENET_DELIVERABLES",
         "WEB_ONENET_ZENODO_D55"
+      ]
+    },
+    {
+      "id": "openfmb_us",
+      "naam": "OpenFMB (Open Field Message Bus)",
+      "familie": "Grid-edge interoperabiliteitsstandaard / common data model",
+      "geografische_scope": "Verenigde Staten/Noord-Amerika",
+      "korte_omschrijving": "Land van oorsprong: Verenigde Staten. Organisatie/consortium: UCAIug OpenFMB Users Group / NAESB-context. Grid-edge interoperabiliteitsstandaard met common data model en protocolinterfaces, afgeleid van IEC 61850 en IEC CIM.",
+      "status_2023": "Actief gebruikersgroep- en implementatie-ecosysteem; adapter-tooling beschikbaar.",
+      "status_2026": "Nog steeds actief; toolkit en community worden onderhouden.",
+      "ontwikkelingen_sinds_publicatie": "OpenFMB blijft een duidelijk Noord-Amerikaans interoperabiliteitsproduct voor DER en grid-edge use-cases.",
+      "bijdrage_datagovernance_interoperabiliteit": "Brengt CIM en 61850 samen in een praktisch interoperabiliteitsmodel voor veldapparatuur en DER-integratie.",
+      "relevantie_en_advies": "Sterk vergelijkbaar met H6.1-doelen; toevoegen als belangrijk VS-voorbeeld.",
+      "verwante_of_nieuwe_initiatieven": "CIM/CGMES; IEC 61850; GridAPPS-D.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
+      "id": "multispeak_us",
+      "naam": "MultiSpeak",
+      "familie": "Interoperabiliteitsspecificatie voor utility enterprise systems",
+      "geografische_scope": "Verenigde Staten/Noord-Amerika",
+      "korte_omschrijving": "Land van oorsprong: Verenigde Staten. Organisatie/consortium: National Rural Electric Cooperative Association (NRECA) met utilities en softwareleveranciers. Specificatie van gestandaardiseerde interfaces tussen utility softwareapplicaties.",
+      "status_2023": "Langlopende, breed gebruikte specificatie; nog steeds actief.",
+      "status_2026": "Nog steeds onderhouden en toegepast.",
+      "ontwikkelingen_sinds_publicatie": "Geen nieuw semantisch paradigma, maar wel blijvende praktische relevantie als enterprise-interoperabiliteitsstandaard in Noord-Amerika.",
+      "bijdrage_datagovernance_interoperabiliteit": "Standaardiseert interfacecontracten en gegevensuitwisseling tussen utility-systemen.",
+      "relevantie_en_advies": "Opnemen als VS-contrast met CIM/OpenFMB: meer interface-gedreven dan ontologie-gedreven.",
+      "verwante_of_nieuwe_initiatieven": "OpenFMB; CIM.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
+      "id": "csip_aus",
+      "naam": "CSIP-AUS (Common Smart Inverter Profile – Australia)",
+      "familie": "Interoperabiliteitsprofiel voor DER/smart inverters",
+      "geografische_scope": "Australië",
+      "korte_omschrijving": "Land van oorsprong: Australië. Organisatie/consortium: DEIP Interoperability Steering Committee; ANU; ARENA; ENA; AEMO en partners. Australisch interoperabiliteitsprofiel voor DER-communicatie, gebaseerd op IEEE 2030.5 en geoperationaliseerd met testen/certificering.",
+      "status_2023": "CSIP-AUS v1.1a beschikbaar; beleids- en standaardiseringstraject actief.",
+      "status_2026": "Actief nationaal harmonisatietraject met reference implementation en test harness.",
+      "ontwikkelingen_sinds_publicatie": "Sinds 2025 is er expliciete nationale harmonisatie via een nieuw test- en certificeringstraject.",
+      "bijdrage_datagovernance_interoperabiliteit": "Zorgt voor één technische taal tussen DER-apparaten, netbeheerders en energiebeheersystemen; combineert profiel + testgovernance.",
+      "relevantie_en_advies": "Zeer relevant; waarschijnlijk het sterkste niet-Europese H6.1-voorbeeld buiten de VS.",
+      "verwante_of_nieuwe_initiatieven": "CSIP California; IEEE 2030.5; OpenFMB.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
+      "id": "cee_map_canada",
+      "naam": "Canadian Energy End-use Mapping (CEE Map)",
+      "familie": "Building-energy/geospatial interoperability product",
+      "geografische_scope": "Canada",
+      "korte_omschrijving": "Land van oorsprong: Canada. Organisatie/consortium: Natural Resources Canada (NRCan) / CanmetENERGY, met OGC Testbed-partners. Project voor building-energy mapping dat datasets, best practices en standaarden combineert.",
+      "status_2023": "Project actief (2019–2024) en in uitvoering.",
+      "status_2026": "Project formeel afgerond; resultaten en aanpak blijven bruikbaar als Canada-specifieke interoperabiliteitsreferentie.",
+      "ontwikkelingen_sinds_publicatie": "Het project heeft aantoonbaar geospatial interoperability standards benut voor online energiemaps en building-energy integratie.",
+      "bijdrage_datagovernance_interoperabiliteit": "Relevant als Canadees voorbeeld van standaardgebaseerde interoperabiliteit tussen gebouw- en geodata; minder een ontologie, meer een product/standaarden-implementatie.",
+      "relevantie_en_advies": "Opnemen als best-matching Canadees voorbeeld, maar expliciet markeren als gedeeltelijke match.",
+      "verwante_of_nieuwe_initiatieven": "OGC Testbed building-energy interoperability; LF Research/NRCan interoperability studies.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
+      "id": "japan_fepc_eci",
+      "naam": "Japan – ECHONET Lite / smart energy interoperability in HEMS-BEMS context",
+      "familie": "Interoperabiliteitsspecificatie voor smart energy devices",
+      "geografische_scope": "Japan",
+      "korte_omschrijving": "Land van oorsprong: Japan. Organisatie/consortium: ECHONET Consortium en verwante smart energy/HEMS-ecosystemen. Specificaties voor slimme apparaten en home/building energy management die in de Japanse markt een rol spelen als interoperabiliteitslaag.",
+      "status_2023": "Actief als marktgedragen interoperabiliteitslaag in de Japanse smart home en energy management context.",
+      "status_2026": "Nog steeds relevant als nationaal dominant interoperabiliteitskader voor apparaten en HEMS-koppelingen.",
+      "ontwikkelingen_sinds_publicatie": "Blijvende rol als praktisch interoperabiliteitskader rond slimme apparaten, gebouwbeheer en energiesturing; minder als generiek semantisch netmodel.",
+      "bijdrage_datagovernance_interoperabiliteit": "Ondersteunt interoperabiliteit tussen energiegerelateerde apparaten en systemen in gebouwen en woningen.",
+      "relevantie_en_advies": "Toevoegen als Japans voorbeeld, met de kanttekening dat het dichter bij device/HEMS-interoperabiliteit ligt dan bij een breed energiedomein-ontologiemodel.",
+      "verwante_of_nieuwe_initiatieven": "SAREF; smart appliance interoperability; HEMS/BEMS-protocollen.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
+      ]
+    },
+    {
+      "id": "new_zealand_note",
+      "naam": "Nieuw-Zeeland – geen direct equivalent gevonden binnen H6.1-scope",
+      "familie": "Landennotitie / markering ontbrekend equivalent",
+      "geografische_scope": "Nieuw-Zeeland",
+      "korte_omschrijving": "Land van oorsprong: Nieuw-Zeeland. Organisatie/consortium: n.v.t. In de huidige onderzoeksbasis is geen duidelijk nationaal initiatief gevonden dat direct vergelijkbaar is met CIM/CGMES, ESDL, OpenFMB of CSIP-AUS als formeel semantisch model of interoperabiliteitsprofiel.",
+      "status_2023": "Geen duidelijk semantisch of informatiemodel-initiatief in deze scope geïdentificeerd.",
+      "status_2026": "Nog steeds geen duidelijk direct equivalent geïdentificeerd binnen de H6.1-afbakening.",
+      "ontwikkelingen_sinds_publicatie": "Activiteit lijkt sterker te liggen op open APIs, datasets en coördinatie rond systeemontwikkeling dan op expliciete nationale ontologieën of profielen.",
+      "bijdrage_datagovernance_interoperabiliteit": "Relevant als markering van een lacune in de internationale vergelijking.",
+      "relevantie_en_advies": "Kort opnemen als notitie; niet als volwaardig equivalent presenteren.",
+      "verwante_of_nieuwe_initiatieven": "Open APIs; system operation / DSO-coördinatie trajecten.",
+      "bronnen": [
+        "FILE_UPDATE_H61"
       ]
     }
   ],
