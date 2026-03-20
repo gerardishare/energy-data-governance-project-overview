@@ -88,7 +88,11 @@
         <h2 id="dTitle">Initiatief</h2>
         <p class="sub" id="dSub"></p>
       </div>
-      <button class="iconBtn" id="closeBtn" aria-label="Sluiten">✕</button>
+      <button type="button" class="iconBtn iconBtn--drawerClose" id="closeBtn" aria-label="Sluiten">
+        <svg class="drawerCloseIcon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
     </div>
     <div class="drawerBody">
       <div class="section">
@@ -132,6 +136,7 @@
   <!-- Fuse.js (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script src="assets/utils.js"></script>
+  <script src="assets/drawer-controller.js"></script>
   <script src="assets/diagram.js"></script>
   <script src="assets/app.js"></script>
 </body>

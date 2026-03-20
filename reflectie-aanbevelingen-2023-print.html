@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Printoverzicht — Reflectie aanbevelingen 2023</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" />
+  <style>
+    @font-face {
+      font-family: 'Amaranth';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/amaranth/v19/KtkpALODe433f0j1zMF-OMWl42H9FYud.woff2) format('woff2');
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    }
+
+    :root {
+      --print-header-bg: #0b0f17;
+      --print-header-text: rgba(255, 255, 255, 0.92);
+      --print-accent: rgb(244, 150, 59);
+      --print-page-bg: #f8fafc;
+      --print-card-bg: #ffffff;
+      --print-text: #0f172a;
+      --print-muted: #475569;
+      --print-border: rgba(15, 23, 42, 0.12);
+      --print-max: 1120px;
+      --font-brand: 'Amaranth', "DM Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      background: var(--print-page-bg);
+      color: var(--print-text);
+      line-height: 1.5;
+    }
+
+    .printSiteHeader {
+      background: var(--print-header-bg);
+      color: var(--print-header-text);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .printSiteHeader-inner {
+      max-width: var(--print-max);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+    }
+    .printSiteBrand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: var(--font-brand);
+      letter-spacing: -0.01em;
+    }
+    .printSiteLogo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    .printSiteBrand-sub {
+      opacity: 0.9;
+    }
+
+    .printMain {
+      max-width: var(--print-max);
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+    .printMain h1 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 2.6vw, 32px);
+      letter-spacing: -0.02em;
+      font-family: var(--font-brand);
+      font-weight: 700;
+    }
+    .printLead {
+      margin: 0 0 24px;
+      color: var(--print-muted);
+      max-width: 85ch;
+      font-size: 15px;
+    }
+
+    .printLegend {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 900px) {
+      .printLegend { grid-template-columns: 1fr; }
+    }
+    .printLegendItem {
+      background: var(--print-card-bg);
+      border: 1px solid var(--print-border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      break-inside: avoid;
+    }
+    .printLegendPill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .printLegendPill--realized {
+      border: 1px solid rgba(34, 139, 84, 0.45);
+      background: rgba(100, 180, 120, 0.14);
+      color: #166534;
+    }
+    .printLegendPill--partial {
+      border: 1px solid rgba(30, 100, 150, 0.4);
+      background: rgba(100, 165, 200, 0.14);
+      color: #0c4a6e;
+    }
+    .printLegendPill--none {
+      border: 1px solid rgba(71, 85, 105, 0.35);
+      background: rgba(148, 163, 184, 0.12);
+      color: #475569;
+    }
+    .printLegendDesc {
+      font-size: 12px;
+      color: var(--print-muted);
+      line-height: 1.45;
+    }
+
+    .printRecSection {
+      background: var(--print-card-bg);
+      border: 1px solid var(--print-border);
+      border-radius: 18px;
+      padding: 18px 20px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+      break-inside: avoid;
+    }
+    .printRecHeader {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid rgba(244, 150, 59, 0.35);
+    }
+    .printRecHeader h2 {
+      margin: 0;
+      font-size: clamp(17px, 2vw, 20px);
+      font-family: var(--font-brand);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      flex: 1;
+      min-width: min(100%, 240px);
+    }
+    .printOverall {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--print-muted);
+      white-space: nowrap;
+    }
+
+    .printSub {
+      padding: 14px 0;
+      border-top: 1px dashed var(--print-border);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .printSub:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .printSubTitleRow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px 12px;
+      margin-bottom: 10px;
+    }
+    .printSubTitleRow h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--print-text);
+      flex: 1;
+      min-width: min(100%, 200px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .printStatusLine {
+      margin: 0 0 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--print-muted);
+    }
+    .printBlockLabel {
+      margin: 0 0 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--print-accent);
+    }
+    .printBlock {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--print-muted);
+      white-space: pre-wrap;
+      margin-bottom: 14px;
+    }
+    .printBlock:last-child {
+      margin-bottom: 0;
+    }
+    .printBlock em {
+      font-style: italic;
+      color: var(--print-text);
+    }
+
+    .printDot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+      border: 1px solid transparent;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+    .printDot--realized {
+      background: rgba(100, 180, 120, 0.95);
+      border-color: rgba(60, 120, 80, 0.55);
+      box-shadow: 0 0 0 2px rgba(100, 180, 120, 0.2);
+    }
+    .printDot--partial {
+      background: rgba(100, 165, 200, 0.95);
+      border-color: rgba(60, 110, 150, 0.55);
+      box-shadow: 0 0 0 2px rgba(100, 165, 200, 0.18);
+    }
+    .printDot--none {
+      background: #e2e8f0;
+      border-color: #94a3b8;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.2);
+    }
+
+    .printEmpty, .printError {
+      padding: 24px;
+      text-align: center;
+      color: var(--print-muted);
+    }
+    .printError { color: #b45309; }
+
+    @media print {
+      @page {
+        margin: 12mm;
+        size: auto;
+      }
+      body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .printMain {
+        padding-top: 12px;
+        max-width: none;
+      }
+      .printRecSection {
+        box-shadow: none;
+        border-color: #cbd5e1;
+      }
+      .printSiteHeader {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="printSiteHeader" role="banner">
+    <div class="printSiteHeader-inner">
+      <div class="printSiteBrand">
+        <img src="assets/energie-data-logo.png" alt="energie.data" class="printSiteLogo" width="120" height="32" />
+        <span class="printSiteBrand-sub">Update data governance</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="printMain">
+    <h1>Reflectie aanbevelingen 2023</h1>
+    <p class="printLead">
+      Totaaloverzicht van alle aanbevelingen, status en toelichting. Gebruik de printfunctie van uw browser (Ctrl+P) om af te drukken of als PDF op te slaan.
+    </p>
+    <div id="recommendations2023PrintRoot" aria-label="Printoverzicht aanbevelingen 2023"></div>
+  </main>
+
+  <script src="assets/utils.js"></script>
+  <script src="assets/recommendations-2023-print.js"></script>
+</body>
+</html>

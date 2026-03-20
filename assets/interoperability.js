@@ -14,6 +14,7 @@ const elChips = document.getElementById('activeChips');
 const overlay = document.getElementById('overlay');
 const drawer = document.getElementById('drawer');
 const closeBtn = document.getElementById('closeBtn');
+const drawerCtl = createDrawerController({ overlay, drawer, closeBtn });
 
 const dTitle = document.getElementById('dTitle');
 const dSub = document.getElementById('dSub');
@@ -227,28 +228,8 @@ function openDrawer(slug){
   dDetail.href = `project-interoperabiliteit.html?slug=${encodeURIComponent(p.slug)}`;
   dMeta.textContent = `ID: ${p.id}`;
 
-  overlay.classList.add('open');
-  drawer.classList.add('open');
-  overlay.setAttribute('aria-hidden','false');
-  drawer.setAttribute('aria-hidden','false');
-
-  document.addEventListener('keydown', onEsc);
+  drawerCtl.open();
 }
-
-function closeDrawer(){
-  overlay.classList.remove('open');
-  drawer.classList.remove('open');
-  overlay.setAttribute('aria-hidden','true');
-  drawer.setAttribute('aria-hidden','true');
-  document.removeEventListener('keydown', onEsc);
-}
-
-function onEsc(e){
-  if (e.key === 'Escape') closeDrawer();
-}
-
-overlay.addEventListener('click', closeDrawer);
-closeBtn.addEventListener('click', closeDrawer);
 
 async function loadData(){
   const dataUrl = './data/projects_interoperability.json';

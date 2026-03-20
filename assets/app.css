@@ -317,6 +317,19 @@ a { color: inherit }
 }
 .iconBtn:focus { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
 
+.iconBtn--drawerClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  line-height: 0;
+}
+.iconBtn--drawerClose .drawerCloseIcon {
+  display: block;
+  opacity: 0.88;
+}
+.iconBtn--drawerClose:hover .drawerCloseIcon { opacity: 1; }
+
 .drawerBody {
   padding: 14px;
   overflow: auto;
@@ -782,3 +795,146 @@ hr.sep {
 .icon--green  { background: rgba(74,222,128,.13); color: rgb(74,222,128); }
 .icon--purple { background: rgba(167,139,250,.14); color: rgb(167,139,250); }
 .icon--rose   { background: rgba(251,113,133,.13); color: rgb(251,113,133); }
+
+/* Reflectie aanbevelingen 2023 — visualisatie */
+.recsLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recsLegend {
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  background: rgba(255,255,255,.04);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.legendItem {
+  border: 1px dashed rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legendStatusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.05);
+  border-radius: 999px;
+  padding: 6px 10px;
+  width: fit-content;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.legendStatusPill--realized { border-color: rgba(100, 180, 120, .5); background: rgba(100,180,120,.12); color: rgba(160,220,175,.95); }
+.legendStatusPill--partial  { border-color: rgba(100, 165, 200, .5); background: rgba(100,165,200,.10); color: rgba(170,210,235,.95); }
+.legendStatusPill--none     { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); color: var(--muted); }
+
+.legendStatusIcon { font-weight: 700; }
+.legendDesc { color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+.recsColumns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 980px) {
+  .recsColumns { grid-template-columns: 1fr; }
+  .recsLegend { grid-template-columns: 1fr; }
+}
+
+.recsColumn { min-width: 0; }
+
+.recsMainCard {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.recsMainHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.recsMainTitle {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+.recsMainOverall { flex-shrink: 0; }
+
+.recsSubList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recsSubButton {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform .08s ease, border-color .12s ease, background .12s ease;
+}
+
+.recsSubButton:hover {
+  border-color: var(--border-hover);
+  background: rgba(255,255,255,.05);
+  transform: translateY(-1px);
+}
+
+.recsSubButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.recsSubButton-status { display: inline-flex; }
+
+.recsSubButton-text {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.statusDot--realized { background: rgba(100, 180, 120, .95); border-color: rgba(100,180,120,.55); box-shadow: 0 0 0 3px rgba(100,180,120,.14); }
+.statusDot--partial  { background: rgba(100, 165, 200, .95); border-color: rgba(100,165,200,.55); box-shadow: 0 0 0 3px rgba(100,165,200,.12); }
+.statusDot--none     { background: rgba(255,255,255,.45); border-color: rgba(255,255,255,.25); box-shadow: 0 0 0 3px rgba(255,255,255,.05); }
+
+.recsDrawerText { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.recsDrawerBlock { white-space: pre-wrap; }
+
+.recsDrawerStatusText { color: var(--text); font-weight: 500; font-size: 13px; }
