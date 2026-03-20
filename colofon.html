@@ -14,15 +14,28 @@
 <body>
   <header class="siteHeader">
     <div class="siteHeader-inner">
-      <div class="siteBrand">
+      <a href="index.html" class="siteBrand">
         <img src="assets/energie-data-logo.png" alt="energie.data" class="siteLogo" />
         <span class="siteBrand-sub">Update data governance</span>
-      </div>
+      </a>
       <nav class="siteNav" aria-label="Hoofdmenu">
-        <a href="index.html" class="siteNav-link">Update rapport</a>
-        <a href="initiatieven-interoperabiliteit.html" class="siteNav-link">Initiatieven interoperabiliteit</a>
-        <a href="initiatieven-data-delen.html" class="siteNav-link">Initiatieven data delen</a>
-        <a href="colofon.html" class="siteNav-link is-active">Colofon</a>
+        <div class="navItem navItem--dropdown">
+          <a href="index.html" class="siteNav-link">Update rapport</a>
+          <div class="navDropdown">
+            <a href="index.html" class="navDropdown-link">Introductie</a>
+            <a href="reflectie-aanbevelingen-2023.html" class="navDropdown-link">Reflectie aanbevelingen 2023</a>
+          </div>
+        </div>
+        <div class="navItem navItem--dropdown">
+          <button type="button" class="navTrigger">Onderzoeksresultaten</button>
+          <div class="navDropdown">
+            <a href="initiatieven-interoperabiliteit.html" class="navDropdown-link">Initiatieven interoperabiliteit</a>
+            <a href="initiatieven-data-delen.html" class="navDropdown-link">Initiatieven data delen</a>
+            <a href="overzicht-use-cases.html" class="navDropdown-link">Overzicht use cases</a>
+            <a href="best-practices.html" class="navDropdown-link">Best practices</a>
+          </div>
+        </div>
+        <a href="aanbevelingen.html" class="siteNav-link">Aanbevelingen</a>
       </nav>
     </div>
   </header>
@@ -42,6 +55,17 @@
       </p>
     </div>
   </div>
+
+  <footer class="siteFooter">
+    <div class="siteFooter-inner">
+      <div>
+        <p class="siteFooter-title">Data governance en data delen in het energiedomein</p>
+        <p class="siteFooter-subtitle">Stand van zaken 2026</p>
+        <p class="siteFooter-credit">Dit rapport is opgesteld in opdracht van RVO voor de Topsector Energie op verzoek van het programma Digitalisering</p>
+      </div>
+      <a href="colofon.html" class="siteFooter-link">Colofon</a>
+    </div>
+  </footer>
 </body>
 </html>
 

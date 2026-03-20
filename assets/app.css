@@ -26,16 +26,20 @@
 }
 
 * { box-sizing: border-box }
-html, body { height: 100% }
+html { min-height: 100% }
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
   color: var(--text);
 }
+.container { flex: 1; }
 
 a { color: inherit }
-.container { max-width: var(--max); margin: 0 auto; padding: 28px 18px 64px }
+.container { flex: 1; max-width: var(--max); width: 100%; margin: 0 auto; padding: 28px 18px 64px }
 .header {
   display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;
   padding: 10px 0 18px;
@@ -403,6 +407,8 @@ hr.sep {
   font-family: var(--font-brand);
   letter-spacing: -0.01em;
   white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
 }
 .siteLogo {
   height: 32px;
@@ -416,6 +422,7 @@ hr.sep {
 .siteNav {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   gap: 14px;
 }
 .siteNav-link {
@@ -447,3 +454,331 @@ hr.sep {
     gap: 10px;
   }
 }
+
+/* Dropdown navigatie */
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navItem--dropdown > .siteNav-link::after,
+.navItem--dropdown > .navTrigger::after {
+  content: ' ▾';
+  font-size: 11px;
+  opacity: 0.55;
+}
+.navTrigger {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  padding: 6px 4px;
+  font-size: 18px;
+  color: rgba(248,250,252,.78);
+  font-family: var(--font-brand);
+  font-weight: 700;
+}
+.navTrigger:hover {
+  color: var(--accent);
+}
+.navTrigger.is-active {
+  color: var(--accent);
+}
+.navTrigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Onzichtbare brug tussen trigger en dropdown — voorkomt dat het menu
+   sluit als de muis de gap oversteekt van trigger naar dropdown. */
+.navItem--dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px;
+  z-index: 199;
+}
+
+.navDropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 230px;
+  background: rgba(12, 17, 28, 0.97);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  backdrop-filter: blur(12px);
+  z-index: 200;
+  padding: 6px;
+  flex-direction: column;
+  gap: 2px;
+}
+.navItem--dropdown:hover .navDropdown,
+.navItem--dropdown:focus-within .navDropdown {
+  display: flex;
+}
+.navDropdown-link {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navDropdown-link:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.07);
+}
+.navDropdown-link.is-active {
+  color: var(--accent);
+  background: rgba(244, 150, 59, .08);
+}
+
+/* Op mobiel: dropdown statisch in de stroom tonen */
+@media (max-width: 700px) {
+  .navItem { width: 100%; }
+  .navDropdown {
+    display: flex;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 4px 0 0 14px;
+    gap: 0;
+    min-width: 0;
+  }
+  .navDropdown-link {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+  .navItem--dropdown > .siteNav-link::after,
+  .navItem--dropdown > .navTrigger::after { display: none; }
+}
+
+/* Footer */
+.siteFooter {
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  flex-shrink: 0;
+}
+.siteFooter-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.siteFooter-title {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.siteFooter-subtitle {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.siteFooter-credit {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: var(--muted2);
+  max-width: 55ch;
+  line-height: 1.5;
+}
+.siteFooter-link {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+.siteFooter-link:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* Homepagina — hero */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 460px;
+  min-height: 220px;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11,15,23,1) 0%,
+    rgba(11,15,23,.75) 40%,
+    rgba(11,15,23,.25) 80%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+}
+.hero-text {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 18px 36px;
+}
+.hero-title {
+  margin: 0 0 8px;
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: clamp(22px, 3.5vw, 42px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #fff;
+}
+.hero-subtitle {
+  margin: 0;
+  font-size: clamp(14px, 1.8vw, 20px);
+  color: rgba(255,255,255,.72);
+  font-family: var(--font-brand);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Homepagina — introductieblok */
+.intro-section {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.intro-body {
+  flex: 1;
+  min-width: 0;
+}
+.intro-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+  flex-shrink: 0;
+  width: 140px;
+}
+.intro-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .intro-section { flex-direction: column; }
+  .intro-logos { flex-direction: row; width: 100%; justify-content: center; }
+  .intro-logo { width: 120px; }
+}
+.intro-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+.intro-text a {
+  color: rgba(170,215,255,.92);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.intro-text a:hover {
+  color: #fff;
+}
+
+/* Homepagina — navigatiekaarten */
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+@media (max-width: 820px) {
+  .nav-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .nav-buttons { grid-template-columns: 1fr; }
+}
+.navCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .1s ease, border-color .12s ease, background .12s ease;
+}
+.navCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+}
+.navCard-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.navCard-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.navCard-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+.navCard-title {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+.navCard-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.navCard-arrow {
+  margin-top: auto;
+  font-size: 13px;
+  opacity: .45;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Icon kleurthema's (navCards) */
+.icon--amber  { background: rgba(244,150,59,.16); color: rgb(244,150,59); }
+.icon--blue   { background: rgba(96,165,250,.14); color: rgb(96,165,250); }
+.icon--teal   { background: rgba(45,212,191,.13); color: rgb(45,212,191); }
+.icon--green  { background: rgba(74,222,128,.13); color: rgb(74,222,128); }
+.icon--purple { background: rgba(167,139,250,.14); color: rgb(167,139,250); }
+.icon--rose   { background: rgba(251,113,133,.13); color: rgb(251,113,133); }

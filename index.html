@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Update rapport</title>
+  <title>Data governance en data delen in het energiedomein</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,33 +14,166 @@
 <body>
   <header class="siteHeader">
     <div class="siteHeader-inner">
-      <div class="siteBrand">
+      <a href="index.html" class="siteBrand">
         <img src="assets/energie-data-logo.png" alt="energie.data" class="siteLogo" />
         <span class="siteBrand-sub">Update data governance</span>
-      </div>
+      </a>
       <nav class="siteNav" aria-label="Hoofdmenu">
-        <a href="index.html" class="siteNav-link is-active">Update rapport</a>
-        <a href="initiatieven-interoperabiliteit.html" class="siteNav-link">Initiatieven interoperabiliteit</a>
-        <a href="initiatieven-data-delen.html" class="siteNav-link">Initiatieven data delen</a>
-        <a href="colofon.html" class="siteNav-link">Colofon</a>
+        <div class="navItem navItem--dropdown">
+          <a href="index.html" class="siteNav-link is-active">Update rapport</a>
+          <div class="navDropdown">
+            <a href="index.html" class="navDropdown-link is-active">Introductie</a>
+            <a href="reflectie-aanbevelingen-2023.html" class="navDropdown-link">Reflectie aanbevelingen 2023</a>
+          </div>
+        </div>
+        <div class="navItem navItem--dropdown">
+          <button type="button" class="navTrigger">Onderzoeksresultaten</button>
+          <div class="navDropdown">
+            <a href="initiatieven-interoperabiliteit.html" class="navDropdown-link">Initiatieven interoperabiliteit</a>
+            <a href="initiatieven-data-delen.html" class="navDropdown-link">Initiatieven data delen</a>
+            <a href="overzicht-use-cases.html" class="navDropdown-link">Overzicht use cases</a>
+            <a href="best-practices.html" class="navDropdown-link">Best practices</a>
+          </div>
+        </div>
+        <a href="aanbevelingen.html" class="siteNav-link">Aanbevelingen</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero cover -->
+  <section class="hero">
+    <img src="assets/cover-image.png" alt="Cover afbeelding rapport" class="hero-img" />
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1 class="hero-title">Data governance en data delen<br>in het energiedomein</h1>
+        <p class="hero-subtitle">Stand van zaken 2026</p>
+      </div>
+    </div>
+  </section>
+
   <div class="container">
-    <div class="header">
-      <div class="title">
-        <h1>Update rapport</h1>
-        <p>Dit is een placeholder voor het update rapport. Via het menu bovenaan kun je naar de andere pagina’s navigeren.</p>
+    <!-- Introductietekst -->
+    <div class="section intro-section" style="margin-top: 10px;">
+      <div class="intro-body">
+        <p class="intro-text">
+          Dit rapport is een actualisatie van het rapport
+          <a href="https://topsectorenergie.nl/documents/524/Inventarisatie_data_governance_en_data_delen_in_het_energiedomein_-_onderzoeks_zdG5lEa.pdf" target="_blank" rel="noopener">Data governance en data delen in het energiedomein (Contact Consulting voor Topsector Energie, maart 2023)</a>.
+          In de afgelopen drie jaar hebben er belangrijke ontwikkelingen plaatsgevonden op het gebied van data delen en interoperabiliteit in de energiesector. Dit rapport geeft een beeld van deze ontwikkeling en bouwt verder aan de kennisontwikkeling op het gebied van interoperabiliteit, data en data delen. Vanuit de analyse van use cases en de analyse van een veelheid aan initiatieven op het gebied van data en interoperabiliteit, zijn best practices geformuleerd die nieuwe initiatieven kunnen gebruiken om sneller succesvol te worden.
+        </p>
+        <p class="intro-text" style="margin-top: 14px;">
+          Start van het rapport is een
+          <a href="reflectie-aanbevelingen-2023.html">reflectie op de aanbevelingen uit het vorige rapport</a>.
+          Een groot deel van de aanbevelingen is gerealiseerd en lijken de beoogde effecten te hebben. Het rapport eindigt met een nieuwe set
+          <a href="aanbevelingen.html">aanbevelingen</a>
+          om het gebruik van data in de energiesector te bevorderen.
+        </p>
+      </div>
+      <div class="intro-logos">
+        <img src="assets/logo-topsector.png" alt="Topsector Energie" class="intro-logo" />
+        <img src="assets/logo-contakt.png" alt="Contakt Consulting" class="intro-logo" />
       </div>
     </div>
 
-    <div class="section">
-      <p class="summary">
-        De pagina <strong>Initiatieven data delen</strong> bevat nu het interactieve overzicht van initiatieven.
-        Gebruik het menu om daarheen te gaan. Deze startpagina kan later worden gevuld met de inhoud van het daadwerkelijke rapport.
-      </p>
-    </div>
+    <!-- Navigatiebuttons naar rapportonderdelen -->
+    <nav class="nav-buttons" aria-label="Rapportonderdelen">
+
+      <a href="reflectie-aanbevelingen-2023.html" class="navCard">
+        <div class="navCard-icon icon--blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+            <path d="M12 7v5l4 2"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Terugblik</span>
+        <h2 class="navCard-title">Reflectie aanbevelingen 2023</h2>
+        <p class="navCard-desc">Beoordeling van de voortgang op de aanbevelingen uit het rapport van 2023 en de behaalde effecten.</p>
+        <span class="navCard-arrow">Bekijk reflectie →</span>
+      </a>
+
+      <a href="initiatieven-interoperabiliteit.html" class="navCard">
+        <div class="navCard-icon icon--teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="5" r="2"/>
+            <circle cx="5" cy="19" r="2"/>
+            <circle cx="19" cy="19" r="2"/>
+            <path d="M12 7v4M8.5 17.5 12 11l3.5 6.5"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Onderzoeksresultaten</span>
+        <h2 class="navCard-title">Initiatieven interoperabiliteit</h2>
+        <p class="navCard-desc">Overzicht van initiatieven gericht op technische en semantische interoperabiliteit in het energiedomein.</p>
+        <span class="navCard-arrow">Bekijk initiatieven →</span>
+      </a>
+
+      <a href="initiatieven-data-delen.html" class="navCard">
+        <div class="navCard-icon icon--green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Onderzoeksresultaten</span>
+        <h2 class="navCard-title">Initiatieven data delen</h2>
+        <p class="navCard-desc">Interactief overzicht van initiatieven op het gebied van data delen in de energiesector.</p>
+        <span class="navCard-arrow">Bekijk initiatieven →</span>
+      </a>
+
+      <a href="overzicht-use-cases.html" class="navCard">
+        <div class="navCard-icon icon--purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Onderzoeksresultaten</span>
+        <h2 class="navCard-title">Overzicht use cases</h2>
+        <p class="navCard-desc">Analyse van use cases die de basis vormen voor de identificatie van best practices en aanbevelingen.</p>
+        <span class="navCard-arrow">Bekijk use cases →</span>
+      </a>
+
+      <a href="best-practices.html" class="navCard">
+        <div class="navCard-icon icon--amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Onderzoeksresultaten</span>
+        <h2 class="navCard-title">Best practices</h2>
+        <p class="navCard-desc">Geformuleerde best practices die nieuwe initiatieven kunnen gebruiken om sneller succesvol te worden.</p>
+        <span class="navCard-arrow">Bekijk best practices →</span>
+      </a>
+
+      <a href="aanbevelingen.html" class="navCard">
+        <div class="navCard-icon icon--rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <span class="navCard-label">Conclusies</span>
+        <h2 class="navCard-title">Aanbevelingen</h2>
+        <p class="navCard-desc">Nieuwe set aanbevelingen om het gebruik van data in de energiesector verder te bevorderen.</p>
+        <span class="navCard-arrow">Bekijk aanbevelingen →</span>
+      </a>
+
+    </nav>
   </div>
+
+  <footer class="siteFooter">
+    <div class="siteFooter-inner">
+      <div>
+        <p class="siteFooter-title">Data governance en data delen in het energiedomein</p>
+        <p class="siteFooter-subtitle">Stand van zaken 2026</p>
+        <p class="siteFooter-credit">Dit rapport is opgesteld in opdracht van RVO voor de Topsector Energie op verzoek van het programma Digitalisering</p>
+      </div>
+      <a href="colofon.html" class="siteFooter-link">Colofon</a>
+    </div>
+  </footer>
 </body>
 </html>
