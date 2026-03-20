@@ -30,38 +30,6 @@ const dLinks = document.getElementById('dLinks');
 const dDetail = document.getElementById('dDetail');
 const dMeta = document.getElementById('dMeta');
 
-function uniqSorted(values){
-  return Array.from(new Set(values.filter(Boolean))).sort((a,b)=>a.localeCompare(b));
-}
-
-function escapeHtml(s){
-  return String(s ?? '')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-function statusClass(s){
-  const v = (s || '').toLowerCase();
-  if (v === 'actief') return 'badgeStatus--active';
-  if (v === 'pilot') return 'badgeStatus--pilot';
-  if (v === 'afgerond') return 'badgeStatus--completed';
-  return 'badgeStatus--default';
-}
-function statusBadgeHtml(s){
-  const text = s && String(s).trim() ? escapeHtml(s) : '—';
-  return `<span class="badge badgeStatus ${statusClass(s)}">${text}</span>`;
-}
-
-function buildSelectOptions(selectEl, values){
-  for (const v of values){
-    const opt = document.createElement('option');
-    opt.value = v;
-    opt.textContent = v;
-    selectEl.appendChild(opt);
-  }
-}
 
 function renderChips(){
   const chips = [];
@@ -147,125 +115,9 @@ function apply(){
   }
 
   renderGrid(list);
-  renderDiagram(list);
+  renderDiagram(list, elDiagram, openDrawer);
 }
 
-function renderDiagram(projects){
-  if (!elDiagram) return;
-  const list = Array.isArray(projects) ? projects : [];
-  if (!list.length){
-    elDiagram.innerHTML = '<p class="small">Geen initiatieven om weer te geven.</p>';
-    return;
-  }
-
-  const byScope = {
-    'Energiedomein': [],
-    'Gerelateerde sector': [],
-    'Generiek initiatief': []
-  };
-  for (const p of list){
-    if (byScope[p.scope]) byScope[p.scope].push(p);
-  }
-
-  const size = 420;
-  const center = size / 2;
-  const radii = {
-    inner: 60,
-    middle: 95,
-    outer: 130
-  };
-  const dotRadii = {
-    inner: radii.inner * 0.6,
-    middle: (radii.inner + radii.middle) / 2,
-    outer: (radii.middle + radii.outer) / 2
-  };
-
-  function pointsFor(list, radius){
-    const n = list.length;
-    if (!n) return [];
-    const pts = [];
-    for (let i=0; i<n; i++){
-      const angle = (2 * Math.PI * i / n) - Math.PI / 2;
-      const x = center + radius * Math.cos(angle);
-      const y = center + radius * Math.sin(angle);
-      const isRight = Math.cos(angle) >= 0;
-      const side = isRight ? 'right' : 'left';
-      const anchor = isRight ? 'start' : 'end';
-      const offset = 10;
-      const lx = x + (isRight ? offset : -offset);
-      const ly = y;
-      pts.push({p: list[i], x, y, lx, ly, anchor, side});
-    }
-    return pts;
-  }
-
-  const innerPts = pointsFor(byScope['Energiedomein'], dotRadii.inner);
-  const middlePts = pointsFor(byScope['Gerelateerde sector'], dotRadii.middle);
-  const outerPts = pointsFor(byScope['Generiek initiatief'], dotRadii.outer);
-
-  // eenvoudige label-collision-resolutie per zijde (links/rechts)
-  const allPts = [...innerPts, ...middlePts, ...outerPts];
-  const minLabelGap = 8;
-  function adjustLabels(side){
-    const pts = allPts.filter(pt => pt.side === side).sort((a,b)=>a.ly - b.ly);
-    for (let i = 1; i < pts.length; i++){
-      const prev = pts[i-1];
-      const curr = pts[i];
-      if (curr.ly < prev.ly + minLabelGap){
-        curr.ly = prev.ly + minLabelGap;
-      }
-    }
-  }
-  adjustLabels('left');
-  adjustLabels('right');
-
-  const viewBoxY = 70;
-  const viewBoxH = size - 140;
-  let svg = `<svg viewBox="0 ${viewBoxY} ${size} ${viewBoxH}" role="img" aria-label="Overzicht initiatieven per scope">`;
-  // achtergrondcirkels (gevuld, geen lijnen)
-  svg += `
-    <circle cx="${center}" cy="${center}" r="${radii.outer}" fill="rgba(22,40,70,.75)"/>
-    <circle cx="${center}" cy="${center}" r="${radii.middle}" fill="rgba(18,32,60,.9)"/>
-    <circle cx="${center}" cy="${center}" r="${radii.inner}" fill="rgba(14,26,48,1)"/>
-  `;
-
-  function renderLayer(points, color){
-    let out = '';
-    for (const pt of points){
-      out += `
-        <g class="diagramItem" data-slug="${escapeHtml(pt.p.id)}">
-          <circle cx="${pt.x}" cy="${pt.y}" r="3.2" fill="${color}"/>
-          <text x="${pt.lx}" y="${pt.ly}" fill="rgba(255,255,255,.9)" font-size="6" text-anchor="${pt.anchor}" dominant-baseline="middle">
-            ${escapeHtml(pt.p.naam)}
-          </text>
-        </g>
-      `;
-    }
-    return out;
-  }
-
-  svg += renderLayer(innerPts, 'rgb(110, 220, 190)');
-  svg += renderLayer(middlePts, 'rgb(130, 190, 255)');
-  svg += renderLayer(outerPts, 'rgb(195, 190, 255)');
-
-  svg += '</svg>';
-  elDiagram.innerHTML = svg;
-
-  // Maak namen in de schietschaaf klikbaar (zelfde gedrag als kaarten)
-  for (const el of elDiagram.querySelectorAll('.diagramItem')){
-    const slug = el.getAttribute('data-slug');
-    if (!slug) continue;
-    el.setAttribute('tabindex', '0');
-    el.setAttribute('role', 'button');
-    el.addEventListener('click', () => openDrawer(slug));
-    el.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openDrawer(slug);
-      }
-    });
-  }
-}
 
 function openDrawer(slug){
   const p = allProjects.find(x => x.id === slug);

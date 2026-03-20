@@ -1,5 +1,4 @@
 /* assets/interoperability.js */
-
 let allInitiatives = [];
 let fuse = null;
 let sourcesMap = {};
@@ -30,41 +29,6 @@ const dSources = document.getElementById('dSources');
 const dDetail = document.getElementById('dDetail');
 const dMeta = document.getElementById('dMeta');
 
-function uniqSorted(values){
-  return Array.from(new Set(values.filter(Boolean))).sort((a,b)=>a.localeCompare(b));
-}
-
-function escapeHtml(s){
-  return String(s ?? '')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-
-function statusClass(s){
-  const v = (s || '').toLowerCase();
-  if (v.includes('in werking')) return 'badgeStatus--active';
-  if (v.includes('actief') || v.includes('doorontwikkeling') || v.includes('doorlopende updates')) return 'badgeStatus--active';
-  if (v.includes('pilot')) return 'badgeStatus--pilot';
-  if (v.includes('afgerond')) return 'badgeStatus--completed';
-  return 'badgeStatus--default';
-}
-
-function statusBadgeHtml(s){
-  const text = s && String(s).trim() ? escapeHtml(s) : '—';
-  return `<span class="badge badgeStatus ${statusClass(s)}">${text}</span>`;
-}
-
-function buildSelectOptions(selectEl, values){
-  for (const v of values){
-    const opt = document.createElement('option');
-    opt.value = v;
-    opt.textContent = v;
-    selectEl.appendChild(opt);
-  }
-}
 
 function renderChips(){
   const chips = [];
@@ -95,14 +59,6 @@ function shortStatus(text){
   const dot = s.indexOf('.');
   if (dot > 0 && dot < 90) return s.slice(0, dot).trim();
   return s;
-}
-
-function splitRelated(text){
-  if (!text) return [];
-  return String(text)
-    .split(/[;,]/)
-    .map(x => x.trim())
-    .filter(Boolean);
 }
 
 function mapInitiatives(raw){

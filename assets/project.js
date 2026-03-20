@@ -9,25 +9,6 @@ function getYear(){
   return y === '2023' ? 2023 : 2026;
 }
 function getDataUrl(){ return `./data/projects_data_sharing_${getYear()}.json`; }
-function escapeHtml(s){
-  return String(s ?? '')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-function statusClass(s){
-  const v = (s || '').toLowerCase();
-  if (v === 'actief') return 'badgeStatus--active';
-  if (v === 'pilot') return 'badgeStatus--pilot';
-  if (v === 'afgerond') return 'badgeStatus--completed';
-  return 'badgeStatus--default';
-}
-function statusBadgeHtml(s){
-  const text = s && String(s).trim() ? escapeHtml(s) : '—';
-  return `<span class="badge badgeStatus ${statusClass(s)}">${text}</span>`;
-}
 
 async function init(){
   const slug = getSlug();
