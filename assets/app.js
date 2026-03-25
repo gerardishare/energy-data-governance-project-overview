@@ -212,6 +212,13 @@ function openDrawer(slug){
   drawerCtl.open();
 }
 
+function updateDataDelenPrintLink() {
+  const a = document.getElementById('dataDelenPrintLink');
+  if (a) {
+    a.href = `initiatieven-data-delen-print.html?year=${selectedYear}`;
+  }
+}
+
 function setYearUI(year){
   selectedYear = year;
   yearBtns.forEach(btn => {
@@ -221,6 +228,7 @@ function setYearUI(year){
   const url = new URL(window.location.href);
   url.searchParams.set('year', String(selectedYear));
   window.history.replaceState(null, '', url);
+  updateDataDelenPrintLink();
 }
 
 async function loadProjects(year){

@@ -1,0 +1,123 @@
+/**
+ * Statisch printoverzicht voor initiatieven-data-delen-print.html
+ * Jaar via query: ?year=2023 of ?year=2026 (standaard 2026)
+ */
+function textBlock(label, value) {
+  const t = value != null && String(value).trim() ? String(value) : '';
+  if (!t) return '';
+  return `<p class="printBlockLabel">${escapeHtml(label)}</p><div class="printBlock">${escapeHtml(t)}</div>`;
+}
+
+function listBlock(label, items) {
+  if (!Array.isArray(items) || !items.length) return '';
+  return `<p class="printBlockLabel">${escapeHtml(label)}</p><ul class="printList">${items.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
+}
+
+function linksAsTextLines(links) {
+  const defs = (Array.isArray(links) ? links : []).filter(
+    x => x && x.url && String(x.url).trim().length
+  );
+  return defs.map(l => {
+    const label = (l.label && String(l.label).trim()) ? String(l.label).trim() : l.url;
+    return `${label} — ${l.url}`;
+  });
+}
+
+function developmentsHtml(dev) {
+  if (!dev || (!dev.samenvatting && !(Array.isArray(dev.hoogtepunten) && dev.hoogtepunten.length))) {
+    return '';
+  }
+  let inner = '';
+  if (dev.referentiedatum) {
+    inner += `<p class="printStatusLine">Referentiedatum: ${escapeHtml(dev.referentiedatum)}</p>`;
+  }
+  if (dev.samenvatting) {
+    inner += `<div class="printBlock">${escapeHtml(dev.samenvatting)}</div>`;
+  }
+  if (Array.isArray(dev.hoogtepunten) && dev.hoogtepunten.length) {
+    inner += '<ul class="printList">';
+    for (const h of dev.hoogtepunten) {
+      const datePart = h.datum ? `${escapeHtml(h.datum)} — ` : '';
+      const titel = escapeHtml(h.titel || '');
+      const detail = h.detail ? ` — ${escapeHtml(h.detail)}` : '';
+      inner += `<li>${datePart}<strong>${titel}</strong>${detail}</li>`;
+    }
+    inner += '</ul>';
+  }
+  return `<p class="printBlockLabel">Ontwikkelingen 2023–2026</p>${inner}`;
+}
+
+function projectSection(p) {
+  const qr = p.korte_referentie || {};
+  const metaParts = [p.status, p.scope, p.geografische_scope].filter(x => x && String(x).trim());
+  if (p.jaar_start != null || p.jaar_einde != null) {
+    metaParts.push(`${p.jaar_start ?? '—'}–${p.jaar_einde ?? '—'}`);
+  }
+  const metaHtml = metaParts.length
+    ? `<div class="printOverall"><span>${escapeHtml(metaParts.join(' • '))}</span></div>`
+    : '';
+
+  const outputs = qr.belangrijkste_resultaten || [];
+  const users = qr.doelgebruikers || [];
+  const tags = Array.isArray(p.tags) ? p.tags.filter(Boolean) : [];
+  const tagLine = tags.length ? tags.join(', ') : '';
+
+  const body = [
+    textBlock('Samenvatting', p.samenvatting),
+    textBlock('Primair doel', qr.primair_doel),
+    listBlock('Belangrijkste resultaten', outputs),
+    listBlock('Doelgebruikers', users),
+    developmentsHtml(p.ontwikkelingen_2023_2026),
+    listBlock('Links (tekst)', linksAsTextLines(p.links)),
+    textBlock('Eigenaar', p.eigenaar),
+    textBlock('Tags', tagLine),
+  ].join('');
+
+  return `
+    <section class="printRecSection">
+      <div class="printRecHeader">
+        <h2>${escapeHtml(p.naam ?? '')}</h2>
+        ${metaHtml}
+      </div>
+      ${body}
+      <p class="printIdFoot">ID: ${escapeHtml(p.id ?? '')}</p>
+    </section>
+  `;
+}
+
+function parseYear() {
+  const y = new URLSearchParams(window.location.search).get('year');
+  if (y === '2023' || y === '2026') return parseInt(y, 10);
+  return 2026;
+}
+
+async function loadDataSharingPrint() {
+  const root = document.getElementById('dataDelenPrintRoot');
+  if (!root) return;
+
+  const year = parseYear();
+  const dataUrl = `./data/projects_data_sharing_${year}.json`;
+  const res = await fetch(dataUrl, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
+
+  const data = await res.json();
+  if (!Array.isArray(data)) {
+    throw new Error('Unexpected data format');
+  }
+
+  const titleEl = document.getElementById('dataDelenPrintYearLabel');
+  if (titleEl) titleEl.textContent = String(year);
+
+  root.innerHTML = data.map(projectSection).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadDataSharingPrint().catch(err => {
+    console.error(err);
+    const root = document.getElementById('dataDelenPrintRoot');
+    if (root) {
+      root.innerHTML =
+        '<p class="printError">Kon het overzicht niet laden. Controleer of dit bestand via een webserver wordt geopend.</p>';
+    }
+  });
+});
