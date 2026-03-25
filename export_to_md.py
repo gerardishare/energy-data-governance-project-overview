@@ -129,6 +129,59 @@ def export_interoperability(json_path: Path, md_path: Path) -> None:
     md_path.write_text(_join_non_empty(lines) + "\n", encoding="utf-8")
 
 
+def export_recommendations_2023(json_path: Path, md_path: Path) -> None:
+    root = json.loads(json_path.read_text(encoding="utf-8"))
+    legend = root.get("legend") or []
+    recommendations = root.get("recommendations") or []
+
+    lines: List[str] = []
+    lines.append(f"# Export van {json_path.name}")
+    lines.append("")
+    lines.append("## id: __legend__")
+    lines.append("")
+    for leg in legend:
+        lk: str = str((leg or {}).get("key", "")).strip()
+        if not lk:
+            continue
+        lines.append(f"### legend.{lk}.label")
+        lines.append(str((leg or {}).get("label", "")).rstrip())
+        lines.append("")
+        lines.append(f"### legend.{lk}.description")
+        lines.append(str((leg or {}).get("description", "")).rstrip())
+        lines.append("")
+
+    for rec in recommendations:
+        r: Dict[str, Any] = rec or {}
+        lines.append(f"## id: {r.get('id', '').strip()}")
+        lines.append(f"header: {r.get('header', '')}")
+        lines.append(f"overallStatusKey: {r.get('overallStatusKey', '')}")
+        lines.append(f"overallStatusLabel: {r.get('overallStatusLabel', '')}")
+        lines.append("")
+        for sub in r.get("subRecommendations") or []:
+            s: Dict[str, Any] = sub or {}
+            sid = str(s.get("id", "")).strip()
+            if not sid:
+                continue
+            p = f"sub.{sid}."
+            lines.append(f"### {p}title")
+            lines.append(str(s.get("title", "")).rstrip())
+            lines.append("")
+            lines.append(f"### {p}quote")
+            lines.append(str(s.get("quote", "")).rstrip())
+            lines.append("")
+            lines.append(f"### {p}statusExplanation")
+            lines.append(str(s.get("statusExplanation", "")).rstrip())
+            lines.append("")
+            lines.append(f"### {p}statusKey")
+            lines.append(str(s.get("statusKey", "")).rstrip())
+            lines.append("")
+            lines.append(f"### {p}statusLabel")
+            lines.append(str(s.get("statusLabel", "")).rstrip())
+            lines.append("")
+
+    md_path.write_text(_join_non_empty(lines) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     export_data_sharing(
         ROOT / "data" / "projects_data_sharing_2023.json",
@@ -141,6 +194,10 @@ def main() -> None:
     export_interoperability(
         ROOT / "data" / "projects_interoperability.json",
         ROOT / "data" / "projects_interoperability.md",
+    )
+    export_recommendations_2023(
+        ROOT / "data" / "recommendations_2023.json",
+        ROOT / "data" / "recommendations_2023.md",
     )
 
 

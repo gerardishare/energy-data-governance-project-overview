@@ -1,9 +1,21 @@
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict, List
 
 
 ROOT = Path(__file__).parent
+
+_ID_LINE_PREFIX = "## id: "
+
+
+def _id_from_block(block: List[str]) -> str:
+    if not block:
+        return ""
+    first = block[0].strip()
+    if first.startswith(_ID_LINE_PREFIX):
+        return first[len(_ID_LINE_PREFIX) :].strip()
+    return ""
 
 
 def _parse_header_block(lines: List[str]) -> Dict[str, str]:
@@ -49,7 +61,7 @@ def import_data_sharing(md_path: Path, json_path: Path) -> None:
             idx += 1
         header = _parse_header_block(header_lines)
         item: Dict[str, Any] = {
-            "id": header.get("id", ""),
+            "id": _id_from_block(block) or header.get("id", ""),
             "naam": header.get("naam", ""),
             "status": header.get("status", ""),
             "scope": header.get("scope", ""),
@@ -163,7 +175,7 @@ def import_interoperability(md_path: Path, json_path: Path) -> None:
             return "\n".join(sections.get(name, [])).strip()
 
         it: Dict[str, Any] = {
-            "id": header.get("id", ""),
+            "id": _id_from_block(block) or header.get("id", ""),
             "naam": header.get("naam", ""),
             "familie": header.get("familie", ""),
             "geografische_scope": header.get("geografische_scope", ""),
@@ -190,6 +202,100 @@ def import_interoperability(md_path: Path, json_path: Path) -> None:
     json_path.write_text(json.dumps(new_root, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+_REC_SUB_SECTION_RE = re.compile(
+    r"^sub\.(?P<subid>.+)\.(?P<field>title|quote|statusExplanation|statusKey|statusLabel)$"
+)
+_REC_LEGEND_SECTION_RE = re.compile(r"^legend\.(?P<key>.+)\.(?P<field>label|description)$")
+
+
+def import_recommendations_2023(md_path: Path, json_path: Path) -> None:
+    text = md_path.read_text(encoding="utf-8")
+    blocks = _read_blocks(text)
+    legend: List[Dict[str, Any]] = []
+    recommendations: List[Dict[str, Any]] = []
+
+    for block in blocks:
+        bid = _id_from_block(block)
+        header_lines: List[str] = []
+        idx = 0
+        while idx < len(block) and not block[idx].startswith("### "):
+            header_lines.append(block[idx])
+            idx += 1
+        header = _parse_header_block(header_lines)
+
+        section: str | None = None
+        buffer: List[str] = []
+        sections: Dict[str, List[str]] = {}
+        for line in block[idx:]:
+            if line.startswith("### "):
+                if section is not None:
+                    sections[section] = buffer
+                section = line[4:].strip()
+                buffer = []
+            else:
+                if section is not None:
+                    buffer.append(line)
+        if section is not None:
+            sections[section] = buffer
+
+        if bid == "__legend__":
+            keys_order: List[str] = []
+            by_key: Dict[str, Dict[str, str]] = {}
+            for sec_name in sections:
+                m = _REC_LEGEND_SECTION_RE.match(sec_name)
+                if not m:
+                    continue
+                key, field = m.group("key"), m.group("field")
+                if key not in by_key:
+                    keys_order.append(key)
+                    by_key[key] = {}
+                by_key[key][field] = "\n".join(sections[sec_name]).strip()
+            legend = [
+                {
+                    "key": k,
+                    "label": by_key[k].get("label", ""),
+                    "description": by_key[k].get("description", ""),
+                }
+                for k in keys_order
+            ]
+            continue
+
+        sub_ids_order: List[str] = []
+        sub_by_id: Dict[str, Dict[str, str]] = {}
+        for sec_name in sections:
+            m = _REC_SUB_SECTION_RE.match(sec_name)
+            if not m:
+                continue
+            sub_id, field = m.group("subid"), m.group("field")
+            if sub_id not in sub_by_id:
+                sub_ids_order.append(sub_id)
+                sub_by_id[sub_id] = {}
+            sub_by_id[sub_id][field] = "\n".join(sections[sec_name]).strip()
+
+        recommendations.append(
+            {
+                "id": bid,
+                "header": header.get("header", ""),
+                "overallStatusKey": header.get("overallStatusKey", ""),
+                "overallStatusLabel": header.get("overallStatusLabel", ""),
+                "subRecommendations": [
+                    {
+                        "id": sid,
+                        "title": sub_by_id[sid].get("title", ""),
+                        "quote": sub_by_id[sid].get("quote", ""),
+                        "statusExplanation": sub_by_id[sid].get("statusExplanation", ""),
+                        "statusKey": sub_by_id[sid].get("statusKey", ""),
+                        "statusLabel": sub_by_id[sid].get("statusLabel", ""),
+                    }
+                    for sid in sub_ids_order
+                ],
+            }
+        )
+
+    root = {"legend": legend, "recommendations": recommendations}
+    json_path.write_text(json.dumps(root, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def main() -> None:
     import_data_sharing(
         ROOT / "data" / "projects_data_sharing_2023.md",
@@ -202,6 +308,10 @@ def main() -> None:
     import_interoperability(
         ROOT / "data" / "projects_interoperability.md",
         ROOT / "data" / "projects_interoperability.json",
+    )
+    import_recommendations_2023(
+        ROOT / "data" / "recommendations_2023.md",
+        ROOT / "data" / "recommendations_2023.json",
     )
 
 
