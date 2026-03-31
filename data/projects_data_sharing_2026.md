@@ -11,15 +11,14 @@ jaar_einde: None
 tags: energietransitie, datafundament, overheid, datasets, governance
 
 ### samenvatting
-VIVET is structureel actief en richt zich in 2023–2026 op verbetering van data over o.a. warmte, laadinfrastructuur en sectorverbruiken. In 2024 zijn nieuwe dataverzoeken goedgekeurd en in 2025/2026 lopen studies zoals een warmtenetaansluitingenregister.
+VIVET is structureel actief en richt zich in 2023–2026 op verbetering van data over o.a. warmte, laadinfrastructuur en sectorverbruiken. In 2024 zijn 30 nieuwe dataverzoeken binnengekomen en beoordeeld voor het programma VIVET, gericht op het verbeteren van informatievoorziening voor de energietransitie. In 2025/2026 lopen studies zoals een warmtenetaansluitingenregister.
 
 ### korte_referentie.primair_doel
 Consistente, betrouwbare en goed vindbare data beschikbaar maken voor beleid, uitvoering, monitoring en evaluatie van de energietransitie.
 
 ### korte_referentie.belangrijkste_resultaten
-- Datasets en dataproducten (nieuw/verbeterd/gebundeld)
 - Verkenningen en rapporten over databehoeften en ontsluiting
-- Dataverzoekproces en afstemming met afnemers
+- Reeks werksessies met als onderwerp "Vastgelopen? Data helpt je verder!" voor gemeenten en provincies
 
 ### korte_referentie.doelgebruikers
 - Rijksoverheid
@@ -32,7 +31,7 @@ Consistente, betrouwbare en goed vindbare data beschikbaar maken voor beleid, ui
 Q1 2026
 
 ### ontwikkelingen_2023_2026.samenvatting
-VIVET is structureel actief en richt zich in 2023–2026 op verbetering van data over o.a. warmte, laadinfrastructuur en sectorverbruiken. In 2024 zijn nieuwe dataverzoeken goedgekeurd en in 2025/2026 lopen studies zoals een warmtenetaansluitingenregister.
+VIVET is structureel actief en richt zich in 2023–2026 op verbetering van data over o.a. warmte, laadinfrastructuur en sectorverbruiken. In 2024 zijn nieuwe dataverzoeken beoordeeld en in 2025/2026 lopen studies zoals een warmtenetaansluitingenregister.
 
 ### ontwikkelingen_2023_2026.hoogtepunten
 - datum=2024; titel=Nieuwe dataverzoeken; detail=Goedkeuring van projecten rond o.a. VvE’s, juridische kaders en warmtenet-aansluitingen op objectniveau.
@@ -50,36 +49,38 @@ jaar_einde: None
 tags: energiedata, afsprakenstelsel, slimme meter, governance, privacy
 
 ### samenvatting
-In aanloop naar de Energiewet is MFFBAS opgesplitst in een vereniging (MFF) voor marktfacilitatie en een BV (BAS) voor de wettelijke rol. BAS opereert sinds 2025/2026 onder de handelsnaam Het Normo en fungeert per 1 januari 2026 als wettelijke Gegevensuitwisselingsentiteit (GUE).
+In aanloop naar de Energiewet is MFFBAS opgesplitst in een vereniging (MFF) voor marktfacilitatie en een BV (BAS) voor de wettelijke rol. BAS opereert sinds juni 2025 onder de handelsnaam Het Normo en fungeert per 1 januari 2026 als wettelijke Gegevensuitwisselingsentiteit (GUE).
 
 ### korte_referentie.primair_doel
-Transparant en efficiënt delen van (gereguleerde) energiedata mogelijk maken, met regie bij de consument en duidelijke afspraken voor marktpartijen.
+Transparant en efficiënt delen van (gereguleerde) energiedata mogelijk maken, met regie bij de eindafnemers (zakelijk en particulier) en duidelijke afspraken voor marktpartijen.
 
 ### korte_referentie.belangrijkste_resultaten
 - Afsprakenstelsel energiedata
 - Governancestructuur (MFF/BAS)
 - Implementatie- en monitoringsprocessen
 - Marktbrede afstemming over datadeling
+- Vanaf 2026 uniforme toegang tot historische meetdata van grote aansluitingen
 
 ### korte_referentie.doelgebruikers
 - Netbeheerders
 - Energieleveranciers
+- Meetbedrijven
+- Gesloten systeem beheerders
 - Dienstverleners
-- Consumenten
-- Toezichthouders
+- Zakelijke en particuliere eindafnemers
 
 ### ontwikkelingen_2023_2026.referentiedatum
 Q1 2026
 
 ### ontwikkelingen_2023_2026.samenvatting
-In aanloop naar de Energiewet is MFFBAS opgesplitst in een vereniging (MFF) voor marktfacilitatie en een BV (BAS) voor de wettelijke rol. BAS opereert sinds 2025/2026 onder de handelsnaam Het Normo en fungeert per 1 januari 2026 als wettelijke Gegevensuitwisselingsentiteit (GUE).
+In aanloop naar de Energiewet is MFFBAS opgesplitst in een vereniging (MFF) voor marktfacilitatie en een BV (BAS) voor de wettelijke rol. BAS opereert sinds juni 2025 onder de handelsnaam Het Normo en fungeert per 1 januari 2026 als wettelijke Gegevensuitwisselingsentiteit (GUE).
 
 ### ontwikkelingen_2023_2026.hoogtepunten
-- datum=2024-10; titel=Energiedatawijzer; detail=Lancering van een centraal platform om sectorafspraken en documentatie vindbaar te maken.
+- datum=2024-10; titel=Energiedatawijzer; detail=Lancering van een centraal platform (www.energiedatawijzer.nl) om sectorafspraken en documentatie vindbaar te maken.
 - datum=2025-01-01; titel=Allocatie 2.0 Tranche 3 live; detail=Implementatie van vernieuwde reconciliatieprocessen.
 - datum=2025-06; titel=Transitie/rebranding naar Het Normo; detail=Nieuwe handelsnaam en entiteit ter voorbereiding op wettelijke rol.
 - datum=2026-01-01; titel=Start als wettelijke GUE; detail=Formele startdatum als neutrale gegevensuitwisselingsentiteit onder de Energiewet.
-- datum=2026; titel=Lancering enKiy; detail=Stapsgewijze introductie van een nieuw energiedataportaal voor toestemming en transparantie.
+- datum=2026; titel=Lancering enKiy; detail=Stapsgewijze introductie van een nieuw energiedataportaal voor inzage in data en verlenen van toestemming.
 - datum=2026-01-01; titel=Eerste data producten live; detail=Start ontsluiting eerste data, o.a. historische meetdata voor grote aansluitingen.
 
 ## id: edsn
@@ -96,16 +97,16 @@ tags: energiemarkt, gegevensuitwisseling, DSO/TSO, IT-infrastructuur, registers
 EDSN heeft de rol als data-enabler versterkt met modernisering van IT-infrastructuur en doorontwikkeling van registers en dashboards, o.a. voor netcongestie en de energietransitie.
 
 ### korte_referentie.primair_doel
-De informatievoorziening en gegevensuitwisseling voor de vrije Nederlandse energiemarkt standaardiseren, vereenvoudigen en betrouwbaar maken.
+Standaardiseren en vereenvoudigen van de informatieoverdracht tussen alle partijen binnen de vrije energiemarkt. EDSN optimaliseert de IT-infrastructuur, dataregisters en applicaties voor wettelijke geregelde overdracht van informatie en data-uitwisseling.
 
 ### korte_referentie.belangrijkste_resultaten
-- Centrale faciliteiten (o.a. aansluitregister, meetdata‑verwerking)
+- Centrale faciliteiten (o.a. aansluitregister, meetdata‑verwerking, verzamelen data slimme meters)
 - Ketenprocessen/berichtenverkeer
 - Standaarden en vereenvoudiging informatieoverdracht
 - Applicaties en dataregisters
 
 ### korte_referentie.doelgebruikers
-- Netbeheerders
+- Regionale netbeheerders
 - TenneT
 - GTS
 - Energieleveranciers
@@ -123,7 +124,7 @@ EDSN heeft de rol als data-enabler versterkt met modernisering van IT-infrastruc
 - datum=2025-07; titel=Producten- en dienstencatalogus; detail=Catalogus met producten en diensten om het net beter te benutten, gepubliceerd via Partners in Energie.
 - datum=2025-08; titel=Vernieuwd Toegankelijk Meetdataregister (TMR); detail=Modernisatie van databank voor meterstanden en verbruiksdata.
 - datum=2025-11; titel=Berichtenbox; detail=Centraal systeem voor gestructureerde berichtenuitwisseling ter vervanging van e-mail.
-- datum=2025-12; titel=Nationaal Energie Dashboard data / API; detail=Beschikbaarstelling van actuele verbruiksdata en voorspellingen via ned.nl inclusief API-toegang.
+- datum=2025-12; titel=Nationaal Energie Dashboard data / API; detail=Beschikbaarstelling van actuele verbruiksdata en voorspellingen via www.ned.nl inclusief API-toegang.
 - datum=2026-01; titel=Invoedingskompas; detail=Kaart- en datatoepassing met inzicht in invoedruimte voor groen gas op het net.
 
 ## id: np-res
