@@ -32,7 +32,7 @@ overallStatusLabel: Gedeeltelijke voortgang
 De opdracht voor de kwartiermaker is om de visie op data delen in de energiesector over te brengen en door te ontwikkelen. Daarnaast het proces voor te bereiden om te komen tot één Nederlandse energiedata community en partijen daaraan te verbinden.
 
 ### sub.1.1.statusExplanation
-In juni 2024 is energie.data opgericht als platform om vraag naar en aanbod van energiedata bij elkaar te brengen. Normo en MFF hebben elk een kwartiermaker aangesteld die invulling geeft aan de beoogde rol.
+In juni 2024 is energie.data opgericht als platform om vraag naar en aanbod van energiedata bij elkaar te brengen. energie.data is een samenwerking tussen MFF, het Normo, Topsector Energie (Digitalisering), RVO en KGG (vanuit opdrachtgeverschap voor VIVET). Het Normo en MFF hebben elk een kwartiermaker aangesteld die invulling geeft aan de beoogde rol. Sinds de oprichting van energie.data is er structurele afstemming tussen bovengenoemde partijen.
 
 ### sub.1.1.statusKey
 realized
@@ -47,7 +47,7 @@ Gerealiseerd
 Stel middelen (technologie, financiering, kennis) beschikbaar voor de ontwikkeling van use cases, bijvoorbeeld via RVO. Sluit voor use cases aan bij de Data Sharing Coalition (EZK).
 
 ### sub.1.2.statusExplanation
-Energiedata is als specifiek thema opgenomen in de MOOI-programma's, met een dedicated meet-up voor datagedreven projecten zoals Orkest, ABLE en Eigen. Topsector Energie Digitalisering en RVO hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling. Aanvullend is er op het Data Festival ruimte gecreëerd voor presentatie van use cases. De aansluiting bij de Data Sharing Coalition (zoals oorspronkelijk aanbevolen) is echter niet gerealiseerd. Inmiddels bestaat de Data Sharing Coalition niet meer en is opgevolgd door het Centre of Excellence for Data Sharing & Cloud.
+energie.data is gestart met het eerste energie.data Festival, in de agenda is ruimte gecreëerd voor presentaties van use cases en zijn er in break-out sessie met de deelnemers verschillende nieuwe use cases uitgewerkt. Er is specifiek aandacht besteed aan gebruik van energiedata in MOOI projecten. Consortia die MOOI subsidie aanvragen ontvangen de Handreiking digitale tools en platformen na vooraanmelding, waarin leidraad geboden wordt aan innoverende partijen tav goed omgaan met (energie)data. Er is een meet-up georganiseerd voor de MOOI projecten specifiek over energiedata, met presentaties van Orkest, ABLE en Eigen. Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling.  De aansluiting bij de Data Sharing Coalition (zoals oorspronkelijk aanbevolen) is echter niet gerealiseerd. Inmiddels bestaat de Data Sharing Coalition niet meer en is opgevolgd door het Centre of Excellence for Data Sharing & Cloud.
 
 ### sub.1.2.statusKey
 realized
@@ -62,7 +62,7 @@ Gerealiseerd
 Organiseer een fysieke kick-off bijeenkomst als start van de communityvorming. Zorg voor brede bekendheid van dit evenement en zet in op een kritische massa van minimaal 250 deelnemers.
 
 ### sub.1.3.statusExplanation
-In oktober 2024 vond het eerste energie.data Festival plaats met 150 deelnemers. In 2025 is de aanwezigheid bij events verder uitgebouwd, met bijdragen aan onder meer de MOOI meet-up, de Ontmoetingsplaats, een webinar voor ROM-organisaties, een presentatie op de Digital Energy Systems dag (11 december) en een bijdrage aan het event over het Federatief Data Stelsel (FDS). Voor 2026 staat een energiedata Hackathon gepland.
+In oktober 2024 vond het eerste energie.data Festival plaats met 150 deelnemers. Het is festival stond volledig in het teken van energiedata en de essentiële rol hiervan in de energietransitie. Het succes van deze eerste editie vormt de ambitie voor een terugkerend event, waarin we jaarlijks ingaan op concrete use-cases en de verdere ontwikkeling van het energiedata-ecosysteem. In 2025 is de aanwezigheid bij events verder uitgebouwd, met bijdragen aan onder meer de MOOI meet-up, de Ontmoetingsplaats, een webinar voor ROM-organisaties, een presentatie op de Digital Energy Systems dag (11 december) en een bijdrage aan het event over het Federatief Data Stelsel (FDS). Voor 2027 staat een energiedata Hackathon gepland.
 
 ### sub.1.3.statusKey
 realized
@@ -77,7 +77,7 @@ Gerealiseerd
 Ontwikkel een (low-tech) platform voor vraag en aanbod naar energiedata. Simuleer het halen en brengen van data en richt het beheer van het platform in.
 
 ### sub.1.4.statusExplanation
-Een Data Sandbox is ontwikkeld als eerste invulling van deze aanbeveling. De verdere doorontwikkeling en het beheer van het platform zijn nog niet volledig belegd.
+In 2026 is een Data Sandbox is ontwikkeld als eerste invulling van deze aanbeveling. energie.data heeft het initiatief genomen om te onderzoeken of een generieke energiedata-deelfaciliteit het eenvoudiger kan maken voor partijen, zoals bijvoorbeeld gemeenten, woningcorporaties, banken, vastgoedeigenaren, start-ups en onderzoekers, om data op een veilige, privacy‑bestendige en schaalbare manier in te zetten. Samen met Roseman Labs is een Data Sandbox ontwikkelt, waarin kan worden getest hoe energiedata veilig en AVG‑verantwoord gedeeld en geanalyseerd kan worden. Vervolgstappen zijn de verdere doorontwikkeling en het beleggen van het beheer van het platform. Via de website van energie.data kunnen data vragers hun vraag stellen wanneer zij bepaalde energiedata niet kunnen vinden.
 
 ### sub.1.4.statusKey
 partial
@@ -92,7 +92,7 @@ Gedeeltelijke voortgang
 Om de vindbaarheid en herkenbaarheid van het thema Energie en Klimaat te verhogen, is het wenselijk dat dit thema wordt toegevoegd op data.overheid.nl.
 
 ### sub.1.5.statusExplanation
-Er zijn geen stappen gezet om Energie en Klimaat als thema toe te voegen aan data.overheid.nl.
+Er is geen ontwikkeling op het thema Energie en Klimaat op data.overheid.nl. 
 
 ### sub.1.5.statusKey
 none
@@ -112,7 +112,7 @@ overallStatusLabel: Gedeeltelijke voortgang
 Creëer een aanjaagteam van verbinders dat actief en gericht ("handpicked") deelnemers werft met als doel energiedata beschikbaar te maken. Dit team stimuleert via matchmaking de ontwikkeling van concrete initiatieven.
 
 ### sub.2.1.statusExplanation
-Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Aanvullend zijn er actielijnen vanuit het LAN, private initiatieven zoals datahubs (waaronder die van BAM) en het Flexible Alliance Network, het Elaad-traject rondom (H)EMS, en een opdracht aan NEN. Daarmee is een publiek-private community werkend vormgegeven.
+Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. 
 
 ### sub.2.1.statusKey
 realized
@@ -207,7 +207,7 @@ overallStatusLabel: Geen ontwikkeling
 Ontwikkel met de community een data space en stel een expertgroep in met vertegenwoordiging vanuit alle deelsectoren.
 
 ### sub.3.1.statusExplanation
-Er zijn geen stappen gezet richting de ontwikkeling van een gezamenlijke data space of de inrichting van een sectoroverstijgende expertgroep.
+Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt.
 
 ### sub.3.1.statusKey
 none
