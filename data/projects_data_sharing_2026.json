@@ -8,6 +8,13 @@
     "eigenaar": "Samenwerkingsprogramma (o.a. CBS, Kadaster, PBL, RVO, Rijkswaterstaat) met steun van betrokken ministeries",
     "jaar_start": 2019,
     "jaar_einde": null,
+    "tags": [
+      "energietransitie",
+      "datafundament",
+      "overheid",
+      "datasets",
+      "governance"
+    ],
     "links": [
       {
         "label": "Programma",
@@ -19,13 +26,6 @@
       }
     ],
     "samenvatting": "VIVET is structureel actief en richt zich in 2023–2026 op verbetering van data over o.a. warmte, laadinfrastructuur en sectorverbruiken. In 2024 zijn nieuwe dataverzoeken goedgekeurd en in 2025/2026 lopen studies zoals een warmtenetaansluitingenregister.",
-    "tags": [
-      "energietransitie",
-      "datafundament",
-      "overheid",
-      "datasets",
-      "governance"
-    ],
     "korte_referentie": {
       "primair_doel": "Consistente, betrouwbare en goed vindbare data beschikbaar maken voor beleid, uitvoering, monitoring en evaluatie van de energietransitie.",
       "belangrijkste_resultaten": [
@@ -72,6 +72,13 @@
     "eigenaar": "MFF (vereniging) & BAS B.V. – sectorbrede governance (o.a. Netbeheer Nederland, Energie‑Nederland, VMNed, Techniek Nederland)",
     "jaar_start": 2019,
     "jaar_einde": null,
+    "tags": [
+      "energiedata",
+      "afsprakenstelsel",
+      "slimme meter",
+      "governance",
+      "privacy"
+    ],
     "links": [
       {
         "label": "Website",
@@ -83,13 +90,6 @@
       }
     ],
     "samenvatting": "In aanloop naar de Energiewet is MFFBAS opgesplitst in een vereniging (MFF) voor marktfacilitatie en een BV (BAS) voor de wettelijke rol. BAS opereert sinds 2025/2026 onder de handelsnaam Het Normo en fungeert per 1 januari 2026 als wettelijke Gegevensuitwisselingsentiteit (GUE).",
-    "tags": [
-      "energiedata",
-      "afsprakenstelsel",
-      "slimme meter",
-      "governance",
-      "privacy"
-    ],
     "korte_referentie": {
       "primair_doel": "Transparant en efficiënt delen van (gereguleerde) energiedata mogelijk maken, met regie bij de consument en duidelijke afspraken voor marktpartijen.",
       "belangrijkste_resultaten": [
@@ -152,6 +152,13 @@
     "eigenaar": "EDSN (samenwerkingsplatform van netbeheerders; EDSN B.V.)",
     "jaar_start": 2001,
     "jaar_einde": null,
+    "tags": [
+      "energiemarkt",
+      "gegevensuitwisseling",
+      "DSO/TSO",
+      "IT-infrastructuur",
+      "registers"
+    ],
     "links": [
       {
         "label": "Website",
@@ -163,13 +170,6 @@
       }
     ],
     "samenvatting": "EDSN heeft de rol als data-enabler versterkt met modernisering van IT-infrastructuur en doorontwikkeling van registers en dashboards, o.a. voor netcongestie en de energietransitie.",
-    "tags": [
-      "energiemarkt",
-      "gegevensuitwisseling",
-      "DSO/TSO",
-      "IT-infrastructuur",
-      "registers"
-    ],
     "korte_referentie": {
       "primair_doel": "De informatievoorziening en gegevensuitwisseling voor de vrije Nederlandse energiemarkt standaardiseren, vereenvoudigen en betrouwbaar maken.",
       "belangrijkste_resultaten": [
@@ -233,13 +233,6 @@
     "eigenaar": "Nationaal Programma RES (ondersteunt 30 RES‑regio’s; samenwerking Rijk, provincies, gemeenten en waterschappen)",
     "jaar_start": 2019,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://www.regionale-energiestrategie.nl/"
-      }
-    ],
-    "samenvatting": "De RES-regio’s zitten in de uitvoeringsfase. Monitoring laat zien dat het 2030-doel (35 TWh) binnen bereik ligt, terwijl de pijplijn voor nieuwe projecten stagneert; de focus verschuift naar systeemintegratie, congestie en de periode na 2030.",
     "tags": [
       "RES",
       "regionale planning",
@@ -247,6 +240,13 @@
       "warmtetransitie",
       "beleid"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://www.regionale-energiestrategie.nl/"
+      }
+    ],
+    "samenvatting": "De RES-regio’s zitten in de uitvoeringsfase. Monitoring laat zien dat het 2030-doel (35 TWh) binnen bereik ligt, terwijl de pijplijn voor nieuwe projecten stagneert; de focus verschuift naar systeemintegratie, congestie en de periode na 2030.",
     "korte_referentie": {
       "primair_doel": "Regio’s ondersteunen bij het opstellen en uitvoeren van Regionale Energiestrategieën, inclusief kennis- en databehoefte voor besluitvorming.",
       "belangrijkste_resultaten": [
@@ -272,12 +272,10 @@
           "detail": "Voortgangsrapportage met aandacht voor stagnatie in nieuwe projecten en netcongestie."
         },
         {
-          "datum": null,
           "titel": "Dataset Begrippenkader RES",
           "detail": "Dataset om projectstatussen eenduidig te monitoren van ambitie tot realisatie."
         },
         {
-          "datum": null,
           "titel": "Doelbereik 35 TWh",
           "detail": "Inschatting dat 35 TWh doelstelling voor 2030 binnen bereik ligt."
         }
@@ -293,13 +291,6 @@
     "eigenaar": "Fraunhofer‑consortium (o.a. Fraunhofer IEE) en partners",
     "jaar_start": 2021,
     "jaar_einde": 2021,
-    "links": [
-      {
-        "label": "Projectinformatie (Fraunhofer IEE)",
-        "url": "https://www.iee.fraunhofer.de/en/press-media/press-releases/2021/endaspace-energy-data-space.html"
-      }
-    ],
-    "samenvatting": "EnDaSpace was een kortlopend demonstratieproject dat geen direct vervolg heeft gekregen. Het experimenteerde met datadeling via IDSA-connectoren.",
     "tags": [
       "energiedataspace",
       "IDS",
@@ -307,6 +298,13 @@
       "waterstof",
       "onderzoek"
     ],
+    "links": [
+      {
+        "label": "Projectinformatie (Fraunhofer IEE)",
+        "url": "https://www.iee.fraunhofer.de/en/press-media/press-releases/2021/endaspace-energy-data-space.html"
+      }
+    ],
+    "samenvatting": "EnDaSpace was een kortlopend demonstratieproject dat geen direct vervolg heeft gekregen. Het experimenteerde met datadeling via IDSA-connectoren.",
     "korte_referentie": {
       "primair_doel": "Aantonen hoe een energy data space met data‑soevereiniteit praktisch kan werken met IDS‑bouwblokken.",
       "belangrijkste_resultaten": [
@@ -326,7 +324,6 @@
       "samenvatting": "EnDaSpace was een kortlopend demonstratieproject dat geen direct vervolg heeft gekregen. Het experimenteerde met datadeling via IDSA-connectoren.",
       "hoogtepunten": [
         {
-          "datum": null,
           "titel": "IDSA connectors demonstrator",
           "detail": "Demonstratie van energiedata-uitwisseling met IDS/IDSA bouwblokken."
         }
@@ -342,6 +339,13 @@
     "eigenaar": "EU‑gefinancierd consortium (29 partners, 11 landen)",
     "jaar_start": 2023,
     "jaar_einde": 2025,
+    "tags": [
+      "EU-project",
+      "energiedataspace",
+      "GAIA-X",
+      "IDSA",
+      "marktplaats"
+    ],
     "links": [
       {
         "label": "Website",
@@ -353,13 +357,6 @@
       }
     ],
     "samenvatting": "EU‑project dat een energie data space implementeert met gefedereerde infrastructuur en een data‑/dienstenmarktplaats. Data‑soevereiniteit staat centraal. Realisatie op basis van IDSA‑ en GAIA‑X‑principes (met o.a. FIWARE‑componenten). Ontwikkelt pilots voor o.a. O&M van hernieuwbare bronnen, local energy communities, e‑mobiliteitsdiensten en lokale flexibiliteit.",
-    "tags": [
-      "EU-project",
-      "energiedataspace",
-      "GAIA-X",
-      "IDSA",
-      "marktplaats"
-    ],
     "korte_referentie": {
       "primair_doel": "Implementeren van een Europese energy data space met data‑soevereiniteit en een federatieve markt voor data en diensten.",
       "belangrijkste_resultaten": [
@@ -375,6 +372,11 @@
         "Mobiliteitsdienstverleners",
         "Netbeheerders/aggregators"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -386,6 +388,13 @@
     "eigenaar": "EU‑gefinancierd consortium (30 partners, 12 landen; NL o.a. via TNO)",
     "jaar_start": 2022,
     "jaar_einde": 2025,
+    "tags": [
+      "EU-project",
+      "referentiearchitectuur",
+      "SGAM",
+      "dataspace",
+      "prikkels"
+    ],
     "links": [
       {
         "label": "Website",
@@ -397,13 +406,6 @@
       }
     ],
     "samenvatting": "Enershare is medio 2025 afgerond. Het project ontwikkelde een consumer-centric referentiearchitectuur voor een Energy Data Space, inclusief marktplaats voor data en diensten, en valideerde dit in pilots.",
-    "tags": [
-      "EU-project",
-      "referentiearchitectuur",
-      "SGAM",
-      "dataspace",
-      "prikkels"
-    ],
     "korte_referentie": {
       "primair_doel": "Een mens‑/eindafnemer‑gerichte referentiearchitectuur en componenten leveren voor interoperabele energiedata‑deling in Europa.",
       "belangrijkste_resultaten": [
@@ -435,17 +437,14 @@
           "detail": "Einde projectperiode."
         },
         {
-          "datum": null,
           "titel": "Energy services marketplace",
           "detail": "Platform voor delen en verhandelen van energiedata en -diensten."
         },
         {
-          "datum": null,
           "titel": "Digital twins",
           "detail": "Oplevering digital twins (o.a. TwinP2G) voor toepassingen zoals groene waterstof."
         },
         {
-          "datum": null,
           "titel": "MoU’s met TSO’s",
           "detail": "Samenwerkingsovereenkomsten voor datadeling met TSO’s."
         }
@@ -461,6 +460,13 @@
     "eigenaar": "EU‑gefinancierd consortium (17 partners, 9 landen)",
     "jaar_start": 2023,
     "jaar_einde": 2025,
+    "tags": [
+      "EU-project",
+      "open source",
+      "toestemming",
+      "slimme meter",
+      "dataspace"
+    ],
     "links": [
       {
         "label": "Website",
@@ -472,13 +478,6 @@
       }
     ],
     "samenvatting": "EDDIE eind 2025 afgerond. Het project ontwikkelde een gedecentraliseerde, open-source data space met focus op “in-house” consent en datadeling voor slimme-meterdata.",
-    "tags": [
-      "EU-project",
-      "open source",
-      "toestemming",
-      "slimme meter",
-      "dataspace"
-    ],
     "korte_referentie": {
       "primair_doel": "Open‑source, gedecentraliseerde data space ontwikkelen waarmee burgers/gebruikers gecontroleerd energiedata kunnen delen.",
       "belangrijkste_resultaten": [
@@ -509,7 +508,6 @@
           "detail": "Oplevering gedecentraliseerde data space en administrative interface."
         },
         {
-          "datum": null,
           "titel": "Administrative interface",
           "detail": "Tooling voor gebruikers om consent voor datadeling te beheren."
         }
@@ -525,6 +523,13 @@
     "eigenaar": "EU‑gefinancierd consortium (30 partners, 14 landen; NL o.a. via RUG en Provincie Noord‑Holland)",
     "jaar_start": 2022,
     "jaar_einde": 2025,
+    "tags": [
+      "EU-project",
+      "lokale energiegemeenschappen",
+      "ontologie",
+      "blockchain",
+      "marktplaats"
+    ],
     "links": [
       {
         "label": "Website",
@@ -536,13 +541,6 @@
       }
     ],
     "samenvatting": "Data Cellar is afgerond in november 2025. Het project leverde een data space voor Local Energy Communities (LEC’s), inclusief diensten, tools en marktplaats, gevalideerd in meerdere cases.",
-    "tags": [
-      "EU-project",
-      "lokale energiegemeenschappen",
-      "ontologie",
-      "blockchain",
-      "marktplaats"
-    ],
     "korte_referentie": {
       "primair_doel": "Een data space realiseren die de oprichting en exploitatie van local energy communities in de EU ondersteunt.",
       "belangrijkste_resultaten": [
@@ -569,17 +567,14 @@
           "detail": "Einde projectperiode en oplevering platform."
         },
         {
-          "datum": null,
           "titel": "Data Cellar platform",
           "detail": "Interoperabel platform met marktplaats, dashboard en connectoren voor data-uitwisseling."
         },
         {
-          "datum": null,
           "titel": "Validatiecases",
           "detail": "Testen van het platform in validatie-cases gericht op LEC’s."
         },
         {
-          "datum": null,
           "titel": "Interconnectie",
           "detail": "Koppeling met andere initiatieven zoals openENTRANCE."
         }
@@ -595,6 +590,13 @@
     "eigenaar": "EU‑gefinancierd consortium (23 partners, 11 landen; NL o.a. Arthur’s Legal)",
     "jaar_start": 2022,
     "jaar_einde": 2026,
+    "tags": [
+      "EU-project",
+      "referentie-implementatie",
+      "cross-domein",
+      "energiedata",
+      "collectieve intelligentie"
+    ],
     "links": [
       {
         "label": "Website",
@@ -606,13 +608,6 @@
       }
     ],
     "samenvatting": "Het Horizon Europe project SYNERGIES zit in de afrondende fase en rondt af op 28 februari 2026. Het leverde een referentie-implementatie voor een Energy Data Space en voerde grootschalige demo’s uit in Griekenland, Spanje en Denemarken.",
-    "tags": [
-      "EU-project",
-      "referentie-implementatie",
-      "cross-domein",
-      "energiedata",
-      "collectieve intelligentie"
-    ],
     "korte_referentie": {
       "primair_doel": "Een referentie‑implementatie leveren voor een inclusieve, cross‑domain energy data space.",
       "belangrijkste_resultaten": [
@@ -639,22 +634,18 @@
           "detail": "Einde projectperiode en afronding deliverables."
         },
         {
-          "datum": null,
           "titel": "Energy Data Space reference implementation",
           "detail": "Oplevering referentie-implementatie voor veilig delen van energiedata."
         },
         {
-          "datum": null,
           "titel": "MVP platform & services",
           "detail": "Definitieve versie van het SYNERGIES platform en services."
         },
         {
-          "datum": null,
           "titel": "Digital Twins",
           "detail": "Ontwikkeling/validatie digital twins voor netwerkoperaties en asset management."
         },
         {
-          "datum": null,
           "titel": "Data analytics & marketplace",
           "detail": "Implementatie van analysetools en marktplaats voor energiediensten."
         }
@@ -670,6 +661,13 @@
     "eigenaar": "EU‑gefinancierd consortium (7 partners, 5 landen)",
     "jaar_start": 2020,
     "jaar_einde": 2022,
+    "tags": [
+      "EU-project",
+      "open data",
+      "FAIR",
+      "onderzoek",
+      "platform"
+    ],
     "links": [
       {
         "label": "Website",
@@ -681,13 +679,6 @@
       }
     ],
     "samenvatting": "EnerMaps is afgerond in juni 2022. Het project leverde een Open Data Management Tool om energie-onderzoeksdata vindbaar en herbruikbaar te maken volgens FAIR-principes en werd geregistreerd als EOSC service provider.",
-    "tags": [
-      "EU-project",
-      "open data",
-      "FAIR",
-      "onderzoek",
-      "platform"
-    ],
     "korte_referentie": {
       "primair_doel": "Databeheer en toegankelijkheid voor energieonderzoek verbeteren en hergebruik versnellen.",
       "belangrijkste_resultaten": [
@@ -712,12 +703,10 @@
           "detail": "Einde project en oplevering tooling/documentatie."
         },
         {
-          "datum": null,
           "titel": "Open Data Management Tool",
           "detail": "Gateway en visualisatietool voor energiedatasets."
         },
         {
-          "datum": null,
           "titel": "EOSC service provider",
           "detail": "Registratie als service provider op European Open Science Cloud."
         }
@@ -733,6 +722,13 @@
     "eigenaar": "EU‑gefinancierd consortium (11 partners, 7 landen)",
     "jaar_start": 2022,
     "jaar_einde": 2025,
+    "tags": [
+      "EU-project",
+      "interoperabiliteit",
+      "community",
+      "diensten",
+      "cross-domein"
+    ],
     "links": [
       {
         "label": "Website",
@@ -744,13 +740,6 @@
       }
     ],
     "samenvatting": "Int:net is in het voorjaar van 2025 afgerond. Het project bouwde een cross-domein interoperability community voor de energietransitie en werkte aan gezamenlijke interoperabele diensten.",
-    "tags": [
-      "EU-project",
-      "interoperabiliteit",
-      "community",
-      "diensten",
-      "cross-domein"
-    ],
     "korte_referentie": {
       "primair_doel": "Een cross‑domain netwerk en concrete interoperabele energie‑services ontwikkelen voor de energietransitie.",
       "belangrijkste_resultaten": [
@@ -775,12 +764,10 @@
           "detail": "Afsluiting van het project en afronding deliverables."
         },
         {
-          "datum": null,
           "titel": "Interoperability Network",
           "detail": "Oprichting en facilitering van een netwerk van stakeholders uit energie- en gerelateerde domeinen."
         },
         {
-          "datum": null,
           "titel": "Community building",
           "detail": "Versterken van samenwerking tussen Europese data-initiatieven."
         }
@@ -796,13 +783,6 @@
     "eigenaar": "Coalitie van (o.a.) Nederlandse publieke en private organisaties; community >60 organisaties/initiatieven",
     "jaar_start": 2020,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://datasharingcoalition.eu/"
-      }
-    ],
-    "samenvatting": "Programma/coalitie dat cross‑sectoraal datadelen stimuleert onder controle van de rechthebbende partij. Werkt via drie sporen: (1) use cases, (2) kennisontwikkeling (o.a. Data Sharing Canvas, playbook, blueprint, implementation guide) en (3) communityvorming.",
     "tags": [
       "cross-sectoraal",
       "datadelen",
@@ -810,6 +790,13 @@
       "handleidingen",
       "community"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://datasharingcoalition.eu/"
+      }
+    ],
+    "samenvatting": "Programma/coalitie dat cross‑sectoraal datadelen stimuleert onder controle van de rechthebbende partij. Werkt via drie sporen: (1) use cases, (2) kennisontwikkeling (o.a. Data Sharing Canvas, playbook, blueprint, implementation guide) en (3) communityvorming.",
     "korte_referentie": {
       "primair_doel": "Cross‑sectoraal datadelen versnellen en interoperabiliteit tussen data spaces versterken, met regie bij de rechthebbende.",
       "belangrijkste_resultaten": [
@@ -826,6 +813,11 @@
         "Programma’s rond digitalisering",
         "Innovatieconsortia"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -837,6 +829,13 @@
     "eigenaar": "GAIA‑X European Association for Data and Cloud AISBL + nationale hubs",
     "jaar_start": 2019,
     "jaar_einde": null,
+    "tags": [
+      "EU",
+      "federatie",
+      "trustframework",
+      "compliance",
+      "interoperabiliteit"
+    ],
     "links": [
       {
         "label": "GAIA-X",
@@ -848,13 +847,6 @@
       }
     ],
     "samenvatting": "Europees initiatief dat, gebaseerd op Europese waarden, een digitale governance en architectuur ontwikkelt voor federatieve data- en clouddiensten. Richt zich op transparantie, controleerbaarheid, overdraagbaarheid en interoperabiliteit. Heeft nationale hubs en stimuleert praktijkcases via lighthouse‑projecten.",
-    "tags": [
-      "EU",
-      "federatie",
-      "trustframework",
-      "compliance",
-      "interoperabiliteit"
-    ],
     "korte_referentie": {
       "primair_doel": "Federatieve data- en cloud‑infrastructuur in Europa mogelijk maken via governance, compliance en federation services.",
       "belangrijkste_resultaten": [
@@ -870,6 +862,11 @@
         "Industrieconsortia",
         "Softwareleveranciers"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -881,6 +878,13 @@
     "eigenaar": "iSHARE Foundation (NL, Rotterdam)",
     "jaar_start": 2018,
     "jaar_einde": null,
+    "tags": [
+      "trustframework",
+      "identiteit",
+      "autorisatie",
+      "datasoevereiniteit",
+      "BLOFT"
+    ],
     "links": [
       {
         "label": "Website",
@@ -896,13 +900,6 @@
       }
     ],
     "samenvatting": "Van oorsprong Nederlands trust framework en standaard/netwerk voor het (internationaal) delen van zakelijke gegevens. Levert specificaties, rollen, juridische/operationele afspraken en technische bouwstenen (o.a. identiteit, authenticatie en autorisatie) om data‑soevereiniteit in data spaces te borgen. Wordt o.a. toegepast in logistiek en als basislaag in initiatieven zoals DVU en DSGO.",
-    "tags": [
-      "trustframework",
-      "identiteit",
-      "autorisatie",
-      "datasoevereiniteit",
-      "BLOFT"
-    ],
     "korte_referentie": {
       "primair_doel": "Vertrouwde, gestandaardiseerde datadeling mogelijk maken met duidelijke rollen, governance en technische bouwblokken.",
       "belangrijkste_resultaten": [
@@ -918,6 +915,11 @@
         "Identity providers",
         "Softwareontwikkelaars"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -929,6 +931,13 @@
     "eigenaar": "International Data Spaces Association (non‑profit)",
     "jaar_start": 2016,
     "jaar_einde": null,
+    "tags": [
+      "standaarden",
+      "referentiearchitectuur",
+      "IDS-connector",
+      "datasoevereiniteit",
+      "interoperabiliteit"
+    ],
     "links": [
       {
         "label": "Website",
@@ -940,13 +949,6 @@
       }
     ],
     "samenvatting": "Non‑profit organisatie die de ontwikkeling en standaardisatie van veilige gegevensuitwisseling bevordert (o.a. in IoT/Industrie 4.0). Levert een referentiearchitectuur (IDS RAM) en definieert kerncomponenten zoals IDS Connector, metadata broker, clearing house en vocabulary hub.",
-    "tags": [
-      "standaarden",
-      "referentiearchitectuur",
-      "IDS-connector",
-      "datasoevereiniteit",
-      "interoperabiliteit"
-    ],
     "korte_referentie": {
       "primair_doel": "Een gestandaardiseerd, veilig en flexibel ecosysteem voor organisatie‑overstijgende gegevensuitwisseling ontwikkelen en promoten.",
       "belangrijkste_resultaten": [
@@ -962,6 +964,11 @@
         "Softwareleveranciers",
         "Onderzoekers"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -973,6 +980,13 @@
     "eigenaar": "FIWARE Foundation",
     "jaar_start": 2016,
     "jaar_einde": null,
+    "tags": [
+      "open source",
+      "IoT",
+      "slimme energie",
+      "smart cities",
+      "datamodellen"
+    ],
     "links": [
       {
         "label": "Website",
@@ -984,13 +998,6 @@
       }
     ],
     "samenvatting": "Open‑source framework dat ontwikkelaars helpt IoT‑toepassingen te bouwen. De FIWARE Foundation beheert standaarden en componenten. FIWARE wordt vaak gebruikt als bouwblok in (EU) data spaces en ‘smart’ domeinen, waaronder Smart Energy en Smart Cities.",
-    "tags": [
-      "open source",
-      "IoT",
-      "slimme energie",
-      "smart cities",
-      "datamodellen"
-    ],
     "korte_referentie": {
       "primair_doel": "Herbruikbare open‑source bouwblokken bieden voor interoperabele (IoT) data‑gedreven toepassingen, inclusief smart‑energy use cases.",
       "belangrijkste_resultaten": [
@@ -1006,6 +1013,11 @@
         "Overheden",
         "Innovatieprogramma’s"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1017,6 +1029,13 @@
     "eigenaar": "GO FAIR Foundation / wereldwijde community",
     "jaar_start": 2018,
     "jaar_einde": null,
+    "tags": [
+      "FAIR",
+      "data stewardship",
+      "interoperabiliteit",
+      "metadata",
+      "hergebruik"
+    ],
     "links": [
       {
         "label": "Website",
@@ -1028,13 +1047,6 @@
       }
     ],
     "samenvatting": "Initiatief dat het toepassen van de FAIR‑principes (Findable, Accessible, Interoperable, Reusable) stimuleert. Ontstaan in de wetenschap maar steeds breder gebruikt door publieke en semipublieke organisaties om data beter deelbaar en herbruikbaar te maken.",
-    "tags": [
-      "FAIR",
-      "data stewardship",
-      "interoperabiliteit",
-      "metadata",
-      "hergebruik"
-    ],
     "korte_referentie": {
       "primair_doel": "FAIR‑datapraktijken breed toepasbaar maken zodat data vindbaar, toegankelijk, interoperabel en herbruikbaar wordt.",
       "belangrijkste_resultaten": [
@@ -1050,6 +1062,11 @@
         "Platformbouwers",
         "Organisaties die data publiceren/delen"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1061,6 +1078,13 @@
     "eigenaar": "Publiek‑private coalitie (o.a. overheid, kennisinstellingen en bedrijfsleven; Topsector ICT)",
     "jaar_start": 2017,
     "jaar_einde": 2024,
+    "tags": [
+      "blockchain",
+      "digital trust",
+      "publiek-privaat",
+      "ecosysteem",
+      "decentralisatie"
+    ],
     "links": [
       {
         "label": "Projectpagina (ECP)",
@@ -1072,13 +1096,6 @@
       }
     ],
     "samenvatting": "Publiek‑private samenwerking die (2017–2024) kennis en toepassing van blockchain in Nederland heeft gestimuleerd en een ecosysteem heeft opgebouwd rondom decentrale technologie en digital trust.",
-    "tags": [
-      "blockchain",
-      "digital trust",
-      "publiek-privaat",
-      "ecosysteem",
-      "decentralisatie"
-    ],
     "korte_referentie": {
       "primair_doel": "Blockchain‑kennis en -toepassingen versnellen en verbinden in Nederland, als katalysator/facilitator voor publiek‑private use cases.",
       "belangrijkste_resultaten": [
@@ -1094,6 +1111,11 @@
         "Innovatieprogramma’s",
         "Digital‑trust ecosystemen"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1105,13 +1127,6 @@
     "eigenaar": "Breed Nederlands AI‑ecosysteem (coördinatie o.a. via ECP/partners)",
     "jaar_start": 2019,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://nlaic.com/"
-      }
-    ],
-    "samenvatting": "Landelijke coalitie die AI‑ontwikkeling en -toepassing in Nederland wil versnellen door samenwerking tussen overheid, bedrijfsleven, kennisinstellingen en maatschappelijke organisaties. Richt zich op innovatie, kennisdeling en verantwoorde inzet van AI.",
     "tags": [
       "AI",
       "ecosysteem",
@@ -1119,6 +1134,13 @@
       "verantwoorde AI",
       "samenwerking"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://nlaic.com/"
+      }
+    ],
+    "samenvatting": "Landelijke coalitie die AI‑ontwikkeling en -toepassing in Nederland wil versnellen door samenwerking tussen overheid, bedrijfsleven, kennisinstellingen en maatschappelijke organisaties. Richt zich op innovatie, kennisdeling en verantwoorde inzet van AI.",
     "korte_referentie": {
       "primair_doel": "AI‑ecosysteem in Nederland versterken en AI‑innovatie versnellen met aandacht voor maatschappelijke waarden en verantwoord gebruik.",
       "belangrijkste_resultaten": [
@@ -1134,6 +1156,11 @@
         "Startups/scale-ups",
         "Maatschappelijke organisaties"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1145,6 +1172,13 @@
     "eigenaar": "DigiGO en sector bouw/techniek; afsprakenstelsel voor data‑uitwisseling",
     "jaar_start": 2021,
     "jaar_einde": null,
+    "tags": [
+      "gebouwde omgeving",
+      "afsprakenstelsel",
+      "bouw",
+      "data-toegang",
+      "architectuur"
+    ],
     "links": [
       {
         "label": "Over DigiGO/DSGO",
@@ -1156,13 +1190,6 @@
       }
     ],
     "samenvatting": "Afsprakenstelsel voor veilige, betrouwbare en gecontroleerde toegang tot data in de ontwerp-, bouw- en technieksector. Richt zich op een digitaal ecosysteem voor de gebouwde omgeving en koppelt aan referentiearchitectuur (o.a. GEBORA). In de iSHARE‑context wordt iSHARE genoemd als basislaag voor trusted data exchange.",
-    "tags": [
-      "gebouwde omgeving",
-      "afsprakenstelsel",
-      "bouw",
-      "data-toegang",
-      "architectuur"
-    ],
     "korte_referentie": {
       "primair_doel": "Uniforme afspraken realiseren voor gecontroleerde datadeling in de gebouwde omgeving, zodat samenwerking en duurzaamheid verbeteren.",
       "belangrijkste_resultaten": [
@@ -1178,6 +1205,11 @@
         "Softwareleveranciers",
         "Overheden"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1189,6 +1221,13 @@
     "eigenaar": "RVO (interface) + partners (o.a. Dutch Green Building Council/WEii) + iSHARE‑ecosysteem",
     "jaar_start": null,
     "jaar_einde": null,
+    "tags": [
+      "utiliteitsgebouwen",
+      "energie-efficiëntie",
+      "dataspace",
+      "digitale tweeling",
+      "WEii"
+    ],
     "links": [
       {
         "label": "Website",
@@ -1200,13 +1239,6 @@
       }
     ],
     "samenvatting": "Initiatief (Data Space for Energy Reduction in Non‑Residential Buildings) dat veilige en efficiënte uitwisseling van data over gemeten energieverbruik en gebouwkenmerken mogelijk maakt om CO₂‑reductieprojecten in utiliteitsgebouwen te optimaliseren. Ondersteunt o.a. WEii‑protocol (DGBC), gebruikt iSHARE Trust Framework en eHerkenning voor trusted datadeling en autorisatie.",
-    "tags": [
-      "utiliteitsgebouwen",
-      "energie-efficiëntie",
-      "dataspace",
-      "digitale tweeling",
-      "WEii"
-    ],
     "korte_referentie": {
       "primair_doel": "CO₂‑reductie in utiliteitsgebouwen versnellen door betrouwbare uitwisseling van meetdata en gebouwkenmerken voor analyses en business cases.",
       "belangrijkste_resultaten": [
@@ -1222,6 +1254,11 @@
         "Financiers",
         "Sectororganisaties"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1233,13 +1270,6 @@
     "eigenaar": "EU‑project/consortium (Green Deal Data Space)",
     "jaar_start": null,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://www.greatproject.eu/"
-      }
-    ],
-    "samenvatting": "Europees project dat bijdraagt aan de ontwikkeling van de Green Deal Data Space door bouwblokken en use cases te ontwikkelen rond het delen van data voor duurzaamheid en de Green Deal.",
     "tags": [
       "Green Deal",
       "dataspace",
@@ -1247,6 +1277,13 @@
       "milieu",
       "interoperabiliteit"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://www.greatproject.eu/"
+      }
+    ],
+    "samenvatting": "Europees project dat bijdraagt aan de ontwikkeling van de Green Deal Data Space door bouwblokken en use cases te ontwikkelen rond het delen van data voor duurzaamheid en de Green Deal.",
     "korte_referentie": {
       "primair_doel": "Bijdragen aan een interoperabele Green Deal Data Space door concrete bouwblokken en pilots/use cases te leveren.",
       "belangrijkste_resultaten": [
@@ -1260,6 +1297,11 @@
         "Data space initiatieven",
         "Onderzoekers"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1271,13 +1313,6 @@
     "eigenaar": "Green Data Hub (Oostenrijk)",
     "jaar_start": null,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://www.greendatahub.at/"
-      }
-    ],
-    "samenvatting": "Oostenrijks initiatief dat inzet op het beter beschikbaar en bruikbaar maken van ‘green’ data (duurzaamheid/milieu) via platformen en samenwerkingen.",
     "tags": [
       "Oostenrijk",
       "groene data",
@@ -1285,6 +1320,13 @@
       "duurzaamheid",
       "datadelen"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://www.greendatahub.at/"
+      }
+    ],
+    "samenvatting": "Oostenrijks initiatief dat inzet op het beter beschikbaar en bruikbaar maken van ‘green’ data (duurzaamheid/milieu) via platformen en samenwerkingen.",
     "korte_referentie": {
       "primair_doel": "Duurzaamheidsdata beter vindbaar en uitwisselbaar maken en hergebruik stimuleren in projecten en beleid.",
       "belangrijkste_resultaten": [
@@ -1298,6 +1340,11 @@
         "Onderzoekers",
         "Duurzaamheidsinitiatieven"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1309,13 +1356,6 @@
     "eigenaar": "EU‑initiatief (Green Deal Data Space ecosysteem)",
     "jaar_start": null,
     "jaar_einde": null,
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://green-deal-dataspace.eu/"
-      }
-    ],
-    "samenvatting": "Europees initiatief om een data space te realiseren rondom de Europese Green Deal. Doel is het delen en hergebruik van milieu- en duurzaamheidsdata te faciliteren, met interoperabiliteit, governance en vertrouwen als uitgangspunt.",
     "tags": [
       "EU",
       "Green Deal",
@@ -1323,6 +1363,13 @@
       "milieu",
       "hergebruik"
     ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://green-deal-dataspace.eu/"
+      }
+    ],
+    "samenvatting": "Europees initiatief om een data space te realiseren rondom de Europese Green Deal. Doel is het delen en hergebruik van milieu- en duurzaamheidsdata te faciliteren, met interoperabiliteit, governance en vertrouwen als uitgangspunt.",
     "korte_referentie": {
       "primair_doel": "Een Europese data space opzetten die Green Deal gerelateerde data veilig en interoperabel beschikbaar maakt voor brede hergebruikscenario’s.",
       "belangrijkste_resultaten": [
@@ -1337,6 +1384,11 @@
         "Onderzoekers",
         "Data space projecten"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1348,6 +1400,13 @@
     "eigenaar": "EU‑initiatief (support centre voor Europese datastrategie)",
     "jaar_start": 2022,
     "jaar_einde": null,
+    "tags": [
+      "EU",
+      "supportcentrum",
+      "interoperabiliteit",
+      "starterkit",
+      "dataspaces"
+    ],
     "links": [
       {
         "label": "Website",
@@ -1359,13 +1418,6 @@
       }
     ],
     "samenvatting": "Ondersteuningscentrum om de Europese strategie voor data te operationaliseren. Ontwikkelt kennis (o.a. DSSC Starter Kit) en faciliteert interoperabiliteit tussen (sectorale) data spaces binnen het Europese data‑ruimtenlandschap.",
-    "tags": [
-      "EU",
-      "supportcentrum",
-      "interoperabiliteit",
-      "starterkit",
-      "dataspaces"
-    ],
     "korte_referentie": {
       "primair_doel": "Europese (common) data spaces versnellen en interoperabel maken door kennis, tooling en begeleiding.",
       "belangrijkste_resultaten": [
@@ -1381,6 +1433,11 @@
         "Architecten",
         "Projectleiders EU‑data spaces"
       ]
+    },
+    "ontwikkelingen_2023_2026": {
+      "referentiedatum": "",
+      "samenvatting": "",
+      "hoogtepunten": []
     }
   },
   {
@@ -1392,8 +1449,6 @@
     "eigenaar": "Samenwerking tussen MFF, Het Normo, Topsector Energie, RVO en ministerie van Klimaat en Groene Groei (KGG)",
     "jaar_start": 2024,
     "jaar_einde": null,
-    "links": [],
-    "samenvatting": "Samenwerking om vraag en aanbod naar energiedata beter te faciliteren door een gedeelde taal te ontwikkelen, kennis te delen en vragers en aanbieders dichter bij elkaar te brengen.",
     "tags": [
       "energiedata",
       "community",
@@ -1401,6 +1456,8 @@
       "data-aanbod",
       "Nederland"
     ],
+    "links": [],
+    "samenvatting": "Samenwerking om vraag en aanbod naar energiedata beter te faciliteren door een gedeelde taal te ontwikkelen, kennis te delen en vragers en aanbieders dichter bij elkaar te brengen.",
     "korte_referentie": {
       "primair_doel": "Vraag en aanbod van energiedata beter verbinden en energiedata toegankelijker maken.",
       "belangrijkste_resultaten": [

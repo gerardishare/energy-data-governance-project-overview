@@ -92,7 +92,7 @@ Gedeeltelijke voortgang
 Om de vindbaarheid en herkenbaarheid van het thema Energie en Klimaat te verhogen, is het wenselijk dat dit thema wordt toegevoegd op data.overheid.nl.
 
 ### sub.1.5.statusExplanation
-Er is geen ontwikkeling op het thema Energie en Klimaat op data.overheid.nl. 
+Er is geen ontwikkeling op het thema Energie en Klimaat op data.overheid.nl.
 
 ### sub.1.5.statusKey
 none
@@ -112,7 +112,7 @@ overallStatusLabel: Gedeeltelijke voortgang
 Creëer een aanjaagteam van verbinders dat actief en gericht ("handpicked") deelnemers werft met als doel energiedata beschikbaar te maken. Dit team stimuleert via matchmaking de ontwikkeling van concrete initiatieven.
 
 ### sub.2.1.statusExplanation
-Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Partners van energie.data ondertekenen de intentieverklaring waarmee zij uitspreken om partijen die zich bij hen melden, maar aan het verkeerde loket staan, door te verwijzen naar het juiste loket waar de gevraagde data wel te halen is.  
+Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Partners van energie.data ondertekenen de intentieverklaring waarmee zij uitspreken om partijen die zich bij hen melden, maar aan het verkeerde loket staan, door te verwijzen naar het juiste loket waar de gevraagde data wel te halen is.
 
 ### sub.2.1.statusKey
 realized
@@ -172,7 +172,7 @@ Gedeeltelijke voortgang
 Positioneer dit als expliciet onderdeel van het aanjaagteam en stel een actieplan op om kennis te vergroten en het belang van digitalisering in de energiesector te onderstrepen. Zoek actieve samenwerking met onderwijs- en kennisinstellingen.
 
 ### sub.2.5.statusExplanation
-Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en middels de Handreiking Digitale Tools en Platformen Energietransitie. Daarnaast is het vergroten van kennis over digitalisering door de deelnemers van energie.data actief ingebracht in de totstandkoming van de Actieagenda Digitalisering Energiesysteem (ADE) welke in december 2025 is aangeboden aan het Ministerie van EZK en welke door de Topsector Energie zal worden gecoördineerd. 
+Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en middels de Handreiking Digitale Tools en Platformen Energietransitie. Daarnaast is het vergroten van kennis over digitalisering door de deelnemers van energie.data actief ingebracht in de totstandkoming van de Actieagenda Digitalisering Energiesysteem (ADE) welke in december 2025 is aangeboden aan het Ministerie van EZK en welke door de Topsector Energie zal worden gecoördineerd.
 
 ### sub.2.5.statusKey
 realized
@@ -207,7 +207,7 @@ overallStatusLabel: Gedeeltelijke voortgang
 Ontwikkel met de community een data space en stel een expertgroep in met vertegenwoordiging vanuit alle deelsectoren.
 
 ### sub.3.1.statusExplanation
-In 2026 is een Data Sandbox ontwikkeld als eerste invulling voor een data space (zie aanbeveling 1.4). Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt. 
+In 2026 is een Data Sandbox ontwikkeld als eerste invulling voor een data space (zie aanbeveling 1.4). Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt.
 
 ### sub.3.1.statusKey
 partial
@@ -252,7 +252,7 @@ Geen ontwikkeling
 Onderzoek in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases. Vraag de expertgroep het overzicht van actoren, rollen en informatie- en databehoeften te onderhouden en periodiek te actualiseren.
 
 ### sub.3.4.statusExplanation
-In 2026 is een Data Sandbox ontwikkeld om te toetsen in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases (zie aanbeveling 1.4). Er zijn een aantal use cases uitgewerkt waarvoor de Data Sandbox kan worden toegepast. Er ontstaat een steeds beter overzicht van actoren, rollen en databehoeften (use cases) binnen het energiedomein. Verderop in dit rapport is de actuele weergave welke periodiek kan worden geactualiseerd. 
+In 2026 is een Data Sandbox ontwikkeld om te toetsen in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases (zie aanbeveling 1.4). Er zijn een aantal use cases uitgewerkt waarvoor de Data Sandbox kan worden toegepast. Er ontstaat een steeds beter overzicht van actoren, rollen en databehoeften (use cases) binnen het energiedomein. Verderop in dit rapport is de actuele weergave welke periodiek kan worden geactualiseerd.
 
 ### sub.3.4.statusKey
 realized
@@ -267,7 +267,7 @@ Gerealiseerd
 Prioriteer met de expertgroep de belemmeringen en selecteer een eerste set knelpunten op basis waarvan een concreet actieplan wordt opgesteld.
 
 ### sub.3.5.statusExplanation
-Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling. 
+Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling.
 
 ### sub.3.5.statusKey
 partial

@@ -1,9 +1,12 @@
+import argparse
 import json
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List, Tuple
 
 
 ROOT = Path(__file__).parent
+
+ExportFn = Callable[[Path, Path], None]
 
 
 def _join_non_empty(lines: List[str]) -> str:
@@ -36,6 +39,21 @@ def export_data_sharing(json_path: Path, md_path: Path) -> None:
             lines.append("tags:")
 
         lines.append("")
+        lines.append("### links")
+        for L in i.get("links") or []:
+            if not isinstance(L, dict):
+                continue
+            label = str(L.get("label", "")).strip()
+            url = str(L.get("url", "")).strip()
+            if not url:
+                continue
+            parts: List[str] = []
+            if label:
+                parts.append(f"label={label}")
+            parts.append(f"url={url}")
+            lines.append("- " + "; ".join(parts))
+        lines.append("")
+
         lines.append("### samenvatting")
         lines.append(i.get("samenvatting", "").rstrip())
         lines.append("")
@@ -183,22 +201,48 @@ def export_recommendations_2023(json_path: Path, md_path: Path) -> None:
 
 
 def main() -> None:
-    export_data_sharing(
-        ROOT / "data" / "projects_data_sharing_2023.json",
-        ROOT / "data" / "projects_data_sharing_2023.md",
+    jobs: Dict[str, Tuple[ExportFn, Path, Path]] = {
+        "data_sharing_2023": (
+            export_data_sharing,
+            ROOT / "data" / "projects_data_sharing_2023.json",
+            ROOT / "data" / "projects_data_sharing_2023.md",
+        ),
+        "data_sharing_2026": (
+            export_data_sharing,
+            ROOT / "data" / "projects_data_sharing_2026.json",
+            ROOT / "data" / "projects_data_sharing_2026.md",
+        ),
+        "interoperability": (
+            export_interoperability,
+            ROOT / "data" / "projects_interoperability.json",
+            ROOT / "data" / "projects_interoperability.md",
+        ),
+        "recommendations_2023": (
+            export_recommendations_2023,
+            ROOT / "data" / "recommendations_2023.json",
+            ROOT / "data" / "recommendations_2023.md",
+        ),
+    }
+    order = list(jobs.keys())
+    parser = argparse.ArgumentParser(
+        description="Write Markdown snapshots from JSON under data/ (for diff-friendly editing)."
     )
-    export_data_sharing(
-        ROOT / "data" / "projects_data_sharing_2026.json",
-        ROOT / "data" / "projects_data_sharing_2026.md",
+    parser.add_argument(
+        "--source",
+        action="append",
+        choices=order,
+        metavar="NAME",
+        dest="sources",
+        help=(
+            "Dataset to export (repeat for several). "
+            f"Choices: {', '.join(order)}. Default: all."
+        ),
     )
-    export_interoperability(
-        ROOT / "data" / "projects_interoperability.json",
-        ROOT / "data" / "projects_interoperability.md",
-    )
-    export_recommendations_2023(
-        ROOT / "data" / "recommendations_2023.json",
-        ROOT / "data" / "recommendations_2023.md",
-    )
+    args = parser.parse_args()
+    selected = args.sources if args.sources else order
+    for name in selected:
+        fn, json_path, md_path = jobs[name]
+        fn(json_path, md_path)
 
 
 if __name__ == "__main__":

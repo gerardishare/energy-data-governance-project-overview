@@ -20,12 +20,14 @@
     {
       "id": "1",
       "header": "Aanbeveling 1 (Ga aan de slag)",
+      "overallStatusKey": "partial",
+      "overallStatusLabel": "Gedeeltelijke voortgang",
       "subRecommendations": [
         {
           "id": "1.1",
           "title": "1.1 Stel een kwartiermaker aan",
           "quote": "De opdracht voor de kwartiermaker is om de visie op data delen in de energiesector over te brengen en door te ontwikkelen. Daarnaast het proces voor te bereiden om te komen tot één Nederlandse energiedata community en partijen daaraan te verbinden.",
-          "statusExplanation": "In juni 2024 is energie.data opgericht als platform om vraag naar en aanbod van energiedata bij elkaar te brengen. Normo en MFF hebben elk een kwartiermaker aangesteld die invulling geeft aan de beoogde rol.",
+          "statusExplanation": "In juni 2024 is energie.data opgericht als platform om vraag naar en aanbod van energiedata bij elkaar te brengen. energie.data is een samenwerking tussen MFF, het Normo, Topsector Energie (Digitalisering), RVO en KGG (vanuit opdrachtgeverschap voor VIVET). Het Normo en MFF hebben elk een kwartiermaker aangesteld die invulling geeft aan de beoogde rol. Sinds de oprichting van energie.data is er structurele afstemming tussen bovengenoemde partijen.",
           "statusKey": "realized",
           "statusLabel": "Gerealiseerd"
         },
@@ -33,7 +35,7 @@
           "id": "1.2",
           "title": "1.2 Stimuleer innovatie en de ontwikkeling van use cases",
           "quote": "Stel middelen (technologie, financiering, kennis) beschikbaar voor de ontwikkeling van use cases, bijvoorbeeld via RVO. Sluit voor use cases aan bij de Data Sharing Coalition (EZK).",
-          "statusExplanation": "Energiedata is als specifiek thema opgenomen in de MOOI-programma's, met een dedicated meet-up voor datagedreven projecten zoals Orkest, ABLE en Eigen. Topsector Energie Digitalisering en RVO hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling. Aanvullend is er op het Data Festival ruimte gecreëerd voor presentatie van use cases. De aansluiting bij de Data Sharing Coalition (zoals oorspronkelijk aanbevolen) is echter niet gerealiseerd. Inmiddels bestaat de Data Sharing Coalition niet meer en is opgevolgd door het Centre of Excellence for Data Sharing & Cloud.",
+          "statusExplanation": "energie.data is gestart met het eerste energie.data Festival, in de agenda is ruimte gecreëerd voor presentaties van use cases en zijn er in break-out sessie met de deelnemers verschillende nieuwe use cases uitgewerkt. Er is specifiek aandacht besteed aan gebruik van energiedata in MOOI projecten. Consortia die MOOI subsidie aanvragen ontvangen de Handreiking digitale tools en platformen na vooraanmelding, waarin leidraad geboden wordt aan innoverende partijen tav goed omgaan met (energie)data. Er is een meet-up georganiseerd voor de MOOI projecten specifiek over energiedata, met presentaties van Orkest, ABLE en Eigen. Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling.  De aansluiting bij de Data Sharing Coalition (zoals oorspronkelijk aanbevolen) is echter niet gerealiseerd. Inmiddels bestaat de Data Sharing Coalition niet meer en is opgevolgd door het Centre of Excellence for Data Sharing & Cloud.",
           "statusKey": "realized",
           "statusLabel": "Gerealiseerd"
         },
@@ -41,7 +43,7 @@
           "id": "1.3",
           "title": "1.3 Organiseer (terugkerende) evenementen",
           "quote": "Organiseer een fysieke kick-off bijeenkomst als start van de communityvorming. Zorg voor brede bekendheid van dit evenement en zet in op een kritische massa van minimaal 250 deelnemers.",
-          "statusExplanation": "In oktober 2024 vond het eerste energie.data Festival plaats met 150 deelnemers. In 2025 is de aanwezigheid bij events verder uitgebouwd, met bijdragen aan onder meer de MOOI meet-up, de Ontmoetingsplaats, een webinar voor ROM-organisaties, een presentatie op de Digital Energy Systems dag (11 december) en een bijdrage aan het event over het Federatief Data Stelsel (FDS). Voor 2026 staat een energiedata Hackathon gepland.",
+          "statusExplanation": "In oktober 2024 vond het eerste energie.data Festival plaats met 150 deelnemers. Het festival stond volledig in het teken van energiedata en de essentiële rol hiervan in de energietransitie. Het succes van deze eerste editie vormt de ambitie voor een terugkerend event, waarin we jaarlijks ingaan op concrete use-cases en de verdere ontwikkeling van het energiedata-ecosysteem. In 2025 is de aanwezigheid bij events verder uitgebouwd, met bijdragen aan onder meer de MOOI meet-up, de Ontmoetingsplaats, een webinar voor ROM-organisaties, een presentatie op de Digital Energy Systems dag (11 december) en een bijdrage aan het event over het Federatief Data Stelsel (FDS). Voor 2027 staat een energiedata Hackathon gepland.",
           "statusKey": "realized",
           "statusLabel": "Gerealiseerd"
         },
@@ -49,7 +51,7 @@
           "id": "1.4",
           "title": "1.4 Lanceer een platform voor vraag en aanbod",
           "quote": "Ontwikkel een (low-tech) platform voor vraag en aanbod naar energiedata. Simuleer het halen en brengen van data en richt het beheer van het platform in.",
-          "statusExplanation": "Een Data Sandbox is ontwikkeld als eerste invulling van deze aanbeveling. De verdere doorontwikkeling en het beheer van het platform zijn nog niet volledig belegd.",
+          "statusExplanation": "In 2026 is een Data Sandbox is ontwikkeld als eerste invulling van deze aanbeveling. energie.data heeft het initiatief genomen om te onderzoeken of een generieke energiedata-deelfaciliteit het eenvoudiger kan maken voor partijen, zoals bijvoorbeeld gemeenten, woningcorporaties, banken, vastgoedeigenaren, start-ups en onderzoekers, om data op een veilige, privacy‑bestendige en schaalbare manier in te zetten. Samen met Roseman Labs is een Data Sandbox ontwikkelt, waarin kan worden getest hoe energiedata veilig en AVG‑verantwoord gedeeld en geanalyseerd kan worden. Vervolgstappen zijn de verdere doorontwikkeling en het beleggen van het beheer van het platform. Via de website van energie.data kunnen data vragers hun vraag stellen wanneer zij bepaalde energiedata niet kunnen vinden.",
           "statusKey": "partial",
           "statusLabel": "Gedeeltelijke voortgang"
         },
@@ -57,23 +59,23 @@
           "id": "1.5",
           "title": "1.5 Energie en Klimaat op data.overheid.nl",
           "quote": "Om de vindbaarheid en herkenbaarheid van het thema Energie en Klimaat te verhogen, is het wenselijk dat dit thema wordt toegevoegd op data.overheid.nl.",
-          "statusExplanation": "Er zijn geen stappen gezet om Energie en Klimaat als thema toe te voegen aan data.overheid.nl.",
+          "statusExplanation": "Er is geen ontwikkeling op het thema Energie en Klimaat op data.overheid.nl.",
           "statusKey": "none",
           "statusLabel": "Geen ontwikkeling"
         }
-      ],
-      "overallStatusKey": "partial",
-      "overallStatusLabel": "Gedeeltelijke voortgang"
+      ]
     },
     {
       "id": "2",
       "header": "Aanbeveling 2 (Vorm één Nederlandse energiedata community)",
+      "overallStatusKey": "partial",
+      "overallStatusLabel": "Gedeeltelijke voortgang",
       "subRecommendations": [
         {
           "id": "2.1",
           "title": "2.1 Vorm een publiek-private community",
           "quote": "Creëer een aanjaagteam van verbinders dat actief en gericht (\"handpicked\") deelnemers werft met als doel energiedata beschikbaar te maken. Dit team stimuleert via matchmaking de ontwikkeling van concrete initiatieven.",
-          "statusExplanation": "Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Aanvullend zijn er actielijnen vanuit het LAN, private initiatieven zoals datahubs (waaronder die van BAM) en het Flexible Alliance Network, het Elaad-traject rondom (H)EMS, en een opdracht aan NEN. Daarmee is een publiek-private community werkend vormgegeven.",
+          "statusExplanation": "Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Partners van energie.data ondertekenen de intentieverklaring waarmee zij uitspreken om partijen die zich bij hen melden, maar aan het verkeerde loket staan, door te verwijzen naar het juiste loket waar de gevraagde data wel te halen is.",
           "statusKey": "realized",
           "statusLabel": "Gerealiseerd"
         },
@@ -81,7 +83,7 @@
           "id": "2.2",
           "title": "2.2 Neem VIVET en MFFBAS als vertrekpunt",
           "quote": "VIVET en MFFBAS stemmen af in hoeverre zij gezamenlijk kunnen en willen optrekken. Voer gesprekken met EZK over randvoorwaarden (onder andere verruiming van de wettelijke taak) en verbind de DG's Klimaat en Energie en DG Bedrijfsleven en Innovatie.",
-          "statusExplanation": "VIVET, Nomro en MFF hebben alle drie bijgedragen aan de oprichting van energie.data. KGG maakt deel uit van de stuurgroep en coördineert de verbinding met VIVET. De data-aanbiedende partijen onder VIVET (Kadaster, VNG, CBS en PBL) zijn rechtstreeks betrokken als partners bij energie.data en hanteren eveneens het principe van *No Wrong Door*.",
+          "statusExplanation": "Het Normo, MFF en VIVET hebben alledrie bijgedragen aan de oprichting van energie.data. KGG maakt deel uit van de stuurgroep en coördineert de verbinding met VIVET. De data-aanbiedende partijen onder VIVET (Kadaster, VNG, CBS en PBL) zijn rechtstreeks betrokken als partners bij energie.data en hanteren eveneens het principe van *No Wrong Door*.",
           "statusKey": "realized",
           "statusLabel": "Gerealiseerd"
         },
@@ -89,15 +91,15 @@
           "id": "2.3",
           "title": "2.3 Vergroot kennis bij bestuurders en beleidsmakers",
           "quote": "Ontwikkel een visualisatie van Europese en Nederlandse wetgeving in de tijd, inclusief momenten waarop impactanalyses beschikbaar komen. Organiseer een bestuurderstafel over zowel relevante wetgeving als het strategisch belang van digitalisering.",
-          "statusExplanation": "De EU Wetgevingsmonitor, ontwikkeld door IBDS, voorziet in een gestructureerd overzicht van relevante Europese regelgeving. De aanbeveling is daarmee deels opgepakt. Een bestuurderstafel zoals aanbevolen is niet aantoonbaar georganiseerd.",
-          "statusKey": "partial",
-          "statusLabel": "Gedeeltelijke voortgang"
+          "statusExplanation": "energie.data maakt voor kennisdeling over Europese en Nederlandse wetgeving gebruik van de EU Wetgevingsmonitor, ontwikkeld door IBDS. Deze voorziet in een gestructureerd overzicht van relevante Europese regelgeving. De aanbeveling is daarmee opgepakt. Verder is door energie.data meegeschreven aan de whitepaper van het Nationaal Klimaat Platform (NKP): 'Tempo maken met ontsluiten van energiedata: van spaghetti naar asperges'. Deelnemers van energie.data hebben deelgenomen aan de bestuurderstafel georganiseerd door NKP om de aandacht te creëren onder bestuurders voor de aanbevelingen uit het whitepaper.",
+          "statusKey": "realized",
+          "statusLabel": "Gerealiseerd"
         },
         {
           "id": "2.4",
           "title": "2.4 Verbind met andere digitaliseringsontwikkelingen",
           "quote": "Leg verbinding met de Data Sharing Coalition, Interbestuurlijke Data Strategie, International Data Spaces Association en het Data Spaces Support Center. Organiseer tevens aansluiting en deelname aan Omega-X en Enershare.",
-          "statusExplanation": "Met IBDS is een actieve samenwerkingsrelatie opgebouwd. De verbinding met DSC, IDSA, DSSC, Omega-X en Enershare is echter niet gerealiseerd.",
+          "statusExplanation": "Met de Interbestuurlijke Datastrategie (IBDS) en Federatief Datastelsel (FDS) is een actieve samenwerkingsrelatie opgebouwd. De verbinding met DSC, IDSA, DSSC, Omega-X en Enershare is nog niet verder vormgegeven maar bouwstenen ervan worden wel door verschillende data deel use cases gebruikt.",
           "statusKey": "partial",
           "statusLabel": "Gedeeltelijke voortgang"
         },
@@ -105,9 +107,9 @@
           "id": "2.5",
           "title": "2.5 Vergroot kennis over digitalisering in het energiedomein",
           "quote": "Positioneer dit als expliciet onderdeel van het aanjaagteam en stel een actieplan op om kennis te vergroten en het belang van digitalisering in de energiesector te onderstrepen. Zoek actieve samenwerking met onderwijs- en kennisinstellingen.",
-          "statusExplanation": "Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en als onderdeel van ADE. Een expliciet actieplan of formele inbedding binnen het aanjaagteam, zoals aanbevolen, is niet gedocumenteerd.",
-          "statusKey": "partial",
-          "statusLabel": "Gedeeltelijke voortgang"
+          "statusExplanation": "Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en middels de Handreiking Digitale Tools en Platformen Energietransitie. Daarnaast is het vergroten van kennis over digitalisering door de deelnemers van energie.data actief ingebracht in de totstandkoming van de Actieagenda Digitalisering Energiesysteem (ADE) welke in december 2025 is aangeboden aan het Ministerie van EZK en welke door de Topsector Energie zal worden gecoördineerd.",
+          "statusKey": "realized",
+          "statusLabel": "Gerealiseerd"
         },
         {
           "id": "2.6",
@@ -117,21 +119,21 @@
           "statusKey": "partial",
           "statusLabel": "Gedeeltelijke voortgang"
         }
-      ],
-      "overallStatusKey": "partial",
-      "overallStatusLabel": "Gedeeltelijke voortgang"
+      ]
     },
     {
       "id": "3",
       "header": "Aanbeveling 3 (Organiseer één energiedata data space)",
+      "overallStatusKey": "partial",
+      "overallStatusLabel": "Gedeeltelijke voortgang",
       "subRecommendations": [
         {
           "id": "3.1",
           "title": "3.1 Ontwikkel met de community een data space",
           "quote": "Ontwikkel met de community een data space en stel een expertgroep in met vertegenwoordiging vanuit alle deelsectoren.",
-          "statusExplanation": "Er zijn geen stappen gezet richting de ontwikkeling van een gezamenlijke data space of de inrichting van een sectoroverstijgende expertgroep.",
-          "statusKey": "none",
-          "statusLabel": "Geen ontwikkeling"
+          "statusExplanation": "In 2026 is een Data Sandbox ontwikkeld als eerste invulling voor een data space (zie aanbeveling 1.4). Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt.",
+          "statusKey": "partial",
+          "statusLabel": "Gedeeltelijke voortgang"
         },
         {
           "id": "3.2",
@@ -139,7 +141,7 @@
           "quote": "Maak dit onderdeel van de verantwoordelijkheden van de expertgroep. Maak gebruik van reeds bestaande taxonomieën en bouw daarop voort. Positioneer Energie als thema binnen de overheidstaxonomie.",
           "statusExplanation": "Een sectorbreed gedragen ontologie is niet ontwikkeld. Energie-gerelateerde terminologie is in beperkte mate meegenomen in de Referentie Architectuur, maar een structureel proces hierachter ontbreekt.",
           "statusKey": "partial",
-          "statusLabel": "Gedeeltelijk gerealiseerd"
+          "statusLabel": "Gedeeltelijke voortgang"
         },
         {
           "id": "3.3",
@@ -153,17 +155,17 @@
           "id": "3.4",
           "title": "3.4 Beschrijf de actoren en hun rol in het energiedomein",
           "quote": "Onderzoek in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases. Vraag de expertgroep het overzicht van actoren, rollen en informatie- en databehoeften te onderhouden en periodiek te actualiseren.",
-          "statusExplanation": "Een overzicht van actoren, rollen en databehoeften binnen het energiedomein is niet opgesteld. Het onderzoek naar dataminimaliserende technologie heeft niet plaatsgevonden.",
-          "statusKey": "none",
-          "statusLabel": "Geen ontwikkeling"
+          "statusExplanation": "In 2026 is een Data Sandbox ontwikkeld om te toetsen in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases (zie aanbeveling 1.4). Er zijn een aantal use cases uitgewerkt waarvoor de Data Sandbox kan worden toegepast. Er ontstaat een steeds beter overzicht van actoren, rollen en databehoeften (use cases) binnen het energiedomein. Verderop in dit rapport is de actuele weergave welke periodiek kan worden geactualiseerd.",
+          "statusKey": "realized",
+          "statusLabel": "Gerealiseerd"
         },
         {
           "id": "3.5",
           "title": "3.5 Reduceer belemmeringen ten aanzien van data delen",
           "quote": "Prioriteer met de expertgroep de belemmeringen en selecteer een eerste set knelpunten op basis waarvan een concreet actieplan wordt opgesteld.",
-          "statusExplanation": "Een gestructureerde aanpak voor het identificeren en prioriteren van belemmeringen is niet opgezet. Er is geen actieplan opgesteld.",
-          "statusKey": "none",
-          "statusLabel": "Geen ontwikkeling"
+          "statusExplanation": "Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling.",
+          "statusKey": "partial",
+          "statusLabel": "Gedeeltelijke voortgang"
         },
         {
           "id": "3.6",
@@ -173,9 +175,7 @@
           "statusKey": "none",
           "statusLabel": "Geen ontwikkeling"
         }
-      ],
-      "overallStatusKey": "none",
-      "overallStatusLabel": "Geen ontwikkeling"
+      ]
     }
   ]
 }

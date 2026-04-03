@@ -1,10 +1,13 @@
+import argparse
 import json
 import re
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List, Tuple
 
 
 ROOT = Path(__file__).parent
+
+ImportFn = Callable[[Path, Path], None]
 
 _ID_LINE_PREFIX = "## id: "
 
@@ -16,6 +19,17 @@ def _id_from_block(block: List[str]) -> str:
     if first.startswith(_ID_LINE_PREFIX):
         return first[len(_ID_LINE_PREFIX) :].strip()
     return ""
+
+
+def _parse_optional_json_number(header: Dict[str, str], key: str) -> Any:
+    """Parse jaar_* fields; MD export uses Python None, not JSON null."""
+    raw = header.get(key)
+    if raw is None:
+        return None
+    s = raw.strip()
+    if not s or s.lower() in ("none", "null"):
+        return None
+    return json.loads(s)
 
 
 def _parse_header_block(lines: List[str]) -> Dict[str, str]:
@@ -67,8 +81,8 @@ def import_data_sharing(md_path: Path, json_path: Path) -> None:
             "scope": header.get("scope", ""),
             "geografische_scope": header.get("geografische_scope", ""),
             "eigenaar": header.get("eigenaar", ""),
-            "jaar_start": json.loads(header.get("jaar_start", "null")),
-            "jaar_einde": json.loads(header.get("jaar_einde", "null")),
+            "jaar_start": _parse_optional_json_number(header, "jaar_start"),
+            "jaar_einde": _parse_optional_json_number(header, "jaar_einde"),
         }
         tags_str = header.get("tags", "")
         if tags_str:
@@ -95,6 +109,28 @@ def import_data_sharing(md_path: Path, json_path: Path) -> None:
 
         def get_text(name: str) -> str:
             return "\n".join(sections.get(name, [])).strip()
+
+        link_lines = sections.get("links", [])
+        links: List[Dict[str, str]] = []
+        for ln in link_lines:
+            ln = ln.strip()
+            if not ln.startswith("-"):
+                continue
+            content = ln[1:].strip()
+            parts = [p.strip() for p in content.split(";") if p.strip()]
+            link_obj: Dict[str, str] = {}
+            for part in parts:
+                if "=" not in part:
+                    continue
+                k, v = part.split("=", 1)
+                k, v = k.strip(), v.strip()
+                if k == "label":
+                    link_obj["label"] = v
+                elif k == "url":
+                    link_obj["url"] = v
+            if link_obj.get("url"):
+                links.append(link_obj)
+        item["links"] = links
 
         item["samenvatting"] = get_text("samenvatting")
 
@@ -297,22 +333,48 @@ def import_recommendations_2023(md_path: Path, json_path: Path) -> None:
 
 
 def main() -> None:
-    import_data_sharing(
-        ROOT / "data" / "projects_data_sharing_2023.md",
-        ROOT / "data" / "projects_data_sharing_2023.json",
+    jobs: Dict[str, Tuple[ImportFn, Path, Path]] = {
+        "data_sharing_2023": (
+            import_data_sharing,
+            ROOT / "data" / "projects_data_sharing_2023.md",
+            ROOT / "data" / "projects_data_sharing_2023.json",
+        ),
+        "data_sharing_2026": (
+            import_data_sharing,
+            ROOT / "data" / "projects_data_sharing_2026.md",
+            ROOT / "data" / "projects_data_sharing_2026.json",
+        ),
+        "interoperability": (
+            import_interoperability,
+            ROOT / "data" / "projects_interoperability.md",
+            ROOT / "data" / "projects_interoperability.json",
+        ),
+        "recommendations_2023": (
+            import_recommendations_2023,
+            ROOT / "data" / "recommendations_2023.md",
+            ROOT / "data" / "recommendations_2023.json",
+        ),
+    }
+    order = list(jobs.keys())
+    parser = argparse.ArgumentParser(
+        description="Read Markdown under data/ and write JSON consumed by the static site."
     )
-    import_data_sharing(
-        ROOT / "data" / "projects_data_sharing_2026.md",
-        ROOT / "data" / "projects_data_sharing_2026.json",
+    parser.add_argument(
+        "--source",
+        action="append",
+        choices=order,
+        metavar="NAME",
+        dest="sources",
+        help=(
+            "Dataset to import (repeat for several). "
+            f"Choices: {', '.join(order)}. Default: all."
+        ),
     )
-    import_interoperability(
-        ROOT / "data" / "projects_interoperability.md",
-        ROOT / "data" / "projects_interoperability.json",
-    )
-    import_recommendations_2023(
-        ROOT / "data" / "recommendations_2023.md",
-        ROOT / "data" / "recommendations_2023.json",
-    )
+    args = parser.parse_args()
+    selected = args.sources if args.sources else order
+    for name in selected:
+        fn, md_path, json_path = jobs[name]
+        fn(md_path, json_path)
 
 
 if __name__ == "__main__":
