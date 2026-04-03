@@ -112,7 +112,7 @@ overallStatusLabel: Gedeeltelijke voortgang
 Creëer een aanjaagteam van verbinders dat actief en gericht ("handpicked") deelnemers werft met als doel energiedata beschikbaar te maken. Dit team stimuleert via matchmaking de ontwikkeling van concrete initiatieven.
 
 ### sub.2.1.statusExplanation
-Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. 
+Vanuit energie.data is een netwerk opgebouwd van partijen die energiedata aanbieden. Via het principe van *No Wrong Door* worden datavragen actief doorgeleid naar het juiste loket, wat matchmaking en doorverwijzing in de praktijk brengt. Partners van energie.data ondertekenen de intentieverklaring waarmee zij uitspreken om partijen die zich bij hen melden, maar aan het verkeerde loket staan, door te verwijzen naar het juiste loket waar de gevraagde data wel te halen is.  
 
 ### sub.2.1.statusKey
 realized
@@ -127,7 +127,7 @@ Gerealiseerd
 VIVET en MFFBAS stemmen af in hoeverre zij gezamenlijk kunnen en willen optrekken. Voer gesprekken met EZK over randvoorwaarden (onder andere verruiming van de wettelijke taak) en verbind de DG's Klimaat en Energie en DG Bedrijfsleven en Innovatie.
 
 ### sub.2.2.statusExplanation
-VIVET, Nomro en MFF hebben alle drie bijgedragen aan de oprichting van energie.data. KGG maakt deel uit van de stuurgroep en coördineert de verbinding met VIVET. De data-aanbiedende partijen onder VIVET (Kadaster, VNG, CBS en PBL) zijn rechtstreeks betrokken als partners bij energie.data en hanteren eveneens het principe van *No Wrong Door*.
+Het Normo, MFF en VIVET hebben alledrie bijgedragen aan de oprichting van energie.data. KGG maakt deel uit van de stuurgroep en coördineert de verbinding met VIVET. De data-aanbiedende partijen onder VIVET (Kadaster, VNG, CBS en PBL) zijn rechtstreeks betrokken als partners bij energie.data en hanteren eveneens het principe van *No Wrong Door*.
 
 ### sub.2.2.statusKey
 realized
@@ -142,13 +142,13 @@ Gerealiseerd
 Ontwikkel een visualisatie van Europese en Nederlandse wetgeving in de tijd, inclusief momenten waarop impactanalyses beschikbaar komen. Organiseer een bestuurderstafel over zowel relevante wetgeving als het strategisch belang van digitalisering.
 
 ### sub.2.3.statusExplanation
-De EU Wetgevingsmonitor, ontwikkeld door IBDS, voorziet in een gestructureerd overzicht van relevante Europese regelgeving. De aanbeveling is daarmee deels opgepakt. Een bestuurderstafel zoals aanbevolen is niet aantoonbaar georganiseerd.
+energie.data maakt voor kennisdeling over Europese en Nederlandse wetgeving gebruik van de EU Wetgevingsmonitor, ontwikkeld door IBDS. Deze voorziet in een gestructureerd overzicht van relevante Europese regelgeving. De aanbeveling is daarmee opgepakt. Verder is door energie.data meegeschreven aan de whitepaper van het Nationaal Klimaat Platform (NKP): 'Tempo maken met ontsluiten van energiedata: van spaghetti naar asperges'. Deelnemers van energie.data hebben deelgenomen aan de bestuurderstafel georganiseerd door NKP om de aandacht te creëren onder bestuurders voor de aanbevelingen uit het whitepaper.
 
 ### sub.2.3.statusKey
-partial
+realized
 
 ### sub.2.3.statusLabel
-Gedeeltelijke voortgang
+Gerealiseerd
 
 ### sub.2.4.title
 2.4 Verbind met andere digitaliseringsontwikkelingen
@@ -157,7 +157,7 @@ Gedeeltelijke voortgang
 Leg verbinding met de Data Sharing Coalition, Interbestuurlijke Data Strategie, International Data Spaces Association en het Data Spaces Support Center. Organiseer tevens aansluiting en deelname aan Omega-X en Enershare.
 
 ### sub.2.4.statusExplanation
-Met IBDS is een actieve samenwerkingsrelatie opgebouwd. De verbinding met DSC, IDSA, DSSC, Omega-X en Enershare is echter niet gerealiseerd.
+Met de Interbestuurlijke Datastrategie (IBDS) en Federatief Datastelsel (FDS) is een actieve samenwerkingsrelatie opgebouwd. De verbinding met DSC, IDSA, DSSC, Omega-X en Enershare is nog niet verder vormgegeven maar bouwstenen ervan worden wel door verschillende data deel use cases gebruikt.
 
 ### sub.2.4.statusKey
 partial
@@ -172,13 +172,13 @@ Gedeeltelijke voortgang
 Positioneer dit als expliciet onderdeel van het aanjaagteam en stel een actieplan op om kennis te vergroten en het belang van digitalisering in de energiesector te onderstrepen. Zoek actieve samenwerking met onderwijs- en kennisinstellingen.
 
 ### sub.2.5.statusExplanation
-Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en als onderdeel van ADE. Een expliciet actieplan of formele inbedding binnen het aanjaagteam, zoals aanbevolen, is niet gedocumenteerd.
+Kennisontwikkeling rond digitalisering is opgepakt via de Human Capital Agenda van Topsector Energie en middels de Handreiking Digitale Tools en Platformen Energietransitie. Daarnaast is het vergroten van kennis over digitalisering door de deelnemers van energie.data actief ingebracht in de totstandkoming van de Actieagenda Digitalisering Energiesysteem (ADE) welke in december 2025 is aangeboden aan het Ministerie van EZK en welke door de Topsector Energie zal worden gecoördineerd. 
 
 ### sub.2.5.statusKey
-partial
+realized
 
 ### sub.2.5.statusLabel
-Gedeeltelijke voortgang
+Gerealiseerd
 
 ### sub.2.6.title
 2.6 Sluit aan bij andere data-deelinitiatieven
@@ -207,13 +207,13 @@ overallStatusLabel: Geen ontwikkeling
 Ontwikkel met de community een data space en stel een expertgroep in met vertegenwoordiging vanuit alle deelsectoren.
 
 ### sub.3.1.statusExplanation
-Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt.
+In 2026 is een Data Sandbox ontwikkeld als eerste invulling voor een data space (zie aanbeveling 1.4). Momenteel loopt er een verkenning over gedeelde data infrastructuur met 4 Fieldlabs (Connectr, The Green Village, Entrance en Switch Field lab). Vanuit deze verkenning worden de richting en de behoeftes voor de ontwikkeling van een gezamenlijke data space scherper gemaakt. 
 
 ### sub.3.1.statusKey
-none
+partial
 
 ### sub.3.1.statusLabel
-Geen ontwikkeling
+Gedeeltelijk gerealiseerd
 
 ### sub.3.2.title
 3.2 Ontwikkel een algemeen geaccepteerde ontologie
@@ -252,13 +252,13 @@ Geen ontwikkeling
 Onderzoek in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases. Vraag de expertgroep het overzicht van actoren, rollen en informatie- en databehoeften te onderhouden en periodiek te actualiseren.
 
 ### sub.3.4.statusExplanation
-Een overzicht van actoren, rollen en databehoeften binnen het energiedomein is niet opgesteld. Het onderzoek naar dataminimaliserende technologie heeft niet plaatsgevonden.
+In 2026 is een Data Sandbox ontwikkeld om te toetsen in hoeverre dataminimaliserende technologie een oplossing biedt aan de hand van een aantal use cases (zie aanbeveling 1.4). Er zijn een aantal use cases uitgewerkt waarvoor de Data Sandbox kan worden toegepast. Er ontstaat een steeds beter overzicht van actoren, rollen en databehoeften (use cases) binnen het energiedomein. Verderop in dit rapport is de actuele weergave welke periodiek kan worden geactualiseerd. 
 
 ### sub.3.4.statusKey
-none
+realized
 
 ### sub.3.4.statusLabel
-Geen ontwikkeling
+Gerealiseerd
 
 ### sub.3.5.title
 3.5 Reduceer belemmeringen ten aanzien van data delen
@@ -267,13 +267,13 @@ Geen ontwikkeling
 Prioriteer met de expertgroep de belemmeringen en selecteer een eerste set knelpunten op basis waarvan een concreet actieplan wordt opgesteld.
 
 ### sub.3.5.statusExplanation
-Een gestructureerde aanpak voor het identificeren en prioriteren van belemmeringen is niet opgezet. Er is geen actieplan opgesteld.
+Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een onderzoeksoproep uitgebracht onder de noemer *KIC Data Sharing for the Energy Transition: socio-technical challenges*. Doel is het wegnemen van belemmeringen die in de weg staan van gestructureerde en toegankelijke data-uitwisseling. 
 
 ### sub.3.5.statusKey
-none
+partial
 
 ### sub.3.5.statusLabel
-Geen ontwikkeling
+Gedeeltelijk gerealiseerd
 
 ### sub.3.6.title
 3.6 Blijf bij op het gebied van nieuwe technologie
