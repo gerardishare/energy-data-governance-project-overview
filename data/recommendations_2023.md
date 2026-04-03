@@ -197,8 +197,8 @@ Gedeeltelijke voortgang
 
 ## id: 3
 header: Aanbeveling 3 (Organiseer één energiedata data space)
-overallStatusKey: none
-overallStatusLabel: Geen ontwikkeling
+overallStatusKey: partial
+overallStatusLabel: Gedeeltelijke voortgang
 
 ### sub.3.1.title
 3.1 Ontwikkel met de community een data space
@@ -213,7 +213,7 @@ In 2026 is een Data Sandbox ontwikkeld als eerste invulling voor een data space 
 partial
 
 ### sub.3.1.statusLabel
-Gedeeltelijk gerealiseerd
+Gedeeltelijke voortgang
 
 ### sub.3.2.title
 3.2 Ontwikkel een algemeen geaccepteerde ontologie
@@ -228,7 +228,7 @@ Een sectorbreed gedragen ontologie is niet ontwikkeld. Energie-gerelateerde term
 partial
 
 ### sub.3.2.statusLabel
-Gedeeltelijk gerealiseerd
+Gedeeltelijke voortgang
 
 ### sub.3.3.title
 3.3 Maak bindende afspraken voor deelnemers aan de data space
@@ -273,7 +273,7 @@ Topsector Energie Digitalisering en en Digital Holland hebben samen met NWO een 
 partial
 
 ### sub.3.5.statusLabel
-Gedeeltelijk gerealiseerd
+Gedeeltelijke voortgang
 
 ### sub.3.6.title
 3.6 Blijf bij op het gebied van nieuwe technologie
