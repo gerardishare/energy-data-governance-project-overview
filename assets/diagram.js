@@ -101,11 +101,11 @@ function renderDiagram(projects, container, onItemClick) {
   const viewBoxH = size - 140;
   let svg = `<svg viewBox="0 ${viewBoxY} ${size} ${viewBoxH}" role="img" aria-label="Overzicht initiatieven per scope">`;
 
-  // Achtergrondringen (gevuld, geen zichtbare randen)
+  // Achtergrondringen (iets lichter + rand voor betere laagafbakening)
   svg += `
-    <circle cx="${center}" cy="${center}" r="${ringRadii.outer}" fill="rgba(22,40,70,.75)"/>
-    <circle cx="${center}" cy="${center}" r="${ringRadii.middle}" fill="rgba(18,32,60,.9)"/>
-    <circle cx="${center}" cy="${center}" r="${ringRadii.inner}" fill="rgba(14,26,48,1)"/>
+    <circle cx="${center}" cy="${center}" r="${ringRadii.outer}" fill="rgba(30,52,84,.55)" stroke="rgba(255,255,255,.18)" stroke-width="0.8"/>
+    <circle cx="${center}" cy="${center}" r="${ringRadii.middle}" fill="rgba(24,42,72,.70)" stroke="rgba(255,255,255,.20)" stroke-width="0.8"/>
+    <circle cx="${center}" cy="${center}" r="${ringRadii.inner}" fill="rgba(16,30,56,.88)" stroke="rgba(255,255,255,.22)" stroke-width="0.8"/>
   `;
 
   /**
@@ -116,7 +116,7 @@ function renderDiagram(projects, container, onItemClick) {
   function renderLayer(points, color) {
     return points.map(pt => `
       <g class="diagramItem" data-slug="${escapeHtml(pt.p.id)}">
-        <circle cx="${pt.x}" cy="${pt.y}" r="3.2" fill="${color}"/>
+        <circle cx="${pt.x}" cy="${pt.y}" r="3.8" fill="${color}"/>
         <text x="${pt.lx}" y="${pt.ly}" fill="rgba(255,255,255,.9)" font-size="6"
               text-anchor="${pt.anchor}" dominant-baseline="middle">
           ${escapeHtml(pt.p.naam)}
@@ -125,9 +125,9 @@ function renderDiagram(projects, container, onItemClick) {
     `).join('');
   }
 
-  svg += renderLayer(innerPts,  'rgb(110, 220, 190)'); // Energiedomein      → groen
-  svg += renderLayer(middlePts, 'rgb(130, 190, 255)'); // Gerelateerde sector → blauw
-  svg += renderLayer(outerPts,  'rgb(195, 190, 255)'); // Generiek initiatief → paars
+  svg += renderLayer(innerPts,  'rgb(46, 224, 132)');  // Energiedomein      → helder groen
+  svg += renderLayer(middlePts, 'rgb(56, 189, 248)');  // Gerelateerde sector → cyaan/blauw
+  svg += renderLayer(outerPts,  'rgb(244, 114, 182)'); // Generiek initiatief → roze/magenta
 
   svg += '</svg>';
   container.innerHTML = svg;
