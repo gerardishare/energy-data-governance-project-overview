@@ -44,16 +44,86 @@
     <div class="header">
       <div class="title">
         <h1>Overzicht use cases</h1>
-        <p>Een overzicht van relevante use cases op het gebied van data delen en interoperabiliteit in het energiedomein.</p>
+        <p>Een overzicht van use cases op het gebied van energiedata. Gebruik zoek- en filteropties om snel relevante cases te vinden en klik op een kaart voor details.</p>
+      </div>
+      <div class="actions">
+        <a href="overzicht-use-cases-print.html" target="_blank" rel="noopener noreferrer" class="button primary">Printoverzicht openen</a>
       </div>
     </div>
 
-    <div class="section">
-      <p class="summary">
-        Deze pagina bevat het overzicht van use cases. De inhoud wordt hier later ingevuld.
-      </p>
+    <div class="toolbar">
+      <div class="toolbarLeft toolbarLeft--useCases">
+        <div class="controls controls--useCases">
+          <input id="q" class="input" type="search" placeholder="Zoek (projectnaam, beschrijving, organisaties...)" autocomplete="off" />
+          <select id="status" class="select">
+            <option value="">Status (alle)</option>
+          </select>
+          <select id="origin" class="select">
+            <option value="">Oorsprong (alle)</option>
+          </select>
+          <select id="energyType" class="select">
+            <option value="">Type energiedata (alle)</option>
+          </select>
+        </div>
+        <div class="kpis">
+          <div>
+            <span id="countLabel">0 use cases</span>
+            <span class="small">• klik op een kaart voor details</span>
+          </div>
+          <div class="chips" id="activeChips"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none;">
+      Geen use cases gevonden met deze filters/zoekterm.
     </div>
   </div>
+
+  <!-- Drawer -->
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Use case details">
+    <div class="drawerHeader">
+      <div>
+        <h2 id="dTitle">Use case</h2>
+        <p class="sub" id="dSub"></p>
+      </div>
+      <button type="button" class="iconBtn iconBtn--drawerClose" id="closeBtn" aria-label="Sluiten">
+        <svg class="drawerCloseIcon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="drawerBody">
+      <div class="section">
+        <h4>Beschrijving</h4>
+        <p class="summary" id="dDescription"></p>
+      </div>
+
+      <div class="section">
+        <h4>Gebruik van energiedata</h4>
+        <p class="summary" id="dDataUse"></p>
+      </div>
+
+      <div class="section">
+        <h4>Kerngegevens</h4>
+        <div class="kv" id="dKv"></div>
+      </div>
+
+      <div class="section">
+        <h4>Metadata</h4>
+        <div id="dLists"></div>
+      </div>
+
+      <div class="section">
+        <h4>Link</h4>
+        <div class="actions" id="dLinks"></div>
+      </div>
+
+      <div class="small" id="dMeta"></div>
+    </div>
+  </aside>
 
   <footer class="siteFooter">
     <div class="siteFooter-inner">
@@ -65,5 +135,10 @@
       <a href="colofon.html" class="siteFooter-link">Colofon</a>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="assets/utils.js"></script>
+  <script src="assets/drawer-controller.js"></script>
+  <script src="assets/use-cases.js"></script>
 </body>
 </html>

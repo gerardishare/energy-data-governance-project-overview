@@ -273,6 +273,7 @@ a { color: inherit }
   font-size: 16px;
   letter-spacing: -0.01em;
   font-family: var(--font-brand);
+  margin-bottom: 6px;
 }
 .cardTitle--new2026 {
   color: rgb(147, 214, 255);
@@ -1032,3 +1033,15 @@ hr.sep {
 .recsDrawerBlock { white-space: pre-wrap; }
 
 .recsDrawerStatusText { color: var(--text); font-weight: 500; font-size: 13px; }
+
+/* Use-cases: 3 filterselects naast elkaar in compact blok */
+.toolbarLeft--useCases {
+  max-width: 595px;
+}
+.controls--useCases {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.controls--useCases > :first-child {
+  grid-column: 1 / span 3;
+}
+

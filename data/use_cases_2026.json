@@ -1,0 +1,2862 @@
+{
+  "meta": {
+    "titel": "Energiedata Use Cases Database",
+    "beschrijving": "Overzicht van 62 use cases en projecten op het gebied van energiedatatoepassing in Nederland",
+    "versie": "1.0",
+    "datum": "2026-04-24",
+    "aantal_use_cases": 62,
+    "bronbestand": "Energiedata_Use_Cases_24_april_Claude_v4.xlsx"
+  },
+  "metadata_schema": {
+    "MD1_status": {
+      "label": "MD1: Status project",
+      "beschrijving": "Geeft aan of het project nog loopt of is afgerond",
+      "waarden": [
+        "Lopend",
+        "Afgerond",
+        "Onbekend / niet gespecificeerd"
+      ],
+      "meerdere_waarden": false
+    },
+    "MD2_projectdoel": {
+      "label": "MD2: Projectdoel",
+      "beschrijving": "Primair doel van het project; meerdere waarden mogelijk (niet MECE)",
+      "waarden": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik",
+        "Voorspelling & planning van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Innovatie & demonstratie: testen en demonstreren van nieuwe technologieen of businessmodellen"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD3_type_energiedata": {
+      "label": "MD3: Type energiedata",
+      "beschrijving": "Welk soort energiedata centraal staat; meerdere waarden mogelijk",
+      "waarden": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Marktdata: data over de energiemarkt"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD4_databron": {
+      "label": "MD4: Databron ofwel aanbieder",
+      "beschrijving": "Van wie de data afkomstig is; meerdere waarden mogelijk",
+      "waarden": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Energieleverancier",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Aggregator",
+        "Dienstverlener anders dan de aggretator",
+        "Producent / opwekker (wind, zon, overige hernieuwbare opwek)"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD5_datasink": {
+      "label": "MD5: Datasink, gebruiker ofwel aanvrager",
+      "beschrijving": "Wie de data ontvangt of gebruikt; meerdere waarden mogelijk",
+      "waarden": [
+        "Huishoudens/prosumers",
+        "Bedrijven/industrie",
+        "Overheden/beleidsmakers",
+        "Netbeheerders",
+        "Dienstverlener anders dan de aggretator",
+        "Aggregator",
+        "Onderzoekers"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD6_governance": {
+      "label": "MD6: Governance/toegang",
+      "beschrijving": "Hoe de toegang tot de data geregeld is; meerdere waarden mogelijk",
+      "waarden": [
+        "Individuele toestemming (consent)",
+        "Geanonimiseerde data",
+        "Open data",
+        "Contractuele datadeling (B2B)",
+        "Wettelijke verplichting",
+        "Data space / federatief (gedistribueerde datadeling met behoud van controle)"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD7_toepassing": {
+      "label": "MD7: Toepassing, waar wordt de data voor gebruikt",
+      "beschrijving": "Maatschappelijk doel waarvoor de data wordt ingezet; meerdere waarden mogelijk",
+      "waarden": [
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Ondersteunen van andere maatschappelijke opgaven - Integratie met o.a. woningbouw, mobiliteit",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD8_granulariteit_niveau": {
+      "label": "MD8: Granulariteit data - niveau",
+      "beschrijving": "Op welk geografisch of fysiek aggregatieniveau de data beschikbaar is",
+      "waarden": [
+        "Apparaat: 1 apparaat dat de energieverbruikt",
+        "Groep: een groep van apparaten",
+        "Fase: een verzameling van apparaten aansgesloten op 1 fase in het huis",
+        "Allocatiepunt: als onderdeel van de aansluiting",
+        "Aansluiting",
+        "Straat",
+        "Postcode 6",
+        "Wijk",
+        "Bedrijventerrein",
+        "Gemeente",
+        "Provincie",
+        "Land"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD9_granulariteit_frequentie": {
+      "label": "MD9: Granulariteit data - frequentie",
+      "beschrijving": "De tijdresolutie waarmee het energieverbruik wordt gemeten en opgeslagen",
+      "waarden": [
+        "Seconde",
+        "Minuut",
+        "Kwartier",
+        "Uur",
+        "Dag",
+        "Week",
+        "Maand",
+        "Jaar",
+        "5 Jaar"
+      ],
+      "meerdere_waarden": true
+    },
+    "MD10_energiedrager": {
+      "label": "MD10: Energiedrager (aanbevolen nieuw veld)",
+      "beschrijving": "Welk type energiedrager centraal staat in de use case",
+      "waarden": [
+        "Elektriciteit",
+        "Aardgas",
+        "Warmte",
+        "Waterstof",
+        "Multi-carrier (meerdere energiedragers)",
+        "Overig / niet gespecificeerd"
+      ],
+      "meerdere_waarden": true
+    }
+  },
+  "use_cases": [
+    {
+      "project_id": "P001",
+      "projectnaam": "MOOI – EIGEN",
+      "oorsprong": "MOOI",
+      "organisaties": "Alliander, TNO, Saxion, Elaad, Entrnce, Connectr, Arcadis, Dep, Liander, Parkcharge, Recoy, SemperPower, Firan,SEP, Universiteit Twente, Ventolines",
+      "beschrijving": "MOOI EIGEN is een sectorbreed samenwerkingsproject, geleid door Alliander, dat een universele blauwdruk en toolset ontwikkelt voor de realisatie van energiehubs op bedrijventerreinen. Het doel is om lokaal opgewekte hernieuwbare energie slim in te passen in bestaande netten en netcongestie te verminderen.",
+      "gebruik_energiedata": "Data over energieopwek, verbruik en netcapaciteit wordt gebruikt om energiestromen lokaal te balanceren en congestie te verminderen. (Hogeschool Saxion)",
+      "link": "https://www.eigen-energyhubs.nl\nhttps://projecten.topsectorenergie.nl/projecten/energy-hubs-voor-inpassing-van-grootschalige-hernieuwbare-energie-36343\nhttps://www.alliander.com/nl/nieuws/project-eigen-gestart-dat-bijdraagt-aan-het-versnellen-van-de-energietransitie/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P002",
+      "projectnaam": "MOOI – ORKEST",
+      "oorsprong": "MOOI",
+      "organisaties": "Stedin, TU Eindhoven, Technolution, DNV",
+      "beschrijving": "ORKEST is een MOOI-subsidieproject van Stedin, TU Eindhoven, Technolution en DNV dat onderzoekt hoe bestaande elektriciteitsnetten beter benut kunnen worden door actief capaciteitsbeheer en optimale inpassing van flexibiliteit en hernieuwbare energie.",
+      "gebruik_energiedata": "Analyse van energiedata uit netten met hoge belasting om dynamische sturing van netcapaciteit mogelijk te maken. (Technolution)",
+      "link": "https://projecten.topsectorenergie.nl/projecten/orkest-optimal-integration-of-network-flexibiilty-and-asset-intelligence-to-increase-large-scale-integration-of-res-while-maintaining-reliability-37711",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P003",
+      "projectnaam": "MOOI – ABLE",
+      "oorsprong": "MOOI",
+      "organisaties": "TNO, bedrijven en kennisinstellingen",
+      "beschrijving": "MOOI ABLE is een onderzoeksproject van TNO en partners dat concepten ontwikkelt voor energie-uitwisseling en lokale warmtenetten op bedrijventerreinen, met als doel duurzame warmte- en elektriciteitsoplossingen te combineren en netcongestie te verminderen.",
+      "gebruik_energiedata": "Data over energiegebruik, warmte-uitwisseling en infrastructuur wordt gebruikt voor ontwerp en exploitatie van lokale energienetten. (2rc.nl)",
+      "link": "https://2rc.nl/projecten/mooi-able/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P004",
+      "projectnaam": "Energy hub Pannenweg",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With the Grid, OM Nieuwe Energie",
+      "beschrijving": "De Energy Hub Pannenweg is een bedrijventerrein in Rotterdam waar bedrijven via een digitaal handelsplatform van With the Grid lokaal elektriciteit uitwisselen. Het project demonstreert hoe een energiehub netcongestie kan verminderen en de inzet van lokale duurzame opwek optimaliseert.",
+      "gebruik_energiedata": "Realtime energiedata van meters en zonnepanelen wordt gebruikt om productie en verbruik binnen de hub te balanceren. (Withthegrid)",
+      "link": "https://energiehubs.nl/kennisbank/case-energie-handelsplatform-pannenweg\nhttps://withthegrid.com/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P005",
+      "projectnaam": "Energy hub Amsterdamse Haven (ECAH)",
+      "oorsprong": "Overig",
+      "organisaties": "Energie Coöperatie Amsterdamse Haven, Firan",
+      "beschrijving": "De Energie Coöperatie Amsterdamse Haven (ECAH) heeft een dataplatform voor een energiehub ontwikkeld waarmee bedrijven in de Amsterdamse haven energie en flexibiliteit lokaal kunnen uitwisselen en netcongestie kunnen verminderen, met de ambitie dit platform sectorbred beschikbaar te stellen.",
+      "gebruik_energiedata": "Energiedata van bedrijven wordt gebruikt voor gezamenlijke optimalisatie van energiegebruik en flexibiliteit.",
+      "link": "https://ecah.amsterdam",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P006",
+      "projectnaam": "Shared Energy Platform Amsterdam",
+      "oorsprong": "Overig",
+      "organisaties": "Alliander / Firan / partners",
+      "beschrijving": "Het Shared Energy Platform Amsterdam is een demonstratieproject van Alliander en Firan in het Amsterdamse havengebied waarbij bedrijven via een gezamenlijk platform lokaal energie uitwisselen. Het doel is het aantonen van de haalbaarheid van lokale energiemarkten voor havenbedrijven.",
+      "gebruik_energiedata": "Data over energieopwekking, opslag en verbruik wordt gebruikt voor lokale energiehandel en sturing.",
+      "link": "https://www.amports.nl/nieuws/energieplatform-voor-havenbedrijven-om-onderling-energie-te-delen/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Huishoudens/prosumers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P007",
+      "projectnaam": "ORTESE",
+      "oorsprong": "Overig",
+      "organisaties": "Provincie Drenthe",
+      "beschrijving": "ORTESE (Ontwerpen en Realiseren van een Toekomstbestendig EnergieSysteem in Emmen) is een programma van de gemeente Emmen, provincie Drenthe, Enexis en het ministerie van Klimaat dat innovatieve oplossingen ontwikkelt en test voor netcongestie, met als speerpunt de bouw van een digital shadow van het totale lokale energiesysteem.",
+      "gebruik_energiedata": "Analyse van verbruiksdata, netdata en flexibiliteitspotentieel.",
+      "link": "https://www.provincie.drenthe.nl/onderwerpen/natuur-milieu/diversen/netcongestie/netcongestie-bedrijven/ortese/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Netbeheerders",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P008",
+      "projectnaam": "Digital Twin Twente",
+      "oorsprong": "Overig",
+      "organisaties": "Universiteit Twente, regionale partners",
+      "beschrijving": "Het GridFlex-project van de Universiteit Twente ontwikkelt een digitale tweeling van het regionale energiesysteem in Twente om de energietransitie te plannen en netflexibiliteit te optimaliseren. De tool ondersteunt scenario-analyses voor systeembeheerders en beleidsmakers.",
+      "gebruik_energiedata": "Energiedata (opwek, vraag, netbelasting) wordt geïntegreerd in een model voor scenarioanalyse.",
+      "link": "https://www.utwente.nl/en/eemcs/energy/projects/current/gridflex/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Provincie"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag",
+        "Jaar"
+      ]
+    },
+    {
+      "project_id": "P009",
+      "projectnaam": "Urban Energy Digital Twin Rotterdam",
+      "oorsprong": "Overig",
+      "organisaties": "Gemeente Rotterdam / TU Delft",
+      "beschrijving": "De Urban Energy Digital Twin Rotterdam is een samenwerking van de gemeente Rotterdam en TU Delft waarbij een digitale representatie van het stedelijk energiesysteem wordt gebouwd om energietransitie-scenario's en infrastructuurplanning te ondersteunen.",
+      "gebruik_energiedata": "Data van gebouwen, energiegebruik en infrastructuur wordt gebruikt om energietransitie-scenario’s te modelleren.",
+      "link": "https://ibestuur.nl/data-en-ai/toepassingen/rotterdam-ontwikkelt-open-urban-platform-met-digital-twin",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P010",
+      "projectnaam": "The Green Village – DC smart grid lab",
+      "oorsprong": "Overig",
+      "organisaties": "TU Delft",
+      "beschrijving": "The Green Village is een regelluwe proeftuin op de TU Delft Campus waar bedrijven, onderzoekers en overheden innovatieve energie-infrastructuur en smart grid-technologieën testen in een bewoonde, levensechte omgeving, met onder meer een gelijkspanningsnetwerk, waterstofleiding en laagtemperatuurwarmtenet.",
+      "gebruik_energiedata": "Data van energieopwekking, opslag en vraag wordt gebruikt voor experimenten met nieuwe energienetten.",
+      "link": "https://www.tudelft.nl/innovatie-impact/home-of-innovation/special/the-green-village\nhttps://www.thegreenvillage.org/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Onderzoekers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P011",
+      "projectnaam": "FlexHouses (The Green Village)",
+      "oorsprong": "Overig",
+      "organisaties": "TU Delft",
+      "beschrijving": "FlexHouses is een testopstelling binnen The Green Village op de TU Delft Campus waarbij bewoonde woningen worden gebruikt als living lab voor slimme energiesturing, vraagrespons en energiemanagement op apparaatniveau.",
+      "gebruik_energiedata": "Energiedata van huishoudelijke apparaten wordt gebruikt voor vraagrespons en energiemanagement.",
+      "link": "https://www.thegreenvillage.org/flexhouses/\nhttps://www.tudelft.nl/en/delft-outlook/articles/maart-2020-start-ups/the-green-village-living-lab-for-sustainability",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Apparaat: 1 apparaat dat de energieverbruikt"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P012",
+      "projectnaam": "GridFlex Heeten",
+      "oorsprong": "Overig",
+      "organisaties": "Alliander / partners",
+      "beschrijving": "GridFlex Heeten is een afgeronde pilot van Alliander en partners in de Overijsselse buurtschap Heeten waarbij huishoudens met zonnepanelen, batterijen en slimme meters actief flexibiliteit leverden aan het elektriciteitsnet via een lokale energiegemeenschap.",
+      "gebruik_energiedata": "Data van slimme meters, batterijen en zonnepanelen wordt gebruikt om vraag en aanbod te balanceren.",
+      "link": "https://gridflex.nl/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Netbeheerders",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P013",
+      "projectnaam": "Equigy pilots",
+      "oorsprong": "Overig",
+      "organisaties": "TenneT / netbeheerders",
+      "beschrijving": "Equigy is een Crowd Balancing Platform van zes Europese TSO's, waaronder TenneT, dat kleine gedistribueerde flexibele assets zoals batterijen en EV's via aggregatie laat deelnemen aan energiemarkten en systeemdiensten. Het platform standaardiseert de koppeling tussen aggregatoren en TSO-systemen.",
+      "gebruik_energiedata": "Data van batterijen en EV’s wordt gebruikt om systeemdiensten te leveren.",
+      "link": "https://equigy.com/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Aggregator"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Apparaat: 1 apparaat dat de energieverbruikt"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P014",
+      "projectnaam": "TROEF",
+      "oorsprong": "NEDRA",
+      "organisaties": "BAM, Entrnce International, Hogeschool Utrecht, KPN, NEN, OrangeNXT, Stedin Netbeheer, Technische Universiteit Eindhoven, Tymlez",
+      "beschrijving": "TROEF (Transparant Reduceren van CO2 en Optimaliseren van energie in een Ecosysteem van Flexibiliteit) is een MOOI-subsidieproject van BAM, Entrnce, Hogeschool Utrecht, KPN, Stedin, TU Eindhoven en partners dat een gelaagd internet-of-energy platform ontwikkelt. Het verbindt kantoren, woningen en elektrische voertuigen in lokale energiegemeenschappen om duurzame energie lokaal te benutten en flexibiliteit te vermarkten.",
+      "gebruik_energiedata": "Energiedata wordt in TROEF niet alleen gebruikt voor monitoring, maar ook als sturings- en uitwisselmiddel binnen het ecosysteem. Via het platform worden data, energie en CO2 tussen deelnemers uitgewisseld. De data wordt gebruikt om realtime inzicht te geven in herkomst van energie, CO2-footprint, verbruik en productie, zodat gestuurd kan worden op het juiste moment van gebruik, lokale benutting van duurzame opwek, flexibiliteit en congestievermindering. Daarnaast gebruikt TROEF energiedata voor community dashboards, CO2 track-and-trace, benchmarking, gamification, analyse van de uurlijkse match tussen opwek en verbruik, en digital twins waarmee toekomstige energiegemeenschappen en flexibiliteitswaarde kunnen worden doorgerekend en geoptimaliseerd.",
+      "link": "https://projecten.topsectorenergie.nl/projecten/troef-transparant-reduceren-van-co2-en-optimaliseren-van-energie-in-een-ecosysteem-van-flexibiliteit-de-troef-naar-versnelling-van-de-energietransitie-en-lokale-energiegemeenschappen-35404\nhttps://www.bam.com/en/node/623\nhttps://www.bambouwentechniek.nl/nieuws/2021/3/troef-toont-aan-dat-samenwerken-in-een-energiegemeenschap-loont\nhttps://www.hu.nl/nieuws/troef-werkt-aan-toepassing-om-duurzame-energie-lokaal-beter-te-benutten",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Huishoudens/prosumers",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P015",
+      "projectnaam": "Starlings",
+      "oorsprong": "NEDRA",
+      "organisaties": "HBR,Yokogawa, Distro",
+      "beschrijving": "Het Starlings-project is een door de Port of Rotterdam Authority gefinancierde pilot waarbij zes industriële bedrijven en twee netbeheerders in het Rotterdamse havengebied energie- en nutsstromen (elektriciteit, stoom, warmte) onderling uitwisselen via een digitaal orchestratieplatform van Yokogawa en Distro Energy.",
+      "gebruik_energiedata": "Energiedata van havenondernemingen wordt gebruikt via een orchestratieplatform voor optimalisatie van energie- en nutsstromen en vermindering van netcongestie.",
+      "link": "https://www.portofrotterdam.com/en/news-and-press-releases/pilot-exchange-energy-and-utility-flows-between-companies-rotterdam\nhttps://initiatives.weforum.org/transitioning-industrial-clusters/case-study-details/port-of-rotterdam:-starlings-project-to-unlocking-multi-utility-flexibility/aJYTG0000000V0b4AE",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Optimalisatie & sturing van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P016",
+      "projectnaam": "Realtime systeemwerking voor netwerkverbetering en transportefficiëntie",
+      "oorsprong": "NEDRA",
+      "organisaties": "Alliander, Enexis, Stedin, TU/e, Tennet",
+      "beschrijving": "Dit MOOI-project van Alliander, Enexis, Stedin, TenneT en TU Eindhoven onderzoekt de randvoorwaarden voor real-time systeemoperaties om transportcapaciteit in het elektriciteitsnet efficiënter te benutten. Het project ontwikkelt en test stuuralgoritmes en systeemarchitecturen op zowel laag- als hoogspanningsniveau.",
+      "gebruik_energiedata": "Realtime meet- en stuurdata uit het elektriciteitsnet worden gebruikt voor dynamische systeembesturing, netoptimalisatie en veiligheidsbewaking op laag- en hoogspanningsniveau.",
+      "link": "https://www.duurzaam-ondernemen.nl/65-miljoen-euro-voor-circulaire-energie-innovatie-in-de-gebouwde-omgeving/\nhttps://www.rvo.nl/subsidies-financiering/pps-toeslag",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Energieverbruiksdata"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Wettelijke verplichting",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P017",
+      "projectnaam": "Energy Control Businesspark – Ecofactorij",
+      "oorsprong": "NEDRA",
+      "organisaties": "Coöperatief Parkmanagement Ecofactorij, Firan, Saxion Hogeschool, Scholt Energy, Universiteit Twente, VDL Energysystems",
+      "beschrijving": "Energy Control Businesspark Ecofactorij is een MOOI-project van het privaat stroomnet in Apeldoorn waarbij een schaalbaar semi-autonoom lokaal energiemanagementsysteem (SALECS) wordt ontwikkeld en getest met meerdere batterijen. Saxion en Universiteit Twente bouwen een digital twin voor optimale inzet van de batterijen en analyse van energieverbruik op het terrein.",
+      "gebruik_energiedata": "Energiedata van het bedrijventerrein Ecofactorij wordt gebruikt in een digital twin voor onderzoek naar optimale batterijinzet, lokale energiebalancering en kennisoverdracht aan stakeholders.",
+      "link": "https://ecofactorij.nl/project/mooi-project/\nhttps://ecofactorij.nl/\nhttps://www.sparklingprojects.nl/nieuws/cooperatie-de-ecofactorij-zet-energieke-stappen-dankzij-rabo-financiering",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P018",
+      "projectnaam": "SinneWetterstof",
+      "oorsprong": "NEDRA",
+      "organisaties": "Alliander, GroenLeven",
+      "beschrijving": "SinneWetterstof is een pilotproject van Alliander en GroenLeven in Oosterwolde (Friesland) waarbij de eerste binnenlandse waterstoffabriek naast een zonnepark werd gebouwd. Het doel was te onderzoeken of power-to-gas een oplossing kan zijn voor netcongestie door overaanbod van zonne-energie lokaal om te zetten in groene waterstof.",
+      "gebruik_energiedata": "Productie- en systeemdata van de pilot power-to-gas-installatie worden gebruikt om het besturingssysteem te valideren en de technische en economische haalbaarheid van grootschalige uitrol te bepalen.",
+      "link": "https://groenleven.nl/projecten/groene-waterstoffabriek-sinnewetterstof-oosterwolde/\nhttps://www.alliander.com/nl/nieuws/alliander-en-groenleven-maken-waterstof-van-zonnestralen/\nhttps://projecten.topsectorenergie.nl/projecten/sinnewetterstof-34699",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Optimalisatie & sturing van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P019",
+      "projectnaam": "De Wijkdimmer",
+      "oorsprong": "NEDRA",
+      "organisaties": "NOORDERLICHT ventures B.V. -",
+      "beschrijving": "De Wijkdimmer is een energiemanagementsysteem van NOORDERLICHT ventures dat zonnepanelen, warmtepompen en andere assets van meerdere huishoudens of woningcorporatieblokken gezamenlijk aanstuurt om piekbelasting op het laagspanningsnet te reduceren. Het systeem is technologie-agnostisch en schaalbaar inzetbaar voor woningcorporaties.",
+      "gebruik_energiedata": "Realtime energiedata van zonnepanelen en warmtepompen in woningcorporatiewijken wordt gebruikt om groot aantal assets gezamenlijk te sturen en de netbelasting te reduceren.",
+      "link": "https://www.noorderlichtventures.nl/\nhttps://solarmagazine.nl/nieuws-zonne-energie/i39911/de-wijkdimmer-sturen-op-maximaal-gebruik-stroom-zonnepanelen",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting",
+        "Apparaat: 1 apparaat dat de energieverbruikt"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P020",
+      "projectnaam": "Netbewust optimaliseren van het binnenklimaat van gebouwen",
+      "oorsprong": "NEDRA",
+      "organisaties": "Spectral Enterprise B.V. CBRE, Flow Real Estate",
+      "beschrijving": "In dit haalbaarheidsstudie van Spectral wordt onderzocht in hoeverre het BRIGHTER building optimization-platform kan worden uitgebreid met netbewuste sturing van HVAC-systemen in utiliteitsgebouwen, om zo piekvraag te verlagen en meer ruimte te creëren op de elektriciteitsaansluiting.",
+      "gebruik_energiedata": "Energiedata uit verschillende bronnen wordt geïntegreerd voor realtime energiemanagement.",
+      "link": "https://spectral.energy/cases/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P021",
+      "projectnaam": "AI gedreven contractoptimalisatie",
+      "oorsprong": "NEDRA",
+      "organisaties": "Info Support B.V. -",
+      "beschrijving": "Dit NEDRA-project van Info Support ontwikkelt een AI-tool die meetdata en locatiegegevens van netgebruikers analyseert om bedrijven met potentieel voor slimme netbenutting te identificeren. Op basis hiervan kunnen maatregelen zoals groepscontracten en peakshaving gerichter worden ingezet.",
+      "gebruik_energiedata": "AI-analyse van meetdata en locatiegegevens om bedrijven met potentie voor slimme netbenutting te identificeren voor gerichte toepassing van groepscontracten en peakshaving.",
+      "link": "https://www.infosupport.com/nl/\nhttps://www.winmagpro.nl/eerste-hulp-bij-netcongestie-3-ai-toepassingen",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Geanonimiseerde data"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Gemeente"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P022",
+      "projectnaam": "Benutting Real-time Restcapaciteit voor Inzet Laadinfra",
+      "oorsprong": "NEDRA",
+      "organisaties": "ROCC B.V. -",
+      "beschrijving": "ROCC B.V. ontwikkelt in dit NEDRA-project een product dat real-time restcapaciteit van het elektriciteitsnet beschikbaar stelt aan laadpunten voor elektrische voertuigen. Dit maakt efficiënter gebruik van bestaande netcapaciteit mogelijk en ondersteunt de uitbreiding van laadinfrastructuur zonder netinvesteringen.",
+      "gebruik_energiedata": "Realtime netcapaciteitsdata wordt beschikbaar gesteld aan laadpunten, zodat beschikbare restcapaciteit efficiënt benut kan worden voor EV-laden.",
+      "link": "https://www.rocc.nl/\nhttps://elaad.nl/succesvolle-proef-met-groeps-capaciteitsbeperkende-contracten-voor-publieke-laadpalen-brabant-en-limburg/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Wettelijke verplichting"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P023",
+      "projectnaam": "Zelf balancerende energiegemeenschappen dankzij Local Energy Optimization services",
+      "oorsprong": "NEDRA",
+      "organisaties": "ICR3ATE Digital Makers Lab -",
+      "beschrijving": "ICR3ATE ontwikkelt het LEO-platform (Local Energy Optimization) dat kleinverbruikers helpt het laagspanningsnet te balanceren door via digital twins op wijk- en huishoudniveau het verbruik en de opwekking te voorspellen en lokaal te coördineren, waarmee kostbare netinvesteringen kunnen worden uitgesteld.",
+      "gebruik_energiedata": "Energiedata van individuele aansluitingen en gemeenschappen wordt via digital twins geanalyseerd om verbruik en opwekking te voorspellen en het laagspanningsnet lokaal te balanceren.",
+      "link": "https://icr3ate.nl/\nhttps://www.icr3ate.nl/local-energy-optimization/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Voorspelling & planning van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Netbeheerders",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting",
+        "Apparaat: 1 apparaat dat de energieverbruikt"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P024",
+      "projectnaam": "Gridscale X-platform",
+      "oorsprong": "NEDRA",
+      "organisaties": "Siemens, Alliander",
+      "beschrijving": "Gridscale X van Siemens is een softwareplatform voor autonoom netbeheer dat bij Alliander wordt ingezet om een digitale tweeling van het laagspanningsnet te creëren. Op basis van deze digitale representatie kunnen netbeheerders investeringen effectief prioriteren en onbenutte netcapaciteit snel benutten.",
+      "gebruik_energiedata": "Laagspanningsnetdata wordt gebruikt om een valide digitale tweeling van het fysieke net te creëren, waarmee netbeheerders investeringen kunnen prioriteren en onbenutte capaciteit kunnen benutten.",
+      "link": "https://www.sw.siemens.com/en-US/gridscale-x/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Energieverbruiksdata"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting",
+        "Fase: een verzameling van apparaten aansgesloten op 1 fase in het huis"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P025",
+      "projectnaam": "TeSopS",
+      "oorsprong": "NEDRA",
+      "organisaties": "RUG Engineering and Technology Institute Groningen of the Faculty of Science and Engineering, the Netherlands Organisation for Applied Scientific Research (TNO), the Municipality of Groningen (WarmteStadt), energy company Enexis, ING Bank, energy transition initiative PowerChainger and multifunctional venue De Groene Afslag.",
+      "beschrijving": "TeSopS is een NWO-gefinancierd onderzoeksproject van de Rijksuniversiteit Groningen, TNO, Enexis en partners dat een integraal energiesysteemmodel ontwikkelt dat technische, economische en sociale componenten combineert. Het doel is energiesystemen te optimaliseren op een manier die technisch haalbaar, economisch betaalbaar én maatschappelijk aanvaardbaar is.",
+      "gebruik_energiedata": "Technische, economische en sociale energiedata worden geïntegreerd in modellen om energiesystemen holistisch te optimaliseren voor beleidsmakers en energiebedrijven.",
+      "link": "https://www.rug.nl/news/2021/07/0701-nwo-esi-far-subsidie?lang=en",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Provincie"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Jaar"
+      ]
+    },
+    {
+      "project_id": "P026",
+      "projectnaam": "DEMOSES",
+      "oorsprong": "NEDRA",
+      "organisaties": "TU Delft Intelligent Electrical Power Grids–IEPG-groep,TNO, TU/e, Eneco, AgroEnergy, Tata Steel, TenneT, Stedin, Aliander, GasUnie",
+      "beschrijving": "DEMOSES is een onderzoeksproject van TU Eindhoven, TNO, Eneco, Tata Steel, TenneT, Stedin en Alliander dat computersimulaties ontwikkelt om de beste combinaties van flexibiliteit, opslag en alternatieve energieopwekking te bepalen voor het opvangen van schommelingen van wind- en zonne-energie in het energiesysteem.",
+      "gebruik_energiedata": "Energieverbruiks-, productie- en flexibiliteitsdata worden gebruikt in computersimulaties om optimale combinaties van duurzame, betrouwbare en betaalbare energiesysteemopties te bepalen.",
+      "link": "https://www.esciencecenter.nl/projects/designing-and-modelling-future-systems-of-energy-systems-demoses/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Energieleverancier"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Land",
+        "Provincie"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag",
+        "Jaar"
+      ]
+    },
+    {
+      "project_id": "P027",
+      "projectnaam": "First Utility-Scale BESS Poland: Axpo, Energix, STELLAR",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Axpo; Energix Group",
+      "beschrijving": "Axpo, Energix en Spectral hebben een utility-scale batterijsysteem van 24 MW / 56 MWh in Polen ontwikkeld en gekoppeld aan Axpo's Virtual Power Plant via het STELLAR-platform. Het project demonstreert hoe grootschalige batterijopslag via slimme marktkoppeling kan worden geoptimaliseerd.",
+      "gebruik_energiedata": "Realtime en historische batterij- en SCADA-data worden via interface/API gebruikt voor monitoring, setpoints, schema’s en marktoptimalisatie.",
+      "link": "https://spectral.energy/project/utility-scale-bess-poland-stellar/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Marktdata: data over de energiemarkt"
+      ],
+      "MD4_databron": [
+        "Dienstverlener anders dan de aggretator",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P028",
+      "projectnaam": "Acanthus: large-scale energy management optimization with BRIGHTER",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Flow Real Estate; ING; CBRE; Warmtebouw",
+      "beschrijving": "Acanthus is een kantoorgebouw van 49.000 m² in Amsterdam Zuidoost waarbij Spectral's BRIGHTER-software is ingezet om HVAC-systemen datagedreven aan te sturen op basis van BMS-data en 80 extra sensoren. Het project resulteerde in een energiebesparing van 18 procent en een verbeterd binnenklimaat.",
+      "gebruik_energiedata": "BMS-data plus 80 extra sensoren voeden BRIGHTER voor analyse van energiestromen, dashboards en realtime aansturing.",
+      "link": "https://spectral.energy/project/acanthus-large-scale-energy-optimization-brighter/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P029",
+      "projectnaam": "B Vital achieves Paris Proof through Spectral’s BRIGHTER",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Flow Real Estate; B Vital",
+      "beschrijving": "B Vital is een multi-tenant kantoorgebouw in Amsterdam van Flow Real Estate waarbij Spectral's BRIGHTER-platform is ingezet om energieverbruik drastisch te verlagen en het gebouw Paris Proof te maken, ondersteund door een ESG-dashboard met inzicht in duurzaamheidsprestaties.",
+      "gebruik_energiedata": "Verschillende datastromen worden samengebracht in een ESG-dashboard voor inzicht in energie- en duurzaamheidsperformance en voor investeringsscenario’s.",
+      "link": "https://spectral.energy/project/data-management-b-vital/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P030",
+      "projectnaam": "Het Koninklijk Concertgebouw: Optimizing a Unique Building",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Het Koninklijk Concertgebouw",
+      "beschrijving": "Het Koninklijk Concertgebouw in Amsterdam heeft Spectral's BRIGHTER ESG Data Management ingezet om energiestromen via slimme meters en submeting in kaart te brengen. Het doel is afwijkende zones en onnodig energieverlies te detecteren in dit monumentale gebouw.",
+      "gebruik_energiedata": "BRIGHTER ESG Data Management combineert gebouw- en submeterdata om afwijkende zones en energieverlies op te sporen.",
+      "link": "https://spectral.energy/project/het-koninklijk-concertgebouw-optimizing-a-unique-building/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P031",
+      "projectnaam": "Greenchoice: Building Optimization for Rotterdam Headquarters",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Greenchoice",
+      "beschrijving": "Greenchoice heeft het eigen hoofdkantoor in Rotterdam verduurzaamd met Spectral's BRIGHTER-platform, waarbij historische gebouwdata, extra sensoren en weerdata worden gecombineerd om algoritmen te trainen en installaties slimmer aan te sturen.",
+      "gebruik_energiedata": "Historische gebouwdata, extra sensoren en weerdata worden gecombineerd om algoritmen te trainen en installaties slimmer te sturen.",
+      "link": "https://spectral.energy/project/greenchoice-building-optimization-rotterdam-headquarters/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P032",
+      "projectnaam": "Axpo: Revolutionizing Renewable Asset Management",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Axpo",
+      "beschrijving": "Axpo en Spectral werken samen aan slimmer beheer van hernieuwbare energieassets via het STELLAR-platform, waarbij realtime data-analyse en machine learning worden ingezet voor monitoring, curtailment en handelsbeslissingen om onbalans- en prijsrisico's te beperken.",
+      "gebruik_energiedata": "Realtime data-analytics en machine learning ondersteunen monitoring, voorspelling en curtailment/trading-besluiten.",
+      "link": "https://spectral.energy/project/axpo-renewable-asset-management/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Marktdata: data over de energiemarkt"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P033",
+      "projectnaam": "Aroundtown: Shining a Light on Sustainability",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Aroundtown; Metropoolregio Amsterdam (MRA); WeBeasy",
+      "beschrijving": "Aroundtown heeft via het \"15% gas terug\"-netwerk van de Metropoolregio Amsterdam Spectral ingeschakeld om HVAC-efficiëntie en energiebesparing in zes kantoorgebouwen te verbeteren. Energie- en HVAC-data werden via API's geanalyseerd om afwijkingen en inefficiënte instellingen te identificeren.",
+      "gebruik_energiedata": "Energie-meterdata via API en HVAC-data worden geanalyseerd om afwijkingen en inefficiënte instellingen te vinden.",
+      "link": "https://spectral.energy/project/aroundtown-shining-a-light-on-sustainability/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P034",
+      "projectnaam": "Hines: Feed-in Congestion at Fresh Park Venlo",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Hines; Fresh Park Venlo",
+      "beschrijving": "Hines heeft voor bedrijventerrein Fresh Park Venlo in Venlo Spectral gevraagd om oplossingen te zoeken voor invoedcongestie veroorzaakt door grootschalige zonnepanelen. Verbruiks- en productiedata werden geanalyseerd om kansen voor zelfconsumptie en geschikte congestieoplossingen in kaart te brengen.",
+      "gebruik_energiedata": "Verbruiks-, koel/vries- en zonneproductiedata worden verzameld om kansen voor zelfconsumptie en passende congestie-oplossingen te bepalen.",
+      "link": "https://spectral.energy/project/hines-feed-in-congestion-at-fresh-park-venlo/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P035",
+      "projectnaam": "Hines: Data Gathering and Control for Real Estate",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Hines",
+      "beschrijving": "Hines wil alle resource- en energiedata van zijn Nederlandse vastgoedportefeuille via API's ontsluiten op één centraal platform en koppelen aan gebouwsturing. Spectral's BRIGHTER integreert data van meerdere meetbedrijven en BMS-systemen voor portefeuillebreed inzicht en dynamische klimaatregeling.",
+      "gebruik_energiedata": "Data van meerdere meetbedrijven en BMS-data worden via API’s samengebracht voor volledige portefeuilledekking, prestatie-inzicht en dynamische control.",
+      "link": "https://spectral.energy/project/hines-data-gathering-and-control-for-real-estate/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Wijk",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P036",
+      "projectnaam": "BECC - Enabling the Energy Hub of Tomorrow",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; BECC; Greenchoice",
+      "beschrijving": "BECC exploiteert een complexe energiehub met een WKK-installatie, e-boiler en batterij die door Spectral's STELLAR-platform integraal worden aangestuurd. Assetdata worden ingezet voor simulatiemodellen en doorgestuurd naar partners voor betere operationele besluitvorming en marktoptimalisatie.",
+      "gebruik_energiedata": "Data van assets wordt gebruikt in simulatiemodellen en sturing, en ook doorgegeven aan derden voor betere operationele beslissingen.",
+      "link": "https://spectral.energy/project/becc-enabling-the-energy-hub-of-tomorrow/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Aggregator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P037",
+      "projectnaam": "Republica Microgrid",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Republica-consortium; Vink Bouw; Marc Koehler; ATEPS; Van Galen; Vaanster; Techniplan",
+      "beschrijving": "Republica Papaverweg in Buiksloterham (Amsterdam) is een gebiedsontwikkeling van 20.000 m² met een privé elektriciteits- en warmtenet, PV-installaties, een batterij van 1,2 MWh, EV-laders en warmtepompen. Spectral's STELLAR integreert en stuurt alle assets zodat de ontwikkeling energy-positive is ondanks een beperkte netaansluiting.",
+      "gebruik_energiedata": "Assetdata wordt in STELLAR samengebracht om instellingen fijn te regelen, assets aan te sturen en energietransacties en balancing mogelijk te maken.",
+      "link": "https://spectral.energy/project/republica-microgrid/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting",
+        "Apparaat: 1 apparaat dat de energieverbruikt"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P038",
+      "projectnaam": "Schieoevers: Mapping the Potential for Smart Business Parks",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Schieoevers-ondernemers; gemeente Delft; provincie Zuid-Holland; Ondernemersfonds Delft; Haagse Hogeschool",
+      "beschrijving": "Voor bedrijventerrein Schieoevers in Delft heeft Spectral samen met lokale ondernemers, de gemeente en de provincie een routekaart opgesteld voor een slimmer en duurzamer bedrijventerrein. Energiedata van bedrijven werden gecombineerd met marktanalyse om de technische en financiële potentie van een lokaal energiesysteem te bepalen.",
+      "gebruik_energiedata": "Energiedata van bedrijven is gecombineerd met interviews en marktkennis om de energetische en financiële potentie van een lokaal energiesysteem te bepalen.",
+      "link": "https://spectral.energy/project/schieoevers-mapping-the-potential-for-smart-business-parks/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Overheden/beleidsmakers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Geanonimiseerde data"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Bedrijventerrein",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P039",
+      "projectnaam": "TSE Smart & Grid Interactive Offices",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Greenchoice; Huygen; Merin",
+      "beschrijving": "TSE Smart & Grid Interactive Offices is een onderzoeksproject waarbij Spectral samen met Greenchoice, Huygen en Merin slimme, flexibele kantoren ontwikkelt met een zelflerende regeling. Realtime gebouwdata, weerdata en energieprijzen worden gecombineerd in digitale simulaties voor optimale gebouwsturing.",
+      "gebruik_energiedata": "Realtime gebouwdata, weerdata en energieprijzen voeden digitale simulaties en algoritmen voor optimale gebouwsturing.",
+      "link": "https://spectral.energy/project/tse-smart-grid-interactive-offices/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P040",
+      "projectnaam": "Bouwinvest - An Environmental Management System",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Bouwinvest; INNAX",
+      "beschrijving": "Bouwinvest heeft Spectral ingeschakeld om een milieumanagementsysteem te bouwen voor meer dan 400 gebouwen in zijn vastgoedportefeuille. Het platform verzamelt, verrijkt en visualiseert data uit slimme meters en andere bronnen voor ESG-rapportage en besparingsanalyse.",
+      "gebruik_energiedata": "Een centraal platform verzamelt, verrijkt, visualiseert en vergelijkt data uit slimme meters en andere bronnen voor ESG-rapportage en besparingsanalyse.",
+      "link": "https://spectral.energy/project/bouwinvest-an-environmental-management-system/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P041",
+      "projectnaam": "NSI Office Portfolio: Eliminating Energy Waste and Improving Indoor Climate",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; NSI",
+      "beschrijving": "NSI heeft zijn kantoorportefeuille aangesloten op Spectral's BRIGHTER-platform om energieverspilling te verminderen en het binnenklimaat te verbeteren. Slimme meters, sensoren en BMS-data worden automatisch verwerkt voor analyse van klimaatcondities en installatieprestaties op portefeuilleniveau.",
+      "gebruik_energiedata": "Slimme meters, sensoren en BMS-data worden automatisch ingelezen om klimaatcondities, installatieprestaties en portefeuillegegevens te analyseren.",
+      "link": "https://spectral.energy/project/nsi-portfolio-2/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P042",
+      "projectnaam": "Living Labs Scheveningen - Micro-Grid Phase 1",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; gemeente Den Haag; Alfen; NRG; Tallgrass",
+      "beschrijving": "De gemeente Den Haag experimenteert in de Living Labs Scheveningen met een smart city microgrid voor publieke voorzieningen op het noordelijk havenhoofd. Spectral's energiesoftware slaat meet- en energiestroomdata op voor integratie, billing en verdere exploitatie van het microgrid.",
+      "gebruik_energiedata": "Meet- en energiestroomdata worden opgeslagen en gevisualiseerd; die data ondersteunt integratie, billing en exploitatie van het microgrid.",
+      "link": "https://spectral.energy/project/living-labs-scheveningen-micro-grid-phase-1/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P043",
+      "projectnaam": "MOOI Brains4Buildings",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; consortium met bijna 40 partners; TU Delft; TU/e; TNO; Windesheim; Haagse Hogeschool; BAM; Deerns; Huygen; INNAX; Unica",
+      "beschrijving": "MOOI Brains4Buildings is een MOOI-subsidieproject met bijna 40 consortium partners, waarbij Spectral in living labs onderzoekt hoe AI en machine learning gebouwen flexibeler en energiezuiniger kunnen aansturen op basis van klimaat-, sensor- en gebruikersfeedbackdata.",
+      "gebruik_energiedata": "Klimaat- en sensordata en gebruikersfeedbackdata worden gekoppeld om gebouwen flexibeler en energiezuiniger aan te sturen.",
+      "link": "https://spectral.energy/project/mooi-brains4buildings/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Individuele toestemming (consent)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P044",
+      "projectnaam": "Tractieweg - Increasing Sustainable Energy Consumption",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; gemeente Utrecht; Greenchoice",
+      "beschrijving": "In dit project heeft Spectral voor de gemeente Utrecht en Greenchoice een analyse uitgevoerd van een gemeentelijk werkterrein aan de Tractieweg om te onderzoeken hoe het directe gebruik van duurzame energie kan worden vergroot. Huidige en toekomstige verbruiksdata zijn gebruikt om reductiepotentieel, elektrificatie en flexibiliteitskansen door te rekenen.",
+      "gebruik_energiedata": "Huidige en toekomstige verbruiksdata zijn gebruikt om reductiepotentieel, elektrificatie en flexibiliteit door te rekenen.",
+      "link": "https://spectral.energy/project/tractieweg-increasing-sustainable-energy-consumption/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Bedrijventerrein"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P045",
+      "projectnaam": "Groningen Peer-to-Peer Energy Exchange",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; gemeente Groningen",
+      "beschrijving": "In dit project heeft Spectral samen met de gemeente Groningen een blockchainplatform opgezet voor peer-to-peer energie-uitwisseling tussen huishoudens. Slimme-meterdata worden naar een blockchain geschreven om transparante energietransacties en inzicht in lokaal verbruik mogelijk te maken.",
+      "gebruik_energiedata": "Energiegegevens uit slimme meters worden naar blockchain geschreven om peer-to-peer transacties mogelijk en inzichtelijk te maken.",
+      "link": "https://spectral.energy/project/groningen-peer-to-peer-energy-exchange/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P046",
+      "projectnaam": "AHOY",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; gemeente Rotterdam; RUGGEDISED-consortium",
+      "beschrijving": "Voor het Ahoy-gebied in Rotterdam heeft Spectral een ontwerp gemaakt voor een slim lokaal energienet met opslag. Historische verbruiks- en productiedata zijn gebruikt om energieprofielen, opslagdimensionering en de businesscase voor balans- en congestiemanagement door te rekenen.",
+      "gebruik_energiedata": "Historische verbruiks- en productiedata zijn gebruikt om profielen, opslaggrootte en businesscase voor balans- en congestiemanagement door te rekenen.",
+      "link": "https://spectral.energy/project/ahoy/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Voorspelling & planning van energiegebruik",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P047",
+      "projectnaam": "GVB Electric Bus Fleet",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; GVB",
+      "beschrijving": "GVB heeft Spectral gevraagd de mogelijkheden van slim laden en flexibiliteitslevering voor de elektrische busvloot te verkennen. Realtime verbruiksdata werden gevisualiseerd en geanalyseerd; het project leverde ook inzichten op over datakwaliteitsproblemen die flexibele inzet belemmeren.",
+      "gebruik_energiedata": "Realtime verbruiksdata wordt gevisualiseerd en gebruikt om flexibiliteit en slim laden te beoordelen; onvoldoende datakwaliteit bleek ook een issue.",
+      "link": "https://spectral.energy/project/gvb-electric-bus-fleet/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P048",
+      "projectnaam": "Jouliette",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Alliander; De Ceuvel-community",
+      "beschrijving": "Jouliette is een project van Spectral en Alliander op De Ceuvel in Amsterdam waarbij een blockchain-gebaseerd platform en token zijn ontwikkeld voor lokale energie-uitwisseling tussen bewoners en bedrijven. Slimme-meterdata geven gebruikers realtime inzicht in lokale energieproductie en -verbruik.",
+      "gebruik_energiedata": "Slimme-meterdata en realtime/high-resolution visualisaties geven gebruikers inzicht in lokaal energiegebruik en verwachte productie en verbruik.",
+      "link": "https://spectral.energy/project/jouliette/",
+      "MD1_status": "Afgerond",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Bedrijven/industrie",
+        "Aggregator"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P049",
+      "projectnaam": "Merin Portfolio",
+      "oorsprong": "Spectral",
+      "organisaties": "Spectral; Merin; DKPS; Stonecold",
+      "beschrijving": "Spectral heeft 18 gebouwen van de vastgoedbeheerder Merin aangesloten op het BRIGHTER-platform voor geautomatiseerde klimaatregeling vanuit één centrale omgeving. BMS-data worden vroeg ingelezen voor prestatie-analyse en prioritering van gebouwen met het grootste verbeterpotentieel.",
+      "gebruik_energiedata": "BMS-data wordt vroeg ingelezen voor analyse, prioritering van gebouwen en automatische klimaatsturing.",
+      "link": "https://spectral.energy/project/merin-portfolio/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Energieverbruiksdata"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Kwartier",
+        "Uur"
+      ]
+    },
+    {
+      "project_id": "P050",
+      "projectnaam": "Aire and Withthegrid partner to bring legacy wind turbines into flexibility markets",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With The Grid; Aire",
+      "beschrijving": "Aire en Withthegrid hebben een samenwerking gesloten om oudere windturbines te moderniseren via de Withthegrid Teleport-gateway. Hierdoor worden de turbines op afstand bestuurbaar en kunnen zij deelnemen aan flexibiliteits- en balanceringsmarkten, wat hun economische levensduur verlengt.",
+      "gebruik_energiedata": "De Teleport vertaalt turbinespecifieke protocollen naar een gestandaardiseerde API. Realtime energiedata en data forwarding maken actieve vermogenssturing, curtailment en marktoptimalisatie mogelijk.",
+      "link": "https://withthegrid.com/aire-and-withthegrid-partnership/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Marktdata: data over de energiemarkt",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P051",
+      "projectnaam": "How Gasunie automated cathodic protection monitoring for 11,000 assets with the Asset Monitoring Platform",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With The Grid; Gasunie",
+      "beschrijving": "Gasunie heeft in samenwerking met Withthegrid de monitoring van kathodische bescherming van 11.000 assets in het gasnet gedigitaliseerd via IoT-sensoren en het Asset Monitoring Platform. Dit vervangt handmatige periodieke inspecties door continue, datagedreven en proactieve assetbewaking.",
+      "gebruik_energiedata": "Sensordata over de status van CP-palen wordt continu naar het platform gestuurd. Daardoor kan Gasunie storingen eerder signaleren en datagedreven, proactief onderhoud uitvoeren.",
+      "link": "https://withthegrid.com/how-gasunie-automated-cathodic-protection-monitoring-for-11000-assets-with-the-asset-monitoring-platform/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)",
+        "Wettelijke verplichting"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Land",
+        "Provincie",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P052",
+      "projectnaam": "Withthegrid and Repowered: Powering up asset flexibility together",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With The Grid; Repowered",
+      "beschrijving": "Repowered en Withthegrid koppelen hun platforms om flexibele energie-assets beter te beheren en te verwaarden. Withthegrid's Teleport maakt zonne-, wind- en batterij-assets op afstand bestuurbaar, waarna Repowered als Flex Service Provider de optimalisatie en markttoegang verzorgt.",
+      "gebruik_energiedata": "Repowered gebruikt data-driven inzichten en algoritmen om flexibele assets te optimaliseren en te monetiseren. Via de Teleport worden zon-, wind- en batterij-assets op afstand bestuurbaar gemaakt.",
+      "link": "https://withthegrid.com/withthegrid-and-repowered-powering-up-asset-flexibility-together/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Markt & flexibiliteit: vermarkten van energie en inzetten voor flexibiliteit",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Marktdata: data over de energiemarkt"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Aggregator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie",
+        "Aggregator",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van energiemarktprocessen - Functioneren van energiemarkten, prijsbepaling en handel in flexibiliteit.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Groep: een groep van apparaten"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut"
+      ]
+    },
+    {
+      "project_id": "P053",
+      "projectnaam": "Digitalizing cathodic protection monitoring at Waterbedrijf Groningen",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With The Grid; Waterbedrijf Groningen",
+      "beschrijving": "Waterbedrijf Groningen heeft de monitoring van kathodische bescherming van zijn drinkwaterpijpleidingennetwerk gedigitaliseerd met Withthegrid's Asset Monitoring Platform. Meetdata en sensordata worden centraal ontsloten in dashboards en analytics voor snellere afwijkingsdetectie en koppeling met andere systemen.",
+      "gebruik_energiedata": "Meetdata en sensordata worden centraal ontsloten in dashboards en analytics. Historische data en trends helpen om afwijkingen sneller te zien en gegevens te koppelen aan andere assetmanagementsystemen.",
+      "link": "https://withthegrid.com/withthegrid-case-study-cathodic-protection-waterbedrijf-groningen/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Provincie",
+        "Land",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag"
+      ]
+    },
+    {
+      "project_id": "P054",
+      "projectnaam": "Monitoring distribution grid in real time at Warmtebedrijf Rotterdam",
+      "oorsprong": "WithTheGrid",
+      "organisaties": "With The Grid; Warmtebedrijf Rotterdam",
+      "beschrijving": "Warmtebedrijf Rotterdam gebruikt IoT-sensoren en het Withthegrid Asset Monitoring Platform om het warmtedistributienet realtime te bewaken. Continue meting en trendanalyse maken proactief onderhoud mogelijk en zijn gekoppeld aan werkorderprocessen voor efficiëntere assetbeheeroperaties.",
+      "gebruik_energiedata": "Realtime meetdata en historische data worden gebruikt voor meldingen bij afwijkingen, trendanalyse en koppelingen met andere assetmanagementsystemen en werkorderprocessen.",
+      "link": "https://withthegrid.com/monitoring-distribution-grid-in-real-time-at-warmtebedrijf-rotterdam/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Energieverbruiksdata"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P055",
+      "projectnaam": "BAM",
+      "oorsprong": "Overig",
+      "organisaties": "BAM, Energy Data Xchange platform",
+      "beschrijving": "BAM maakt gebruik van het Energy Data Xchange platform om energiedata van bouw- en vastgoedprojecten te verzamelen en te delen voor duurzaamheidsrapportage en energiebeheer.",
+      "gebruik_energiedata": "Energiedata van gebouwen en bouwprojecten wordt centraal ontsloten en gedeeld via het Energy Data Xchange platform voor ESG-rapportage en prestatiemanagement.",
+      "link": "https://energydataxchange.com/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P056",
+      "projectnaam": "Denyse.org",
+      "oorsprong": "Overig",
+      "organisaties": "Denyse.org, partners in de bouwsector",
+      "beschrijving": "Denyse.org is een platform dat gebouweigenaren en -gebruikers helpt inzicht te krijgen in hun energieverbruik en duurzaamheidsprestaties, met als doel gedragsverandering en verduurzaming.",
+      "gebruik_energiedata": "Energieverbruiksdata van gebouwen wordt gevisualiseerd en geanalyseerd om gebruikers te motiveren tot energiebesparing en verduurzaming.",
+      "link": "https://www.denyse.org/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Huishoudens/prosumers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Individuele toestemming (consent)",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie",
+        "Ondersteunen van andere maatschappelijke opgaven - Integratie met o.a. woningbouw, mobiliteit"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P057",
+      "projectnaam": "AIMZ",
+      "oorsprong": "Overig",
+      "organisaties": "AIMZ, vastgoedsector partners",
+      "beschrijving": "AIMZ levert een AI-gedreven platform voor energiemanagement en duurzaamheid in vastgoed, waarmee gebouweigenaren automatisch inzicht en sturing krijgen over energieverbruik en CO2-uitstoot in hun portefeuille.",
+      "gebruik_energiedata": "Energieverbruiksdata en gebouwdata worden via AI geanalyseerd om energieverspilling te detecteren, prestaties te benchmarken en verduurzamingsmaatregelen te prioriteren.",
+      "link": "https://www.aimz.nl/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Optimalisatie & sturing van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P058",
+      "projectnaam": "Bouwinvest",
+      "oorsprong": "Overig",
+      "organisaties": "Bouwinvest, dienstverleners vastgoedsector",
+      "beschrijving": "Bouwinvest werkt aan de verduurzaming van zijn vastgoedportefeuille door energiedata centraal te verzamelen, te analyseren en te rapporteren voor ESG-doelstellingen en Paris Proof ambitie.",
+      "gebruik_energiedata": "Energieverbruiksdata van de Bouwinvest-portefeuille wordt geaggregeerd en geanalyseerd voor ESG-rapportage, het stellen van reductiedoelen en het monitoren van de verduurzamingsvoortgang.",
+      "link": "https://www.bouwinvest.nl/duurzaamheid/\nhttps://www.bouwinvest.nl/nieuws/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet",
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P059",
+      "projectnaam": "Digital Twin Twente",
+      "oorsprong": "Overig",
+      "organisaties": "SustainableScaleUp, Universiteit Twente, regionale partners Twente",
+      "beschrijving": "TwinTwente is een digitale tweeling van de energiesystemen in de regio Twente, ontwikkeld als onderdeel van het TwinValley-programma om de regionale energietransitie te plannen en te visualiseren.",
+      "gebruik_energiedata": "Energiedata van de regio Twente wordt geïntegreerd in een digitale tweeling om energiestromen, netbelasting en transitiescenario's te analyseren en te communiceren aan stakeholders.",
+      "link": "https://www.sustainablescale-up.com/twinvalley-programme/twintwente-twents",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Provincie"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Uur",
+        "Dag",
+        "Jaar"
+      ]
+    },
+    {
+      "project_id": "P060",
+      "projectnaam": "Datastelsel Verduurzaming Utiliteit",
+      "oorsprong": "Overig",
+      "organisaties": "RVO, vastgoedeigenaren, gemeenten, provincies, netbeheerders",
+      "beschrijving": "Het Datastelsel Verduurzaming Utiliteit (DVU) is een landelijk stelsel voor het standaardiseren en ontsluiten van energiedata van utiliteitsbouw, bedoeld om de verduurzaming van het commercieel vastgoed te versnellen.",
+      "gebruik_energiedata": "Gestandaardiseerde energieverbruiksdata van utiliteitsgebouwen wordt ontsloten voor eigenaren, gebruikers, overheden en marktpartijen om verduurzaming te monitoren, te stimuleren en te verantwoorden.",
+      "link": "https://www.rvo.nl/onderwerpen/verduurzaming-utiliteitsbouw/dvu",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Inzicht & monitoring van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Wettelijke verplichting",
+        "Open data",
+        "Geanonimiseerde data"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring",
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen."
+      ],
+      "MD8_granulariteit_niveau": [
+        "Aansluiting",
+        "Gemeente",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand",
+        "Jaar"
+      ]
+    },
+    {
+      "project_id": "P061",
+      "projectnaam": "Slim Strandnet Scheveningen",
+      "oorsprong": "Overig",
+      "organisaties": "Gemeente Den Haag, Stedin, smart city-partners Scheveningen",
+      "beschrijving": "Het Slim Strandnet Scheveningen is een innovatief slim energienet op het noordelijk havenhoofd van Scheveningen dat duurzame opwek, opslag en slimme sturing combineert voor evenementen en permanente gebruikers.",
+      "gebruik_energiedata": "Realtime energiedata van productie, opslag en verbruik op het strandnet wordt gebruikt voor slimme sturing en optimalisatie van het lokale net en het verminderen van netcongestie.",
+      "link": "https://smartcity.denhaag.nl/use-cases/slim-energienet-op-het-noordelijk-havenhoofd/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Optimalisatie & sturing van energiegebruik",
+        "Inzicht & monitoring van energiegebruik",
+        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Realtime sensordata (anders dan energieverbruik)"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Dienstverlener anders dan de aggretator",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie",
+        "Netbeheerders"
+      ],
+      "MD6_governance": [
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Wijk",
+        "Aansluiting"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Minuut",
+        "Kwartier"
+      ]
+    },
+    {
+      "project_id": "P062",
+      "projectnaam": "Drechtsteden",
+      "oorsprong": "Overig",
+      "organisaties": "Gemeenten Drechtsteden, Stedin, provincie Zuid-Holland, partners energietransitie",
+      "beschrijving": "Het Drechtsteden-project richt zich op de regionale energietransitie door energiedata te verzamelen en te analyseren voor het opstellen van een regionaal energietransitieplan en het identificeren van kansen voor verduurzaming.",
+      "gebruik_energiedata": "Energieverbruiks-, productie- en netdata van de regio Drechtsteden wordt geanalyseerd om de energietransitie te plannen, kansen voor verduurzaming te identificeren en beleid te onderbouwen.",
+      "link": "https://www.drechtsteden.nl/energietransitie",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Voorspelling & planning van energiegebruik"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
+        "Gebouwdata: data over gebouwen die energie verbruiken"
+      ],
+      "MD4_databron": [
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator"
+      ],
+      "MD5_datasink": [
+        "Overheden/beleidsmakers",
+        "Onderzoekers"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Gemeente",
+        "Wijk"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Dag",
+        "Maand"
+      ]
+    },
+    {
+      "project_id": "P063",
+      "projectnaam": "EnergySHR (Energy Data Sharing House)",
+      "oorsprong": "Overig",
+      "organisaties": "AIDD Convergence Center for Energy Systems Intelligence (CESI), Erasmus Data Collaboratory (EDC), Erasmus University Rotterdam, TU Delft, Erasmus MC",
+      "beschrijving": "EnergySHR is een open platform voor het delen, publiceren, vinden, beheren en archiveren van energiedatasets en algoritmen voor onderzoek en innovatie rond de energietransitie. Het platform combineert datasetdeling met communityfunctionaliteit en analyse-omgevingen, zodat onderzoekers, startups en beleidsstakeholders datasets en algoritmen kunnen delen, bespreken en gebruiken voor datagedreven oplossingen.",
+      "gebruik_energiedata": "EnergySHR ontsluit en beheert energiedatasets en algoritmen, waaronder datasets over gebouwen, batterijen, elektrische voertuigen, netbelasting en andere energietransitiegerelateerde onderwerpen. Gebruikers kunnen datasets publiceren, vinden, analyseren via geïntegreerde Jupyter-notebookfunctionaliteit en koppelen aan onderzoek of machine-learningtoepassingen. De nadruk ligt op hergebruik van energiedata, kennisdeling en versnelling van AI- en datagedreven onderzoek naar de energietransitie.",
+      "link": "https://energyshr.nl/",
+      "MD1_status": "Lopend",
+      "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
+        "Innovatie & demonstratie: testen en demonstreren van nieuwe technologieen of businessmodellen"
+      ],
+      "MD3_type_energiedata": [
+        "Energieverbruiksdata",
+        "Realtime sensordata (anders dan energieverbruik)",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie",
+        "Marktdata: data over de energiemarkt"
+      ],
+      "MD4_databron": [
+        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Dienstverlener anders dan de aggretator",
+        "Producent / opwekker (wind, zon, overige hernieuwbare opwek)",
+        "Aggregator"
+      ],
+      "MD5_datasink": [
+        "Onderzoekers",
+        "Dienstverlener anders dan de aggretator",
+        "Overheden/beleidsmakers",
+        "Bedrijven/industrie"
+      ],
+      "MD6_governance": [
+        "Open data",
+        "Contractuele datadeling (B2B)",
+        "Data space / federatief (gedistribueerde datadeling met behoud van controle)"
+      ],
+      "MD7_toepassing": [
+        "Ondersteunen van landelijke beleidsvorming - Strategische keuzes, wet- en regelgeving, scenario's, monitoring",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Ondersteunen van andere maatschappelijke opgaven - Integratie met o.a. woningbouw, mobiliteit",
+        "Versterken van keuze- en handelingsvermogen van burgers - Inzicht en mogelijkheden voor energiebesparing en lokale energieparticipatie"
+      ],
+      "MD8_granulariteit_niveau": [
+        "Apparaat: 1 apparaat dat de energieverbruikt",
+        "Aansluiting",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Wijk",
+        "Gemeente",
+        "Land"
+      ],
+      "MD9_granulariteit_frequentie": [
+        "Seconde",
+        "Minuut",
+        "Kwartier",
+        "Uur",
+        "Dag",
+        "Maand",
+        "Jaar"
+      ]
+    }
+  ]
+}

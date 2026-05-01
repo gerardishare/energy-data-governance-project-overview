@@ -1,0 +1,263 @@
+/* assets/use-cases.js */
+let allUseCases = [];
+let fuse = null;
+
+const elQ = document.getElementById('q');
+const elStatus = document.getElementById('status');
+const elOrigin = document.getElementById('origin');
+const elEnergyType = document.getElementById('energyType');
+const elGrid = document.getElementById('grid');
+const elEmpty = document.getElementById('empty');
+const elCount = document.getElementById('countLabel');
+const elChips = document.getElementById('activeChips');
+
+const overlay = document.getElementById('overlay');
+const drawer = document.getElementById('drawer');
+const closeBtn = document.getElementById('closeBtn');
+const drawerCtl = createDrawerController({ overlay, drawer, closeBtn });
+
+const dTitle = document.getElementById('dTitle');
+const dSub = document.getElementById('dSub');
+const dDescription = document.getElementById('dDescription');
+const dDataUse = document.getElementById('dDataUse');
+const dKv = document.getElementById('dKv');
+const dLists = document.getElementById('dLists');
+const dLinks = document.getElementById('dLinks');
+const dMeta = document.getElementById('dMeta');
+
+function isNonEmptyString(v) {
+  return typeof v === 'string' && v.trim().length > 0;
+}
+
+function normalizeUseCase(raw) {
+  return {
+    project_id: raw.project_id || '',
+    projectnaam: raw.projectnaam || '',
+    oorsprong: raw.oorsprong || '',
+    organisaties: raw.organisaties || '',
+    beschrijving: raw.beschrijving || '',
+    gebruik_energiedata: raw.gebruik_energiedata || '',
+    link: raw.link || '',
+    MD1_status: raw.MD1_status || '',
+    MD2_projectdoel: Array.isArray(raw.MD2_projectdoel) ? raw.MD2_projectdoel : [],
+    MD3_type_energiedata: Array.isArray(raw.MD3_type_energiedata) ? raw.MD3_type_energiedata : [],
+    MD4_databron: Array.isArray(raw.MD4_databron) ? raw.MD4_databron : [],
+    MD5_datasink: Array.isArray(raw.MD5_datasink) ? raw.MD5_datasink : [],
+    MD6_governance: Array.isArray(raw.MD6_governance) ? raw.MD6_governance : [],
+    MD7_toepassing: Array.isArray(raw.MD7_toepassing) ? raw.MD7_toepassing : [],
+    MD8_granulariteit_niveau: Array.isArray(raw.MD8_granulariteit_niveau) ? raw.MD8_granulariteit_niveau : [],
+    MD9_granulariteit_frequentie: Array.isArray(raw.MD9_granulariteit_frequentie) ? raw.MD9_granulariteit_frequentie : []
+  };
+}
+
+function statusClassForUseCase(status) {
+  const s = String(status || '').toLowerCase();
+  if (s.includes('lopend')) return 'badgeStatus--active';
+  if (s.includes('afgerond')) return 'badgeStatus--completed';
+  return 'badgeStatus--default';
+}
+
+function statusBadgeForUseCase(status) {
+  const text = isNonEmptyString(status) ? escapeHtml(status) : 'Onbekend';
+  return `<span class="badge badgeStatus ${statusClassForUseCase(status)}">${text}</span>`;
+}
+
+function listToBadges(values, maxItems = 2) {
+  return values
+    .slice(0, maxItems)
+    .map(v => `<span class="badge">${escapeHtml(v)}</span>`)
+    .join('');
+}
+
+function cardHtml(item) {
+  const meta = `
+    ${statusBadgeForUseCase(item.MD1_status)}
+    ${item.oorsprong ? `<span class="badge">${escapeHtml(item.oorsprong)}</span>` : ''}
+    ${listToBadges(item.MD3_type_energiedata, 1)}
+  `;
+  const summarySrc = item.beschrijving || '';
+  const summary = escapeHtml(summarySrc).slice(0, 180) + (summarySrc.length > 180 ? '…' : '');
+
+  return `
+    <div class="card" data-id="${escapeHtml(item.project_id)}" role="button" tabindex="0" aria-label="Open use case: ${escapeHtml(item.projectnaam)}">
+      <div>
+        <h3>${escapeHtml(item.projectnaam || item.project_id)}</h3>
+        <div class="meta">${meta}</div>
+      </div>
+      <p class="summary">${summary}</p>
+      <div class="footerRow">
+        <span class="small">Use case details →</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderGrid(list) {
+  elGrid.innerHTML = list.map(cardHtml).join('');
+  elEmpty.style.display = list.length ? 'none' : 'block';
+  elCount.textContent = `${list.length} use case${list.length === 1 ? '' : 's'}`;
+
+  for (const card of elGrid.querySelectorAll('.card')) {
+    const id = card.getAttribute('data-id');
+    card.addEventListener('click', () => openDrawer(id));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer(id);
+      }
+    });
+  }
+}
+
+function renderChips() {
+  const chips = [];
+  const q = elQ.value.trim();
+  const status = elStatus.value;
+  const origin = elOrigin.value;
+  const energyType = elEnergyType.value;
+
+  if (q) chips.push({ label: `Zoek: ${q}`, clear: () => { elQ.value = ''; apply(); } });
+  if (status) chips.push({ label: `Status: ${status}`, clear: () => { elStatus.value = ''; apply(); } });
+  if (origin) chips.push({ label: `Oorsprong: ${origin}`, clear: () => { elOrigin.value = ''; apply(); } });
+  if (energyType) chips.push({ label: `Type energiedata`, clear: () => { elEnergyType.value = ''; apply(); } });
+
+  elChips.innerHTML = '';
+  for (const chip of chips) {
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.type = 'button';
+    btn.textContent = `${chip.label} ✕`;
+    btn.onclick = chip.clear;
+    elChips.appendChild(btn);
+  }
+}
+
+function apply() {
+  renderChips();
+
+  const q = elQ.value.trim();
+  const status = elStatus.value;
+  const origin = elOrigin.value;
+  const energyType = elEnergyType.value;
+
+  let list = allUseCases;
+  if (q && fuse) list = fuse.search(q).map(r => r.item);
+  if (status) list = list.filter(x => (x.MD1_status || '') === status);
+  if (origin) list = list.filter(x => (x.oorsprong || '') === origin);
+  if (energyType) list = list.filter(x => x.MD3_type_energiedata.includes(energyType));
+
+  renderGrid(list);
+}
+
+function kvRow(label, value) {
+  return `<div class="k">${escapeHtml(label)}</div><div class="v">${escapeHtml(value || '—')}</div>`;
+}
+
+function listSection(title, values) {
+  if (!values.length) return '';
+  return `<div class="small" style="margin-top:10px;">${escapeHtml(title)}</div><ul class="list">${values.map(v => `<li>${escapeHtml(v)}</li>`).join('')}</ul>`;
+}
+
+function openDrawer(id) {
+  const item = allUseCases.find(x => x.project_id === id);
+  if (!item) return;
+
+  dTitle.textContent = item.projectnaam || item.project_id;
+  const subParts = [];
+  if (item.MD1_status) subParts.push(item.MD1_status);
+  if (item.oorsprong) subParts.push(item.oorsprong);
+  dSub.textContent = subParts.join(' • ');
+
+  dDescription.textContent = item.beschrijving || '—';
+  dDataUse.textContent = item.gebruik_energiedata || '—';
+
+  dKv.innerHTML = `
+    ${kvRow('Project ID', item.project_id)}
+    ${kvRow('Status', item.MD1_status)}
+    ${kvRow('Oorsprong', item.oorsprong)}
+    ${kvRow('Organisaties', item.organisaties)}
+  `;
+
+  dLists.innerHTML = `
+    ${listSection('Projectdoel', item.MD2_projectdoel)}
+    ${listSection('Type energiedata', item.MD3_type_energiedata)}
+    ${listSection('Databron', item.MD4_databron)}
+    ${listSection('Datasink', item.MD5_datasink)}
+    ${listSection('Governance', item.MD6_governance)}
+    ${listSection('Toepassing', item.MD7_toepassing)}
+    ${listSection('Granulariteit niveau', item.MD8_granulariteit_niveau)}
+    ${listSection('Granulariteit frequentie', item.MD9_granulariteit_frequentie)}
+  `;
+
+  dLinks.innerHTML = '';
+  if (isNonEmptyString(item.link)) {
+    const a = document.createElement('a');
+    a.className = 'button primary';
+    a.href = item.link;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = 'Open bronlink →';
+    dLinks.appendChild(a);
+  } else {
+    dLinks.innerHTML = '<span class="small">Geen link beschikbaar.</span>';
+  }
+
+  dMeta.textContent = item.project_id ? `ID: ${item.project_id}` : '';
+  drawerCtl.open();
+}
+
+function uniqueValues(values) {
+  return Array.from(new Set(values.filter(isNonEmptyString))).sort((a, b) => a.localeCompare(b));
+}
+
+async function loadUseCases() {
+  const dataUrl = './data/use_cases_2026.json';
+  const res = await fetch(dataUrl, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
+  const data = await res.json();
+  if (!data || !Array.isArray(data.use_cases)) {
+    throw new Error(`Unexpected data format in ${dataUrl}`);
+  }
+
+  allUseCases = data.use_cases.map(normalizeUseCase);
+
+  fuse = new Fuse(allUseCases, {
+    includeScore: true,
+    threshold: 0.32,
+    keys: [
+      { name: 'projectnaam', weight: 0.45 },
+      { name: 'beschrijving', weight: 0.28 },
+      { name: 'gebruik_energiedata', weight: 0.24 },
+      { name: 'organisaties', weight: 0.18 },
+      { name: 'oorsprong', weight: 0.12 },
+      { name: 'MD2_projectdoel', weight: 0.15 },
+      { name: 'MD3_type_energiedata', weight: 0.15 },
+      { name: 'MD7_toepassing', weight: 0.12 }
+    ]
+  });
+
+  elStatus.innerHTML = '<option value="">Status (alle)</option>';
+  elOrigin.innerHTML = '<option value="">Oorsprong (alle)</option>';
+  elEnergyType.innerHTML = '<option value="">Type energiedata (alle)</option>';
+
+  buildSelectOptions(elStatus, uniqueValues(allUseCases.map(x => x.MD1_status)));
+  buildSelectOptions(elOrigin, uniqueValues(allUseCases.map(x => x.oorsprong)));
+  buildSelectOptions(elEnergyType, uniqueValues(allUseCases.flatMap(x => x.MD3_type_energiedata)));
+
+  apply();
+}
+
+function init() {
+  elQ.addEventListener('input', apply);
+  elStatus.addEventListener('change', apply);
+  elOrigin.addEventListener('change', apply);
+  elEnergyType.addEventListener('change', apply);
+
+  loadUseCases().catch(err => {
+    console.error(err);
+    elGrid.innerHTML = '<div class="empty">Kon ./data/use_cases_2026.json niet laden.</div>';
+  });
+}
+
+init();
+
