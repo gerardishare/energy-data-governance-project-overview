@@ -55,14 +55,36 @@ function subBlockHtml(sub) {
   `;
 }
 
-function sectionHtml(rec) {
+function sectionAnchorId(rec, index) {
+  const raw = String(rec?.id ?? '').trim().toLowerCase();
+  const safe = raw.replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
+  return `recommendation-${safe || index + 1}`;
+}
+
+function tocHtml(recommendations) {
+  if (!Array.isArray(recommendations) || !recommendations.length) return '';
+  const items = recommendations.map((rec, idx) => {
+    const id = sectionAnchorId(rec, idx);
+    const label = rec?.header ?? rec?.id ?? `Aanbeveling ${idx + 1}`;
+    return `<li><a href="#${escapeHtml(id)}">${escapeHtml(label)}</a></li>`;
+  }).join('');
+  return `
+    <nav class="printToc" aria-label="Inhoudsopgave aanbevelingen">
+      <h2>Inhoudsopgave</h2>
+      <ol class="printTocList">${items}</ol>
+    </nav>
+  `;
+}
+
+function sectionHtml(rec, index) {
+  const anchorId = sectionAnchorId(rec, index);
   const overallKey = coerceStatusKeyPrint(rec?.overallStatusKey);
   const overallLabel = rec?.overallStatusLabel ?? '';
   const header = rec?.header ?? '';
   const subs = Array.isArray(rec.subRecommendations) ? rec.subRecommendations : [];
 
   return `
-    <section class="printRecSection">
+    <section class="printRecSection" id="${escapeHtml(anchorId)}">
       <div class="printRecHeader">
         <h2>${escapeHtml(header)}</h2>
         <div class="printOverall">
@@ -94,7 +116,8 @@ async function loadRecommendations2023Print() {
 
   root.innerHTML = `
     ${legendHtml}
-    ${recs.map(sectionHtml).join('')}
+    ${tocHtml(recs)}
+    ${recs.map((rec, idx) => sectionHtml(rec, idx)).join('')}
   `;
 }
 

@@ -47,7 +47,29 @@ function developmentsHtml(dev) {
   return `<p class="printBlockLabel">Ontwikkelingen 2023–2026</p>${inner}`;
 }
 
-function projectSection(p) {
+function sectionAnchorId(project, index) {
+  const raw = String(project?.id ?? '').trim().toLowerCase();
+  const safe = raw.replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
+  return `initiative-${safe || index + 1}`;
+}
+
+function tocHtml(projects) {
+  if (!Array.isArray(projects) || !projects.length) return '';
+  const items = projects.map((p, i) => {
+    const id = sectionAnchorId(p, i);
+    const label = p?.naam ?? p?.id ?? `Initiatief ${i + 1}`;
+    return `<li><a href="#${escapeHtml(id)}">${escapeHtml(label)}</a></li>`;
+  }).join('');
+  return `
+    <nav class="printToc" aria-label="Inhoudsopgave initiatieven">
+      <h2>Inhoudsopgave</h2>
+      <ol class="printTocList">${items}</ol>
+    </nav>
+  `;
+}
+
+function projectSection(p, index) {
+  const anchorId = sectionAnchorId(p, index);
   const qr = p.korte_referentie || {};
   const metaParts = [p.status, p.scope, p.geografische_scope].filter(x => x && String(x).trim());
   if (p.jaar_start != null || p.jaar_einde != null) {
@@ -74,7 +96,7 @@ function projectSection(p) {
   ].join('');
 
   return `
-    <section class="printRecSection">
+    <section class="printRecSection" id="${escapeHtml(anchorId)}">
       <div class="printRecHeader">
         <h2>${escapeHtml(p.naam ?? '')}</h2>
         ${metaHtml}
@@ -108,7 +130,10 @@ async function loadDataSharingPrint() {
   const titleEl = document.getElementById('dataDelenPrintYearLabel');
   if (titleEl) titleEl.textContent = String(year);
 
-  root.innerHTML = data.map(projectSection).join('');
+  root.innerHTML = `
+    ${tocHtml(data)}
+    ${data.map((p, i) => projectSection(p, i)).join('')}
+  `;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

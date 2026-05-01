@@ -15,9 +15,16 @@
  * @param {Array}       projects    - Gefilterde projecten (met .id, .naam, .scope)
  * @param {HTMLElement} container   - Element waarin het SVG wordt geplaatst
  * @param {Function}    onItemClick - Callback(slug) bij klik op een diagram-item
+ * @param {Object}      options     - Optionele render opties
  */
-function renderDiagram(projects, container, onItemClick) {
+function renderDiagram(projects, container, onItemClick, options = {}) {
   if (!container) return;
+  const isNewIn2026 = typeof options.isNewIn2026 === 'function'
+    ? options.isNewIn2026
+    : () => false;
+  const isInactiveIn2026 = typeof options.isInactiveIn2026 === 'function'
+    ? options.isInactiveIn2026
+    : () => false;
 
   const list = Array.isArray(projects) ? projects : [];
   if (!list.length) {
@@ -110,14 +117,16 @@ function renderDiagram(projects, container, onItemClick) {
 
   /**
    * Rendert een reeks punten als klikbare SVG-groepen met label.
-   * @param {Array}  points - Uitvoer van pointsFor()
-   * @param {string} color  - Kleur van het datapunt (CSS-kleur string)
+   * Kleur van punt en tekst volgt statusbetekenis:
+   * - lichtblauw: nieuw in 2026
+   * - lichtgrijs: niet meer actief in 2026 (afgerond)
+   * - wit: overige initiatieven
    */
-  function renderLayer(points, color) {
+  function renderLayer(points) {
     return points.map(pt => `
       <g class="diagramItem" data-slug="${escapeHtml(pt.p.id)}">
-        <circle cx="${pt.x}" cy="${pt.y}" r="3.8" fill="${color}"/>
-        <text x="${pt.lx}" y="${pt.ly}" fill="rgba(255,255,255,.9)" font-size="6"
+        <circle cx="${pt.x}" cy="${pt.y}" r="3.8" fill="${isNewIn2026(pt.p) ? 'rgb(147, 214, 255)' : (isInactiveIn2026(pt.p) ? 'rgba(170, 177, 191, .96)' : 'rgba(255,255,255,.9)')}"/>
+        <text x="${pt.lx}" y="${pt.ly}" fill="${isNewIn2026(pt.p) ? 'rgb(147, 214, 255)' : (isInactiveIn2026(pt.p) ? 'rgba(170, 177, 191, .96)' : 'rgba(255,255,255,.9)')}" font-size="6"
               text-anchor="${pt.anchor}" dominant-baseline="middle">
           ${escapeHtml(pt.p.naam)}
         </text>
@@ -125,9 +134,9 @@ function renderDiagram(projects, container, onItemClick) {
     `).join('');
   }
 
-  svg += renderLayer(innerPts,  'rgb(46, 224, 132)');  // Energiedomein      → helder groen
-  svg += renderLayer(middlePts, 'rgb(56, 189, 248)');  // Gerelateerde sector → cyaan/blauw
-  svg += renderLayer(outerPts,  'rgb(244, 114, 182)'); // Generiek initiatief → roze/magenta
+  svg += renderLayer(innerPts);
+  svg += renderLayer(middlePts);
+  svg += renderLayer(outerPts);
 
   svg += '</svg>';
   container.innerHTML = svg;

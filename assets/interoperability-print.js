@@ -20,7 +20,29 @@ function resolveBronLines(keys, sourcesMap) {
   });
 }
 
-function initiativeSection(i, sourcesMap) {
+function sectionAnchorId(initiative, index) {
+  const raw = String(initiative?.id ?? '').trim().toLowerCase();
+  const safe = raw.replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
+  return `initiative-${safe || index + 1}`;
+}
+
+function tocHtml(initiatives) {
+  if (!Array.isArray(initiatives) || !initiatives.length) return '';
+  const items = initiatives.map((i, idx) => {
+    const id = sectionAnchorId(i, idx);
+    const label = i?.naam ?? i?.id ?? `Initiatief ${idx + 1}`;
+    return `<li><a href="#${escapeHtml(id)}">${escapeHtml(label)}</a></li>`;
+  }).join('');
+  return `
+    <nav class="printToc" aria-label="Inhoudsopgave initiatieven interoperabiliteit">
+      <h2>Inhoudsopgave</h2>
+      <ol class="printTocList">${items}</ol>
+    </nav>
+  `;
+}
+
+function initiativeSection(i, sourcesMap, index) {
+  const anchorId = sectionAnchorId(i, index);
   const naam = i.naam ?? '';
   const metaParts = [i.familie, i.geografische_scope].filter(x => x && String(x).trim());
   const metaHtml = metaParts.length
@@ -43,7 +65,7 @@ function initiativeSection(i, sourcesMap) {
   ].join('');
 
   return `
-    <section class="printRecSection">
+    <section class="printRecSection" id="${escapeHtml(anchorId)}">
       <div class="printRecHeader">
         <h2>${escapeHtml(naam)}</h2>
         ${metaHtml}
@@ -70,7 +92,10 @@ async function loadInteroperabilityPrint() {
   const sourcesMap = data.bronnen || {};
   const list = data.initiatieven;
 
-  root.innerHTML = list.map(i => initiativeSection(i, sourcesMap)).join('');
+  root.innerHTML = `
+    ${tocHtml(list)}
+    ${list.map((i, idx) => initiativeSection(i, sourcesMap, idx)).join('')}
+  `;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

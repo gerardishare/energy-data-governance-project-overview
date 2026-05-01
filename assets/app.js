@@ -2,8 +2,28 @@
 let selectedYear = 2026;
 let allProjects = [];
 let fuse = null;
+let ids2023Cache = null;
+let ids2023Promise = null;
 
 function getDataUrl(){ return `./data/projects_data_sharing_${selectedYear}.json`; }
+
+async function get2023Ids(){
+  if (ids2023Cache) return ids2023Cache;
+  if (ids2023Promise) return ids2023Promise;
+
+  ids2023Promise = (async () => {
+    const res = await fetch('./data/projects_data_sharing_2023.json', {cache:'no-store'});
+    if (!res.ok) throw new Error('Failed to load ./data/projects_data_sharing_2023.json');
+    const data = await res.json();
+    if (!Array.isArray(data)) {
+      throw new Error('Unexpected data format in ./data/projects_data_sharing_2023.json');
+    }
+    ids2023Cache = new Set(data.map(p => p && p.id).filter(Boolean));
+    return ids2023Cache;
+  })();
+
+  return ids2023Promise;
+}
 
 const elQ = document.getElementById('q');
 const elStatus = document.getElementById('status');
@@ -13,6 +33,8 @@ const elDiagram = document.getElementById('radialDiagram');
 const elEmpty = document.getElementById('empty');
 const elCount = document.getElementById('countLabel');
 const elChips = document.getElementById('activeChips');
+const elRemovedIn2026Section = document.getElementById('removedIn2026Section');
+const elRemovedIn2026List = document.getElementById('removedIn2026List');
 const yearBtns = document.querySelectorAll('.yearBtn');
 
 const overlay = document.getElementById('overlay');
@@ -30,6 +52,19 @@ const dDevelopments = document.getElementById('dDevelopments');
 const dLinks = document.getElementById('dLinks');
 const dDetail = document.getElementById('dDetail');
 const dMeta = document.getElementById('dMeta');
+
+const removedIn2026Items = [
+  {
+    id: 'removed-dutch-blockchain-coalition',
+    naam: 'Dutch Blockchain Coalition',
+    reden: 'Dit initiatief bestaat niet meer en de relatie met het onderwerp Energie data governance en data delen werd toch te beperkt gevonden.'
+  },
+  {
+    id: 'removed-ds4ssc',
+    naam: 'Data Space for Smart and Sustainable Cities and Communities (DS4SSC)',
+    reden: 'Dit initiatief leek toch te weinig relevant ten opzichte van het onderwerp van het rapport.'
+  }
+];
 
 
 function renderChips(){
@@ -55,6 +90,9 @@ function renderChips(){
 
 function cardHtml(p){
   const tags = (p.tags || []).slice(0,3).map(t=>`<span class="badge">${escapeHtml(t)}</span>`).join('');
+  const titleClass = p._isNewIn2026
+    ? 'cardTitle cardTitle--new2026'
+    : (p._isInactiveIn2026 ? 'cardTitle cardTitle--inactive2026' : 'cardTitle');
   const meta = `
     ${statusBadgeHtml(p.status)}
     <span class="badge">${escapeHtml(p.scope)}</span>
@@ -65,7 +103,7 @@ function cardHtml(p){
   return `
     <div class="card" data-slug="${escapeHtml(p.id)}" role="button" tabindex="0" aria-label="Open quick reference: ${escapeHtml(p.naam)}">
       <div>
-        <h3>${escapeHtml(p.naam)}</h3>
+        <h3 class="${titleClass}">${escapeHtml(p.naam)}</h3>
         <div class="meta">${meta}</div>
       </div>
       <p class="summary">${summary}</p>
@@ -95,6 +133,17 @@ function renderGrid(list){
   }
 }
 
+function renderRemovedIn2026Section(){
+  if (!elRemovedIn2026Section || !elRemovedIn2026List) return;
+
+  elRemovedIn2026List.innerHTML = removedIn2026Items.map(item => `
+    <article class="removedInitiativeItem">
+      <span class="removedInitiativeTitle">${escapeHtml(item.naam)}</span>
+      <span class="removedInitiativeReason">${escapeHtml(item.reden)}</span>
+    </article>
+  `).join('');
+}
+
 function apply(){
   renderChips();
 
@@ -116,7 +165,11 @@ function apply(){
   }
 
   renderGrid(list);
-  renderDiagram(list, elDiagram, openDrawer);
+  renderDiagram(list, elDiagram, openDrawer, {
+    isNewIn2026: (p) => Boolean(p && p._isNewIn2026),
+    isInactiveIn2026: (p) => Boolean(p && p._isInactiveIn2026)
+  });
+  renderRemovedIn2026Section();
 }
 
 
@@ -181,6 +234,7 @@ function openDrawer(slug){
   }
 
   dDetail.href = `project.html?slug=${encodeURIComponent(p.id)}&year=${selectedYear}`;
+  dDetail.style.display = '';
   const tagText = (p.tags || []).join(', ');
   dMeta.textContent = tagText ? `Tags: ${tagText}` : '';
 
@@ -234,13 +288,28 @@ function setYearUI(year){
 async function loadProjects(year){
   setYearUI(year);
   const dataUrl = getDataUrl();
-  const res = await fetch(dataUrl, {cache:'no-store'});
+  const [res, ids2023] = await Promise.all([
+    fetch(dataUrl, {cache:'no-store'}),
+    get2023Ids()
+  ]);
   if (!res.ok) throw new Error(`Failed to load ${dataUrl}`);
   const data = await res.json();
   if (!Array.isArray(data)) {
     throw new Error(`Unexpected data format in ${dataUrl}`);
   }
-  allProjects = data;
+
+  allProjects = data.map(p => {
+    const isNewIn2026 = selectedYear === 2026 && p && p.id && !ids2023.has(p.id);
+    const isInactiveIn2026 = selectedYear === 2026
+      && p
+      && typeof p.status === 'string'
+      && p.status.trim().toLowerCase() === 'afgerond';
+    return {
+      ...p,
+      _isNewIn2026: Boolean(isNewIn2026),
+      _isInactiveIn2026: Boolean(isInactiveIn2026)
+    };
+  });
 
   fuse = new Fuse(allProjects, {
     includeScore: true,

@@ -72,6 +72,14 @@
             <span class="small">• klik op een kaart voor details</span>
           </div>
           <div class="chips" id="activeChips"></div>
+          <div class="legendChip legendChip--new2026" aria-label="Legenda nieuw in 2026">
+            <span class="legendChip-dot" aria-hidden="true"></span>
+            <span class="legendChip-label">Lichtblauw = nieuw in 2026 t.o.v. 2023</span>
+          </div>
+          <div class="legendChip legendChip--inactive2026" aria-label="Legenda niet meer actief in 2026">
+            <span class="legendChip-dot" aria-hidden="true"></span>
+            <span class="legendChip-label">Lichtgrijs = niet meer actief in 2026 t.o.v. 2023</span>
+          </div>
         </div>
       </div>
       <div id="radialDiagram" class="radialDiagram" aria-label="Overzicht initiatieven per scope"></div>
@@ -81,6 +89,12 @@
     <div id="empty" class="empty" style="display:none;">
       Geen initiatieven gevonden met deze filters/zoekterm.
     </div>
+
+    <section id="removedIn2026Section" class="section removedInitiativesSection" aria-label="Initiatieven die in deze update uit de radar zijn verwijderd">
+      <h4>Initiatieven die in deze update uit de radar zijn verwijderd</h4>
+      <p class="summary">Deze initiatieven waren wel opgenomen in de vorige versie van het onderzoek, maar zijn in deze update verwijderd, zowel uit het overzicht van 2023, als uit het overzicht van 2026.</p>
+      <div id="removedIn2026List" class="removedInitiativesList"></div>
+    </section>
   </div>
 
   <!-- Drawer -->
