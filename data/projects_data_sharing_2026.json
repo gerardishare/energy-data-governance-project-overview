@@ -1014,9 +1014,13 @@
     "tags": [
       "stedelijke verdichting",
       "mobiliteit",
+      "gebiedsontwikkeling",
       "klimaat",
       "energie",
-      "data platformen",
+      "energiedata",
+      "digital twins",
+      "sandboxes",
+      "federatief datadelen",
       "afsprakenstelsel"
     ],
     "links": [
@@ -1029,6 +1033,10 @@
         "url": "https://dmi-ecosysteem.nl/over-dmi/"
       },
       {
+        "label": "Use case overview",
+        "url": "https://dmi-ecosysteem.nl/use-case-overview/"
+      },
+      {
         "label": "DMI PDX",
         "url": "https://pdx.dmi-ecosysteem.nl/"
       },
@@ -1037,20 +1045,27 @@
         "url": "https://jaarverslag.dmi-ecosysteem.nl/"
       }
     ],
-    "samenvatting": "DMI is een publiek-privaat ecosysteem dat data en informatietechnologie inzet om steden versneld duurzaam te verdichten en mobiliteit te vernieuwen. Voor data governance is vooral het afsprakenstelsel en de Producten en Data Exchange (PDX) relevant: hiermee worden datasets, diensten en producten vindbaar, deelbaar en toetsbaar gemaakt, met aandacht voor vertrouwen, compliance, logging en federatief datadelen.",
+    "samenvatting": "DMI is een publiek-privaat data-ecosysteem voor mobiliteit en duurzame verstedelijking. Voor het energiedomein is DMI vooral relevant als cross-sectoraal data-deelinitiatief: er zijn nog weinig concreet toegepaste energiedata-use-cases binnen DMI, maar bij gemeenten bestaat een grote behoefte aan hergebruik van energiedata voor gebiedsontwikkeling, beheer van de openbare ruimte, mobiliteit, netcongestie en ruimtelijke planning. Het DMI Café Energie & Digitalisering van 28 januari 2026 markeert een inhoudelijke verbreding richting energiedata. Daarin kwamen sandboxes, federatieve digital twins, gebiedsgerichte planningsmodellen, ESDL, iSHARE en een mogelijke rol van DMI als verbindend ecosysteem richting de Actieagenda Digitalisering Energiesysteem nadrukkelijk naar voren. DMI is daarmee niet primair een energiesector-initiatief, maar een relevante omgeving om energiedata veilig en vertrouwd te hergebruiken in integrale stedelijke besluitvorming.",
     "korte_referentie": {
-      "primair_doel": "Data, digitale infrastructuur en publiek-private samenwerking inzetten om stedelijke opgaven rond gebiedsontwikkeling, mobiliteit, klimaat, energie en sociaal domein integraal en datagedreven aan te pakken.",
+      "primair_doel": "Data, digitale infrastructuur en publiek-private samenwerking inzetten om stedelijke opgaven rond gebiedsontwikkeling, mobiliteit, klimaat, energie en sociaal domein integraal en datagedreven aan te pakken, met specifieke potentie voor het veilige hergebruik van energiedata in gebiedsontwikkeling en ruimtelijke planning.",
       "belangrijkste_resultaten": [
         "DMI-afsprakenstelsel voor deelname, governance en datadeling",
         "Producten en Data Exchange (PDX) voor vraag en aanbod van data, producten, diensten en kennis",
-        "Use cases rond mobiliteit, energie, gebiedsontwikkeling, digital twins, water/bodem en monitoring",
-        "Community/ecoraad en werkgroepen voor publiek-private besluitvorming",
-        "Koppeling met federatief datadelen en trustmechanismen zoals iSHARE"
+        "Use case portfolio rond mobiliteit, gebiedsontwikkeling, digital twins, water/bodem, klimaat en energie",
+        "DMI Café Energie & Digitalisering op 28 januari 2026 met 22 deelnemers uit gemeenten, netbeheerders, kennisinstellingen en marktpartijen",
+        "Identificatie van energiedata als kansrijk thema voor gebiedsgerichte planning, digital twins en duurzame verstedelijking",
+        "Agendering van sandboxes als veilige publieke voorziening om vragen op energiedata te kunnen stellen zonder ruwe data breed te delen",
+        "Voorstel voor 4–6 living labs rond gebiedsontwikkeling, netcongestie, bedrijventerreinen en binnenstedelijke verdichting",
+        "Verkenning van federatieve digital twins waarin modellen data bij de bron kunnen gebruiken in plaats van data centraal te kopiëren",
+        "Aansluiting op trustmechanismen en standaarden zoals iSHARE en ESDL",
+        "Positionering van DMI als mogelijke verbindende schakel tussen gemeenten, netbeheerders, marktpartijen, kennisinstellingen en landelijke programma's zoals de Actieagenda Digitalisering Energiesysteem"
       ],
       "doelgebruikers": [
         "Gemeenten en provincies",
         "Ministeries en uitvoeringsorganisaties",
+        "Netbeheerders als samenwerkingspartner en databron",
         "Mobiliteits- en gebiedsontwikkelingspartijen",
+        "Beheerders van openbare ruimte",
         "Data- en platformleveranciers",
         "Kennisinstellingen",
         "Beleidsmakers en stedelijke planners"
@@ -1058,17 +1073,22 @@
     },
     "ontwikkelingen_2023_2026": {
       "referentiedatum": "Q2 2026",
-      "samenvatting": "DMI is in 2025 zichtbaar doorontwikkeld van ecosysteem- en afsprakenvorming naar toepassing. De livegang van de PDX in oktober 2025 is de belangrijkste recente mijlpaal voor data governance: vraag en aanbod van data en diensten worden via één exchange vindbaar, toetsbaar en onder voorwaarden deelbaar.",
+      "samenvatting": "DMI is in 2025 en 2026 doorontwikkeld van een breed ecosysteem voor mobiliteit en duurzame verstedelijking naar een relevante omgeving voor cross-sectoraal hergebruik van energiedata. De belangrijkste nuance is dat DMI nog weinig concreet toegepaste energiedata-use-cases kent, maar wel een duidelijke behoefte en potentieel: gemeenten willen energiedata gebruiken voor gebiedsontwikkeling, beheer openbare ruimte, netcongestie, mobiliteit en ruimtelijke planning. Het DMI Café Energie & Digitalisering van 28 januari 2026 bracht deze behoefte scherp in beeld. De strategische sweet spot ligt bij een energiedata-infrastructuur met standaarden, trust frameworks, federatief datadelen en sandboxes, direct gekoppeld aan gebiedsgerichte planningscasussen. Voor de update van het rapport is DMI daarom relevant als gerelateerde-sectorinitiatief dat kan helpen om energiedata buiten de oorspronkelijke verzamelcontext verantwoord te hergebruiken.",
       "hoogtepunten": [
         {
           "datum": "2023-06",
           "titel": "DMI-afsprakenstelsel v1.1",
-          "detail": "Vastlegging van deelnamevoorwaarden, governance, algemene voorzieningen en gedragsregels voor deelnemers."
+          "detail": "Vastlegging van deelnamevoorwaarden, governance, algemene voorzieningen en gedragsregels voor deelnemers. Dit vormt de basis voor vertrouwd datadelen binnen het DMI-ecosysteem."
         },
         {
           "datum": "2025-10",
           "titel": "Livegang Producten en Data Exchange (PDX)",
-          "detail": "Lancering van de PDX voor vertrouwd en veilig delen en hergebruiken van data, producten en diensten."
+          "detail": "Lancering van de PDX voor het vindbaar, toetsbaar en onder voorwaarden deelbaar maken van data, producten en diensten binnen het DMI-ecosysteem."
+        },
+        {
+          "datum": "2026-01-28",
+          "titel": "DMI Café Energie & Digitalisering",
+          "detail": "DMI organiseerde een kennissessie over de rol van DMI in de digitalisering van het energiesysteem. Met 22 deelnemers uit gemeenten, netbeheerders, kennisinstellingen en marktpartijen zijn energiedata-ecosystemen, gebiedsgerichte planningsmodellen, digital twins en energieapplicaties besproken. Het energiedata-ecosysteem scoorde hoog op relevantie, gebiedsgerichte planning kreeg de hoogste prioriteit en digital twins leverden de meeste casussen op. Het DMI Café maakte zichtbaar dat gemeenten en marktpartijen behoefte hebben aan energiedata voor gebiedsontwikkeling en beheer openbare ruimte, maar dat ontbrekende data, onvindbare data, juridische onzekerheid, privacy, security en terughoudendheid bij netbeheerders belangrijke belemmeringen zijn. Deelnemers benoemden sandboxing als mogelijke versneller: niet ruwe energiedata breed delen, maar vragen veilig op datasets kunnen afvuren in een beschermde omgeving. Dit kan helpen om AVG- en securitybelemmeringen te verkleinen en toch bruikbare antwoorden voor gemeenten en onderzoekers te krijgen. Het gedeelde toekomstbeeld is federatieve digital twins die data bij de bron benutten."
         },
         {
           "datum": "2026",
