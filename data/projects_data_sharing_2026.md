@@ -248,8 +248,8 @@ Implementeren van een Europese energy data space met data‑soevereiniteit en ee
 ### korte_referentie.doelgebruikers
 - Energiesector
 - Hernieuwbare‑operators
-- Local Energy Communities
-- Mobiliteitsdienstverleners
+- Wind operators
+- Hydrogen operators
 - Netbeheerders/aggregators
 
 ### ontwikkelingen_2023_2026.referentiedatum
@@ -268,21 +268,22 @@ geografische_scope: Europa
 eigenaar: EU‑gefinancierd consortium (30 partners, 12 landen; NL o.a. via TNO)
 jaar_start: 2022
 jaar_einde: 2025
-tags: EU-project, referentiearchitectuur, SGAM, dataspace, prikkels
+tags: EU-project, referentiearchitectuur, SGAM, dataspace, GAIA-X, IDSA, BRIDGE
 
 ### links
 - label=Website; url=https://enershare.eu/
 - label=CORDIS; url=https://cordis.europa.eu/project/id/101069831
 
 ### samenvatting
-Enershare is medio 2025 afgerond. Het project ontwikkelde een consumer-centric referentiearchitectuur voor een Energy Data Space, inclusief marktplaats voor data en diensten, en valideerde dit in pilots.
+Enershare is medio 2025 afgerond. Het project ontwikkelde een referentiearchitectuur voor een Energy Data Space, inclusief marktplaats voor data en diensten, en valideerde dit in zeven pilots en elf use‑cases.
 
 ### korte_referentie.primair_doel
-Een mens‑/eindafnemer‑gerichte referentiearchitectuur en componenten leveren voor interoperabele energiedata‑deling in Europa.
+Een referentiearchitectuur en componenten leveren voor interoperabele energiedata‑deling in Europa.
 
 ### korte_referentie.belangrijkste_resultaten
-- Referentiearchitectuur (SGAM‑gebaseerd)
+- Referentiearchitectuur (GAIA-X en SGAM‑gebaseerd)
 - IDSA‑compliant componenten
+- Marketplace (marktplaats) met blockchain/smart contracts
 - Pilots en use cases
 - Compensatiesysteem voor datadeling
 
@@ -297,7 +298,7 @@ Een mens‑/eindafnemer‑gerichte referentiearchitectuur en componenten leveren
 Q1 2026
 
 ### ontwikkelingen_2023_2026.samenvatting
-Enershare is medio 2025 afgerond. Het project ontwikkelde een consumer-centric referentiearchitectuur voor een Energy Data Space, inclusief marktplaats voor data en diensten, en valideerde dit in pilots.
+Enershare is medio 2025 afgerond. Het project ontwikkelde een referentiearchitectuur voor een Energy Data Space, inclusief marktplaats voor data en diensten, en valideerde dit in pilots.
 
 ### ontwikkelingen_2023_2026.hoogtepunten
 - datum=2025-04; titel=Final evaluation; detail=Eindrapportage met evaluatie van pilots en best practices.
@@ -342,7 +343,7 @@ Open‑source, gedecentraliseerde data space ontwikkelen waarmee burgers/gebruik
 Q1 2026
 
 ### ontwikkelingen_2023_2026.samenvatting
-Volgens het update-overzicht is EDDIE eind 2025 afgerond. Het project ontwikkelde een gedecentraliseerde, open-source data space met focus op “in-house” consent en datadeling voor slimme-meterdata.
+EDDIE is eind 2025 afgerond. Het project ontwikkelde een gedecentraliseerde, open-source data space met focus op “in-house” consent en datadeling voor slimme-meterdata.
 
 ### ontwikkelingen_2023_2026.hoogtepunten
 - datum=2023; titel=EDDIE Online (PaaS); detail=PaaS gelanceerd voor snelle data-integratie.
