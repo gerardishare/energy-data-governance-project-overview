@@ -11,6 +11,14 @@ function listBlock(label, items) {
   return `<p class="printBlockLabel">${escapeHtml(label)}</p><ul class="printList">${items.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>`;
 }
 
+function normalizeLinks(useCase) {
+  return Array.isArray(useCase?.links)
+    ? useCase.links
+      .filter(link => typeof link === 'string' && link.trim())
+      .map(link => link.trim())
+    : [];
+}
+
 function sectionAnchorId(useCase, index) {
   const raw = String(useCase?.project_id ?? '').trim().toLowerCase();
   const safe = raw.replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
@@ -34,6 +42,7 @@ function tocHtml(useCases) {
 
 function useCaseSection(u, index) {
   const anchorId = sectionAnchorId(u, index);
+  const links = normalizeLinks(u);
   const metaParts = [u.MD1_status, u.oorsprong].filter(x => x && String(x).trim());
   const metaHtml = metaParts.length
     ? `<div class="printOverall"><span>${escapeHtml(metaParts.join(' • '))}</span></div>`
@@ -51,7 +60,7 @@ function useCaseSection(u, index) {
     listBlock('Toepassing', u.MD7_toepassing),
     listBlock('Granulariteit niveau', u.MD8_granulariteit_niveau),
     listBlock('Granulariteit frequentie', u.MD9_granulariteit_frequentie),
-    textBlock('Link', u.link)
+    listBlock('Links', links)
   ].join('');
 
   return `

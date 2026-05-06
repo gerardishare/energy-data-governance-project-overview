@@ -29,6 +29,12 @@ function isNonEmptyString(v) {
   return typeof v === 'string' && v.trim().length > 0;
 }
 
+function normalizeLinks(raw) {
+  return Array.isArray(raw.links)
+    ? raw.links.filter(isNonEmptyString).map(link => link.trim())
+    : [];
+}
+
 function normalizeUseCase(raw) {
   return {
     project_id: raw.project_id || '',
@@ -37,7 +43,7 @@ function normalizeUseCase(raw) {
     organisaties: raw.organisaties || '',
     beschrijving: raw.beschrijving || '',
     gebruik_energiedata: raw.gebruik_energiedata || '',
-    link: raw.link || '',
+    links: normalizeLinks(raw),
     MD1_status: raw.MD1_status || '',
     MD2_projectdoel: Array.isArray(raw.MD2_projectdoel) ? raw.MD2_projectdoel : [],
     MD3_type_energiedata: Array.isArray(raw.MD3_type_energiedata) ? raw.MD3_type_energiedata : [],
@@ -190,16 +196,13 @@ function openDrawer(id) {
   `;
 
   dLinks.innerHTML = '';
-  if (isNonEmptyString(item.link)) {
-    const a = document.createElement('a');
-    a.className = 'button primary';
-    a.href = item.link;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.textContent = 'Open bronlink →';
-    dLinks.appendChild(a);
+  if (Array.isArray(item.links) && item.links.length) {
+    const linksHtml = item.links
+      .map(link => `<li><a class="link" href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link)}</a></li>`)
+      .join('');
+    dLinks.innerHTML = `<ul class="list">${linksHtml}</ul>`;
   } else {
-    dLinks.innerHTML = '<span class="small">Geen link beschikbaar.</span>';
+    dLinks.innerHTML = '<span class="small">Geen links beschikbaar.</span>';
   }
 
   dMeta.textContent = item.project_id ? `ID: ${item.project_id}` : '';
