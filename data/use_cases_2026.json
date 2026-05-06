@@ -53,7 +53,7 @@
         "Energieleverancier",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
         "Aggregator",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Producent / opwekker (wind, zon, overige hernieuwbare opwek)"
       ],
       "meerdere_waarden": true
@@ -66,7 +66,7 @@
         "Bedrijven/industrie",
         "Overheden/beleidsmakers",
         "Netbeheerders",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Aggregator",
         "Onderzoekers"
       ],
@@ -132,19 +132,6 @@
         "Maand",
         "Jaar",
         "5 Jaar"
-      ],
-      "meerdere_waarden": true
-    },
-    "MD10_energiedrager": {
-      "label": "MD10: Energiedrager (aanbevolen nieuw veld)",
-      "beschrijving": "Welk type energiedrager centraal staat in de use case",
-      "waarden": [
-        "Elektriciteit",
-        "Aardgas",
-        "Warmte",
-        "Waterstof",
-        "Multi-carrier (meerdere energiedragers)",
-        "Overig / niet gespecificeerd"
       ],
       "meerdere_waarden": true
     }
@@ -296,7 +283,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -337,7 +324,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -378,7 +365,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -423,7 +410,7 @@
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -448,50 +435,6 @@
       ]
     },
     {
-      "project_id": "P008",
-      "projectnaam": "Digital Twin Twente",
-      "oorsprong": "Overig",
-      "organisaties": "Universiteit Twente, regionale partners",
-      "beschrijving": "Het GridFlex-project van de Universiteit Twente ontwikkelt een digitale tweeling van het regionale energiesysteem in Twente om de energietransitie te plannen en netflexibiliteit te optimaliseren. De tool ondersteunt scenario-analyses voor systeembeheerders en beleidsmakers.",
-      "gebruik_energiedata": "Energiedata (opwek, vraag, netbelasting) wordt geïntegreerd in een model voor scenarioanalyse.",
-      "link": "https://www.utwente.nl/en/eemcs/energy/projects/current/gridflex/",
-      "MD1_status": "Lopend",
-      "MD2_projectdoel": [
-        "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
-        "Voorspelling & planning van energiegebruik"
-      ],
-      "MD3_type_energiedata": [
-        "Energieverbruiksdata",
-        "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
-      ],
-      "MD4_databron": [
-        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
-      ],
-      "MD5_datasink": [
-        "Overheden/beleidsmakers",
-        "Onderzoekers"
-      ],
-      "MD6_governance": [
-        "Open data",
-        "Contractuele datadeling (B2B)"
-      ],
-      "MD7_toepassing": [
-        "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
-        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
-      ],
-      "MD8_granulariteit_niveau": [
-        "Gemeente",
-        "Provincie"
-      ],
-      "MD9_granulariteit_frequentie": [
-        "Uur",
-        "Dag",
-        "Jaar"
-      ]
-    },
-    {
       "project_id": "P009",
       "projectnaam": "Urban Energy Digital Twin Rotterdam",
       "oorsprong": "Overig",
@@ -512,7 +455,7 @@
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -556,7 +499,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Onderzoekers",
@@ -600,7 +543,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -644,7 +587,7 @@
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -665,7 +608,8 @@
       ],
       "MD9_granulariteit_frequentie": [
         "Kwartier",
-        "Uur"
+        "Uur",
+        "Minuut"
       ]
     },
     {
@@ -687,7 +631,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Aggregator"
       ],
       "MD5_datasink": [
@@ -732,7 +676,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -778,7 +722,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -864,7 +808,7 @@
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -948,7 +892,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -993,7 +937,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -1077,7 +1021,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -1121,7 +1065,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -1167,7 +1111,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Netbeheerders"
@@ -1210,7 +1154,7 @@
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -1298,7 +1242,7 @@
         "Marktdata: data over de energiemarkt"
       ],
       "MD4_databron": [
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
       ],
       "MD5_datasink": [
@@ -1341,7 +1285,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1381,7 +1325,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1421,7 +1365,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1461,7 +1405,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1502,7 +1446,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -1543,7 +1487,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1583,7 +1527,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -1626,7 +1570,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1668,7 +1612,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Aggregator"
       ],
       "MD5_datasink": [
@@ -1713,7 +1657,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -1757,7 +1701,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -1801,7 +1745,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -1842,7 +1786,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1883,7 +1827,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -1924,7 +1868,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)"
       ],
       "MD5_datasink": [
@@ -1968,7 +1912,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -2011,7 +1955,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -2052,7 +1996,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -2095,7 +2039,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -2136,7 +2080,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -2177,7 +2121,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -2221,7 +2165,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -2263,7 +2207,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie",
@@ -2305,7 +2249,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Netbeheerders"
@@ -2349,7 +2293,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Aggregator"
       ],
       "MD5_datasink": [
@@ -2392,7 +2336,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Netbeheerders"
@@ -2433,7 +2377,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Netbeheerders"
@@ -2473,7 +2417,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -2513,7 +2457,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Huishoudens/prosumers",
@@ -2555,7 +2499,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -2595,7 +2539,7 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Bedrijven/industrie"
@@ -2618,10 +2562,10 @@
     },
     {
       "project_id": "P059",
-      "projectnaam": "Digital Twin Twente",
+      "projectnaam": "TwinTwente",
       "oorsprong": "Overig",
       "organisaties": "SustainableScaleUp, Universiteit Twente, regionale partners Twente",
-      "beschrijving": "TwinTwente is een digitale tweeling van de energiesystemen in de regio Twente, ontwikkeld als onderdeel van het TwinValley-programma om de regionale energietransitie te plannen en te visualiseren.",
+      "beschrijving": "TwinTwente is een regionaal digital-twin- en datadeelprogramma binnen TwinValley. Het richt zich op een gedeelde informatiebasis, governance en samenwerking rond regionale opgaven in Twente. Energie en verduurzaming kunnen onderdeel zijn van de use cases.",
       "gebruik_energiedata": "Energiedata van de regio Twente wordt geïntegreerd in een digitale tweeling om energiestromen, netbelasting en transitiescenario's te analyseren en te communiceren aan stakeholders.",
       "link": "https://www.sustainablescale-up.com/twinvalley-programme/twintwente-twents",
       "MD1_status": "Lopend",
@@ -2631,32 +2575,33 @@
       ],
       "MD3_type_energiedata": [
         "Energieverbruiksdata",
+        "Gebouwdata: data over gebouwen die energie verbruiken",
         "Netdata: data over het (fysieke) energienetwerk en de assets daarin"
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator",
-        "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
-        "Onderzoekers"
+        "Onderzoekers",
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD6_governance": [
-        "Open data",
+        "Data space / federatief (gedistribueerde datadeling met behoud van controle)",
         "Contractuele datadeling (B2B)"
       ],
       "MD7_toepassing": [
         "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
-        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+        "Ondersteunen van andere maatschappelijke opgaven - Integratie met o.a. woningbouw, mobiliteit"
       ],
       "MD8_granulariteit_niveau": [
         "Gemeente",
-        "Provincie"
+        "Wijk"
       ],
       "MD9_granulariteit_frequentie": [
-        "Uur",
         "Dag",
+        "Maand",
         "Jaar"
       ]
     },
@@ -2680,7 +2625,7 @@
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -2728,7 +2673,7 @@
       ],
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer"
       ],
       "MD5_datasink": [
@@ -2773,7 +2718,7 @@
       "MD4_databron": [
         "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator"
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
@@ -2819,13 +2764,13 @@
       ],
       "MD4_databron": [
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Producent / opwekker (wind, zon, overige hernieuwbare opwek)",
         "Aggregator"
       ],
       "MD5_datasink": [
         "Onderzoekers",
-        "Dienstverlener anders dan de aggretator",
+        "Dienstverlener anders dan de aggregator",
         "Overheden/beleidsmakers",
         "Bedrijven/industrie"
       ],
