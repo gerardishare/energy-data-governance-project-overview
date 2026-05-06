@@ -87,7 +87,7 @@ function cardHtml(item) {
   return `
     <div class="card" data-id="${escapeHtml(item.project_id)}" role="button" tabindex="0" aria-label="Open use case: ${escapeHtml(item.projectnaam)}">
       <div>
-        <h3>${escapeHtml(item.projectnaam || item.project_id)}</h3>
+        <h3>${escapeHtml(item.projectnaam || 'Onbekende use case')}</h3>
         <div class="meta">${meta}</div>
       </div>
       <p class="summary">${summary}</p>
@@ -168,19 +168,16 @@ function openDrawer(id) {
   const item = allUseCases.find(x => x.project_id === id);
   if (!item) return;
 
-  dTitle.textContent = item.projectnaam || item.project_id;
+  dTitle.textContent = item.projectnaam || 'Onbekende use case';
   const subParts = [];
   if (item.MD1_status) subParts.push(item.MD1_status);
-  if (item.oorsprong) subParts.push(item.oorsprong);
   dSub.textContent = subParts.join(' • ');
 
   dDescription.textContent = item.beschrijving || '—';
   dDataUse.textContent = item.gebruik_energiedata || '—';
 
   dKv.innerHTML = `
-    ${kvRow('Project ID', item.project_id)}
     ${kvRow('Status', item.MD1_status)}
-    ${kvRow('Oorsprong', item.oorsprong)}
     ${kvRow('Organisaties', item.organisaties)}
   `;
 
@@ -205,7 +202,7 @@ function openDrawer(id) {
     dLinks.innerHTML = '<span class="small">Geen links beschikbaar.</span>';
   }
 
-  dMeta.textContent = item.project_id ? `ID: ${item.project_id}` : '';
+  dMeta.textContent = '';
   drawerCtl.open();
 }
 

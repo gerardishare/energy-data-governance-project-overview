@@ -139,10 +139,10 @@
   "use_cases": [
     {
       "project_id": "P001",
-      "projectnaam": "MOOI – EIGEN",
+      "projectnaam": "EIGEN",
       "oorsprong": "MOOI",
       "organisaties": "Alliander, TNO, Saxion, Elaad, ENTRNCE, Connectr, Arcadis, Dep, Liander, PARKnCHARGE, Recoy, SemperPower, Firan, SEP, Universiteit Twente, Ventolines",
-      "beschrijving": "MOOI EIGEN is een sectorbrede samenwerking, geleid door Alliander, die een universele blauwdruk en toolset ontwikkelt voor de realisatie van energiehubs op bedrijventerreinen. Het doel is om lokaal opgewekte hernieuwbare energie slim in te passen in bestaande netten en netcongestie te verminderen.",
+      "beschrijving": "EIGEN is een sectorbrede samenwerking, geleid door Alliander, die een universele blauwdruk en toolset ontwikkelt voor de realisatie van energiehubs op bedrijventerreinen. Het doel is om lokaal opgewekte hernieuwbare energie slim in te passen in bestaande netten en netcongestie te verminderen.",
       "gebruik_energiedata": "Data over energieopwek, verbruik, opslag, flexibiliteit en netcapaciteit wordt gebruikt om energiestromen lokaal te balanceren en congestie te verminderen.",
       "links": [
         "https://www.eigen-energyhubs.nl/",
@@ -191,7 +191,7 @@
     },
     {
       "project_id": "P002",
-      "projectnaam": "MOOI – ORKEST",
+      "projectnaam": "ORKEST",
       "oorsprong": "MOOI",
       "organisaties": "Stedin, TU Eindhoven, Technolution, DNV, Netbeheer Nederland, Phase to Phase",
       "beschrijving": "ORKEST is een MOOI-subsidieproject van Stedin, TU Eindhoven, Technolution, DNV, Netbeheer Nederland en Phase to Phase dat onderzoekt hoe bestaande elektriciteitsnetten beter benut kunnen worden door actief capaciteitsbeheer, asset intelligence en optimale inpassing van flexibiliteit en hernieuwbare energie.",
@@ -235,10 +235,10 @@
     },
     {
       "project_id": "P003",
-      "projectnaam": "MOOI – ABLE",
+      "projectnaam": "ABLE",
       "oorsprong": "MOOI",
       "organisaties": "TNO, bedrijven en kennisinstellingen",
-      "beschrijving": "MOOI ABLE is een onderzoeksproject van TNO en partners dat concepten ontwikkelt voor energie-uitwisseling en lokale warmtenetten op bedrijventerreinen, met als doel duurzame warmte- en elektriciteitsoplossingen te combineren en netcongestie te verminderen.",
+      "beschrijving": "ABLE is een onderzoeksproject van TNO en partners dat concepten ontwikkelt voor energie-uitwisseling en lokale warmtenetten op bedrijventerreinen, met als doel duurzame warmte- en elektriciteitsoplossingen te combineren en netcongestie te verminderen.",
       "gebruik_energiedata": "Data over energiegebruik, warmte-uitwisseling en infrastructuur wordt gebruikt voor ontwerp en exploitatie van lokale energienetten.",
       "links": [
         "https://projecten.topsectorenergie.nl/projecten/actiegericht-op-bedrijventerreinen-laagdrempelig-energie-uitwisseling-realiseren-39455",
@@ -1157,50 +1157,6 @@
       "MD9_granulariteit_frequentie": [
         "Kwartier",
         "Uur"
-      ]
-    },
-    {
-      "project_id": "P024",
-      "projectnaam": "Gridscale X-platform",
-      "oorsprong": "NEDRA",
-      "organisaties": "Siemens, Alliander",
-      "beschrijving": "Gridscale X van Siemens is een softwareplatform voor autonoom netbeheer dat bij Alliander wordt ingezet om een digitale tweeling van het laagspanningsnet te creëren. Op basis van deze digitale representatie kunnen netbeheerders investeringen prioriteren en onbenutte netcapaciteit benutten.",
-      "gebruik_energiedata": "Laagspanningsnetdata wordt gebruikt om een digitale tweeling van het fysieke net te creëren, waarmee netbeheerders investeringen kunnen prioriteren en onbenutte capaciteit kunnen benutten.",
-      "MD1_status": "Lopend",
-      "MD2_projectdoel": [
-        "Operationeel netbeheer: gebruik van energiedata voor de operationele taken van de netbeheerder",
-        "Inzicht & monitoring van energiegebruik",
-        "Optimalisatie & sturing van energiegebruik"
-      ],
-      "MD3_type_energiedata": [
-        "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
-        "Energieverbruiksdata"
-      ],
-      "MD4_databron": [
-        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
-        "Dienstverlener anders dan de aggregator"
-      ],
-      "MD5_datasink": [
-        "Netbeheerders"
-      ],
-      "MD6_governance": [
-        "Contractuele datadeling (B2B)"
-      ],
-      "MD7_toepassing": [
-        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
-        "Operationeel management - Dagelijkse bedrijfsvoering van het elektriciteits-  gas- en warmtenet"
-      ],
-      "MD8_granulariteit_niveau": [
-        "Wijk",
-        "Aansluiting",
-        "Fase: een verzameling van apparaten aansgesloten op 1 fase in het huis"
-      ],
-      "MD9_granulariteit_frequentie": [
-        "Minuut",
-        "Kwartier"
-      ],
-      "links": [
-        "https://www.sw.siemens.com/en-US/gridscale-x/"
       ]
     },
     {
@@ -2680,7 +2636,7 @@
       "projectnaam": "Bouwinvest duurzaamheid / vastgoedportefeuille",
       "oorsprong": "Overig",
       "organisaties": "Bouwinvest, dienstverleners vastgoedsector",
-      "beschrijving": "Bouwinvest werkt aan verduurzaming van zijn vastgoedportefeuille door energiedata centraal te verzamelen, te analyseren en te rapporteren voor ESG-doelstellingen en Paris Proof-ambities. Deze use case overlapt inhoudelijk sterk met P040, dat de concrete Spectral-implementatie beschrijft.",
+      "beschrijving": "Bouwinvest werkt aan verduurzaming van zijn vastgoedportefeuille door energiedata centraal te verzamelen, te analyseren en te rapporteren voor ESG-doelstellingen en Paris Proof-ambities.",
       "gebruik_energiedata": "Energieverbruiksdata van de Bouwinvest-portefeuille wordt geaggregeerd en geanalyseerd voor ESG-rapportage, reductiedoelen en monitoring van verduurzamingsvoortgang.",
       "MD1_status": "Lopend",
       "MD2_projectdoel": [
@@ -2864,49 +2820,57 @@
     },
     {
       "project_id": "P062",
-      "projectnaam": "Drechtsteden",
+      "projectnaam": "Digital Twin Drechtsteden",
       "oorsprong": "Overig",
-      "organisaties": "Gemeenten Drechtsteden, Stedin, provincie Zuid-Holland, partners energietransitie",
-      "beschrijving": "Het Drechtsteden-project richt zich op regionale energietransitie door energiedata te verzamelen en te analyseren voor regionale planning en het identificeren van kansen voor verduurzaming. De opgegeven bron is een algemene regiopagina en geen specifieke projectpagina.",
-      "gebruik_energiedata": "Energieverbruiks-, productie- en netdata van de regio Drechtsteden wordt geanalyseerd om de energietransitie te plannen, kansen voor verduurzaming te identificeren en beleid te onderbouwen.",
-      "MD1_status": "Onbekend / niet gespecificeerd",
+      "organisaties": "RES-regio Drechtsteden, Smart Delta Drechtsteden / Programmabureau Energieakkoord Drechtsteden, Werkgevers Drechtsteden, gemeenten Drechtsteden, ondernemersverenigingen en energiecoöperaties, Zenmo",
+      "beschrijving": "Digital Twin Drechtsteden is een simulatietool voor het lokale energiesysteem in de regio Drechtsteden. De tool verkent hoe de energievoorziening zich in een gebied ontwikkelt en maakt inzichtelijk wat de gevolgen zijn van warmtetransitie, elektrificatie van bedrijven en mobiliteit, zon op daken, lokale opwek, flexibiliteit en energiehubs voor het elektriciteitsnet en het integrale energiesysteem. De digital twin wordt toegepast bij onder meer bedrijventerreinen zoals Antoniapolder en Groote Lindt en is in doorontwikkeling naar schaalniveau Drechtsteden.",
+      "gebruik_energiedata": "De digital twin combineert actuele data, kaarten en modellen, waaronder gegevens over gebouwen, energieverbruik, zonnedaken, elektrische voertuigen, huidige en toekomstige energievraag, lokale opwek, flexibiliteit en warmteopties. Daarmee worden scenario’s doorgerekend voor warmtetransitie, netbelasting, energiehubs, lokale energie-uitwisseling en betere afstemming van investeringen in netten, warmte-infrastructuur en bedrijventerreinen.",
+      "link": "https://www.drechtstedenenergie.nl/digitaltwindrechtsteden\nhttps://www.smartdeltadrechtsteden.nl/nieuws/simulatietool-helpt-slim-om-te-gaan-met-stroom-bij-warmtetransitie?sresult=1265987673&swords=digital+twin\nhttps://www.smartdeltadrechtsteden.nl/nieuws/simulatietool-digital-twin-helpt-ondernemers-drechtsteden-bij-aanpak-netcongestie",
+      "MD1_status": "Lopend",
       "MD2_projectdoel": [
+        "Inzicht & monitoring van energiegebruik",
+        "Voorspelling & planning van energiegebruik",
         "Beleid & onderzoek: gebruik van energiedata t.b.v. nieuw of aangepast beleid",
-        "Voorspelling & planning van energiegebruik"
+        "Innovatie & demonstratie: testen en demonstreren van nieuwe technologieen of businessmodellen"
       ],
       "MD3_type_energiedata": [
         "Energieverbruiksdata",
         "Netdata: data over het (fysieke) energienetwerk en de assets daarin",
-        "Gebouwdata: data over gebouwen die energie verbruiken"
+        "Gebouwdata: data over gebouwen die energie verbruiken",
+        "Flexibiliteitsdata: data over de inzet van flexibele energie"
       ],
       "MD4_databron": [
-        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Gebruiker (aangeslotene, contractant) op niveau van 1 huishouden, prosumer",
+        "Netbeheerder ofwel systeembeheerder, distributie of transmissie (DSO/DSB, TSO/TSB)",
         "Dienstverlener anders dan de aggregator",
         "Producent / opwekker (wind, zon, overige hernieuwbare opwek)"
       ],
       "MD5_datasink": [
         "Overheden/beleidsmakers",
-        "Onderzoekers"
+        "Bedrijven/industrie",
+        "Netbeheerders",
+        "Onderzoekers",
+        "Dienstverlener anders dan de aggregator"
       ],
       "MD6_governance": [
-        "Open data",
-        "Contractuele datadeling (B2B)"
+        "Contractuele datadeling (B2B)",
+        "Geanonimiseerde data"
       ],
       "MD7_toepassing": [
         "Ondersteunen van decentrale beleidsvorming en uitvoering - Regionale en lokale planning en concrete uitvoering van maatregelen.",
-        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders"
+        "Ondersteunen van systeemplanning en realisatie - Fysieke planning en beheer van netten en infrastructuur door netbeheerders",
+        "Stimuleren van innovatie en bedrijvigheid in het energiesysteem - Ontwikkeling van nieuwe diensten, flexibiliteitsopties en energiehubs.",
+        "Ondersteunen van andere maatschappelijke opgaven - Integratie met o.a. woningbouw, mobiliteit"
       ],
       "MD8_granulariteit_niveau": [
-        "Gemeente",
-        "Wijk"
+        "Bedrijventerrein",
+        "Wijk",
+        "Gemeente"
       ],
       "MD9_granulariteit_frequentie": [
         "Dag",
-        "Maand"
-      ],
-      "links": [
-        "https://www.drechtsteden.nl/energietransitie"
+        "Maand",
+        "Jaar"
       ]
     },
     {
