@@ -25,6 +25,19 @@ function renderDiagram(projects, container, onItemClick, options = {}) {
   const isInactiveIn2026 = typeof options.isInactiveIn2026 === 'function'
     ? options.isInactiveIn2026
     : () => false;
+  const labelFontSize = Number.isFinite(options.labelFontSize) ? options.labelFontSize : 6;
+  const labelBackground = Boolean(options.labelBackground);
+  const labelBackgroundColor = typeof options.labelBackgroundColor === 'string'
+    ? options.labelBackgroundColor
+    : '#ffffff';
+  const labelBackgroundOpacity = Number.isFinite(options.labelBackgroundOpacity)
+    ? options.labelBackgroundOpacity
+    : 0.4;
+  const labelColor = typeof options.labelColor === 'function'
+    ? options.labelColor
+    : (p) => (isNewIn2026(p)
+      ? 'rgb(147, 214, 255)'
+      : (isInactiveIn2026(p) ? 'rgba(170, 177, 191, .96)' : 'rgba(255,255,255,.9)'));
 
   const list = Array.isArray(projects) ? projects : [];
   if (!list.length) {
@@ -126,7 +139,18 @@ function renderDiagram(projects, container, onItemClick, options = {}) {
     return points.map(pt => `
       <g class="diagramItem" data-slug="${escapeHtml(pt.p.id)}">
         <circle cx="${pt.x}" cy="${pt.y}" r="3.8" fill="${isNewIn2026(pt.p) ? 'rgb(147, 214, 255)' : (isInactiveIn2026(pt.p) ? 'rgba(170, 177, 191, .96)' : 'rgba(255,255,255,.9)')}"/>
-        <text x="${pt.lx}" y="${pt.ly}" fill="${isNewIn2026(pt.p) ? 'rgb(147, 214, 255)' : (isInactiveIn2026(pt.p) ? 'rgba(170, 177, 191, .96)' : 'rgba(255,255,255,.9)')}" font-size="6"
+        ${labelBackground ? (() => {
+          const name = String(pt.p.naam || '');
+          const textW = Math.max(8, name.length * labelFontSize * 0.56);
+          const padX = 2.4;
+          const padY = 1.4;
+          const boxW = textW + (padX * 2);
+          const boxH = labelFontSize + (padY * 2);
+          const boxX = pt.anchor === 'start' ? pt.lx - padX : pt.lx - boxW + padX;
+          const boxY = pt.ly - (boxH / 2);
+          return `<rect x="${boxX}" y="${boxY}" width="${boxW}" height="${boxH}" rx="1.8" ry="1.8" fill="${labelBackgroundColor}" fill-opacity="${labelBackgroundOpacity}"/>`;
+        })() : ''}
+        <text x="${pt.lx}" y="${pt.ly}" fill="${labelColor(pt.p)}" font-size="${labelFontSize}"
               text-anchor="${pt.anchor}" dominant-baseline="middle">
           ${escapeHtml(pt.p.naam)}
         </text>

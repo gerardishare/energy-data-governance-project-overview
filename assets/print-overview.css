@@ -116,6 +116,29 @@ body {
   .printTocList { columns: 1; }
 }
 
+.printRadarSection {
+  background: var(--print-card-bg);
+  border: 1px solid var(--print-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 0 0 24px;
+  break-inside: avoid;
+}
+.printRadarSection h2 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-family: var(--font-brand);
+  font-weight: 700;
+}
+.printRadar {
+  min-height: 360px;
+}
+.printRadar svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .printLegend {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -334,5 +357,8 @@ body {
   .printTocList a {
     color: inherit;
     text-decoration: none;
+  }
+  .printRadarSection {
+    border-color: #cbd5e1;
   }
 }

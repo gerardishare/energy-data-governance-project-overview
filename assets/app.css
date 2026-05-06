@@ -149,6 +149,7 @@ a { color: inherit }
 }
 .chips { display: flex; gap: 8px; flex-wrap: wrap }
 .legendChip {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -158,6 +159,23 @@ a { color: inherit }
   padding: 6px 10px;
   font-size: 12px;
   color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+.legendChip:hover {
+  border-color: var(--border-hover);
+}
+.legendChip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.legendChip[aria-pressed="true"] {
+  box-shadow: 0 0 0 2px var(--accent-soft) inset;
+}
+.legendChip:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
 .legendChip--new2026 {
   border-color: rgba(147, 214, 255, .45);
@@ -420,9 +438,15 @@ a { color: inherit }
 .section h4 { margin: 0 0 10px; font-size: 13px; color: var(--muted) }
 .kv {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: minmax(140px, 36%) minmax(0, 1fr);
   gap: 8px 10px;
   font-size: 13px;
+}
+.kv .k,
+.kv .v {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .kv .k { color: var(--muted) }
 .kv .v { color: var(--text) }

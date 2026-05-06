@@ -33,9 +33,12 @@ const elDiagram = document.getElementById('radialDiagram');
 const elEmpty = document.getElementById('empty');
 const elCount = document.getElementById('countLabel');
 const elChips = document.getElementById('activeChips');
+const elLegendNew2026 = document.getElementById('legendNew2026');
+const elLegendInactive2026 = document.getElementById('legendInactive2026');
 const elRemovedIn2026Section = document.getElementById('removedIn2026Section');
 const elRemovedIn2026List = document.getElementById('removedIn2026List');
 const yearBtns = document.querySelectorAll('.yearBtn');
+let legendFilter = '';
 
 const overlay = document.getElementById('overlay');
 const drawer = document.getElementById('drawer');
@@ -76,6 +79,8 @@ function renderChips(){
   if (q) chips.push({label:`Zoek: ${q}`, clear: ()=>{ elQ.value=''; apply(); }});
   if (st) chips.push({label:`Status: ${st}`, clear: ()=>{ elStatus.value=''; apply(); }});
   if (sc) chips.push({label:`Scope: ${sc}`, clear: ()=>{ elScope.value=''; apply(); }});
+  if (legendFilter === 'new2026') chips.push({label:'Legenda: Lichtblauw', clear: ()=>{ legendFilter=''; syncLegendFiltersUI(); apply(); }});
+  if (legendFilter === 'inactive2026') chips.push({label:'Legenda: Lichtgrijs', clear: ()=>{ legendFilter=''; syncLegendFiltersUI(); apply(); }});
 
   elChips.innerHTML = '';
   for (const c of chips){
@@ -85,6 +90,19 @@ function renderChips(){
     btn.textContent = `${c.label} ✕`;
     btn.onclick = c.clear;
     elChips.appendChild(btn);
+  }
+}
+
+function syncLegendFiltersUI(){
+  const enabled = selectedYear === 2026;
+  if (!enabled) legendFilter = '';
+  if (elLegendNew2026) {
+    elLegendNew2026.disabled = !enabled;
+    elLegendNew2026.setAttribute('aria-pressed', enabled && legendFilter === 'new2026' ? 'true' : 'false');
+  }
+  if (elLegendInactive2026) {
+    elLegendInactive2026.disabled = !enabled;
+    elLegendInactive2026.setAttribute('aria-pressed', enabled && legendFilter === 'inactive2026' ? 'true' : 'false');
   }
 }
 
@@ -162,6 +180,11 @@ function apply(){
   }
   if (sc){
     list = list.filter(p => (p.scope || '') === sc);
+  }
+  if (legendFilter === 'new2026'){
+    list = list.filter(p => Boolean(p._isNewIn2026));
+  } else if (legendFilter === 'inactive2026'){
+    list = list.filter(p => Boolean(p._isInactiveIn2026));
   }
 
   renderGrid(list);
@@ -275,6 +298,7 @@ function updateDataDelenPrintLink() {
 
 function setYearUI(year){
   selectedYear = year;
+  syncLegendFiltersUI();
   yearBtns.forEach(btn => {
     const y = parseInt(btn.dataset.year, 10);
     btn.classList.toggle('active', y === selectedYear);
@@ -355,6 +379,21 @@ function init(){
   elQ.addEventListener('input', apply);
   elStatus.addEventListener('change', apply);
   elScope.addEventListener('change', apply);
+  if (elLegendNew2026) {
+    elLegendNew2026.addEventListener('click', () => {
+      legendFilter = legendFilter === 'new2026' ? '' : 'new2026';
+      syncLegendFiltersUI();
+      apply();
+    });
+  }
+  if (elLegendInactive2026) {
+    elLegendInactive2026.addEventListener('click', () => {
+      legendFilter = legendFilter === 'inactive2026' ? '' : 'inactive2026';
+      syncLegendFiltersUI();
+      apply();
+    });
+  }
+  syncLegendFiltersUI();
 
   loadProjects(selectedYear).catch(err=>{
     console.error(err);

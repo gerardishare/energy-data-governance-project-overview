@@ -68,6 +68,15 @@ function tocHtml(projects) {
   `;
 }
 
+function radarSectionHtml() {
+  return `
+    <section class="printRadarSection" aria-label="Radar initiatieven per scope">
+      <h2>Radar initiatieven per scope</h2>
+      <div id="dataDelenPrintRadar" class="printRadar"></div>
+    </section>
+  `;
+}
+
 function projectSection(p, index) {
   const anchorId = sectionAnchorId(p, index);
   const qr = p.korte_referentie || {};
@@ -126,14 +135,43 @@ async function loadDataSharingPrint() {
   if (!Array.isArray(data)) {
     throw new Error('Unexpected data format');
   }
+  let ids2023 = new Set();
+  if (year === 2026) {
+    const prevRes = await fetch('./data/projects_data_sharing_2023.json', { cache: 'no-store' });
+    if (!prevRes.ok) throw new Error('Failed to load ./data/projects_data_sharing_2023.json');
+    const prevData = await prevRes.json();
+    if (!Array.isArray(prevData)) throw new Error('Unexpected data format in 2023 data');
+    ids2023 = new Set(prevData.map(p => p && p.id).filter(Boolean));
+  }
 
   const titleEl = document.getElementById('dataDelenPrintYearLabel');
   if (titleEl) titleEl.textContent = String(year);
 
   root.innerHTML = `
     ${tocHtml(data)}
+    ${radarSectionHtml()}
     ${data.map((p, i) => projectSection(p, i)).join('')}
   `;
+
+  const radarEl = document.getElementById('dataDelenPrintRadar');
+  if (radarEl && typeof renderDiagram === 'function') {
+    renderDiagram(data, radarEl, () => {}, {
+      labelFontSize: 5,
+      labelBackground: true,
+      labelBackgroundColor: '#ffffff',
+      labelBackgroundOpacity: 0.4,
+      labelColor: (p) => {
+        if (year === 2026 && p && p.id && !ids2023.has(p.id)) return '#075985';
+        if (year === 2026 && p && typeof p.status === 'string' && p.status.trim().toLowerCase() === 'afgerond') return '#475569';
+        return '#111827';
+      },
+      isNewIn2026: (p) => year === 2026 && p && p.id && !ids2023.has(p.id),
+      isInactiveIn2026: (p) => year === 2026
+        && p
+        && typeof p.status === 'string'
+        && p.status.trim().toLowerCase() === 'afgerond'
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
